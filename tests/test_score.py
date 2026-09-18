@@ -151,7 +151,7 @@ class Budget(unittest.TestCase):
         q = plan.discovery_queries(TODAY)
         self.assertEqual([x["origin"] for x in q], ["NYC", "NYC", "EWR"])
         self.assertIsNone(q[0]["arrival_area_id"])
-        self.assertLessEqual((len(q) + plan.VERIFY_PER_DAY) * 31, 250)
+        self.assertLessEqual(plan.DAILY_BUDGET * 31, 250)
 
     def test_rotation_covers_every_region_and_trip_length(self):
         days = [plan.discovery_queries(TODAY + timedelta(days=d)) for d in range(6)]
@@ -159,12 +159,59 @@ class Budget(unittest.TestCase):
         self.assertEqual({q[1]["area"] for q in days}, set(plan.REGIONS))
         self.assertEqual({q[2]["area"] for q in days}, set(plan.REGIONS) | {None})
 
+    def test_watches_come_out_of_verification_not_discovery(self):
+        q, w = plan.discovery_queries(TODAY), [{"id": "a"}, {"id": "b"}, {"id": "c"}]
+        self.assertEqual(plan.fit_budget([], q, 250), ([], q, 5))
+        self.assertEqual(plan.fit_budget(w, q, 250), (w, q, 2))
+
     def test_low_balance_trims_plan(self):
-        q = plan.discovery_queries(TODAY)
-        self.assertEqual(plan.fit_budget(q, 250), (q, 5))
-        self.assertEqual(plan.fit_budget(q, 6), (q, 1))
-        self.assertEqual(plan.fit_budget(q, 3), (q[:1], 0))
-        self.assertEqual(plan.fit_budget(q, 0), ([], 0))
+        q, w = plan.discovery_queries(TODAY), [{"id": "a"}]
+        self.assertEqual(plan.fit_budget(w, q, 6), (w, q, 0))
+        self.assertEqual(plan.fit_budget(w, q, 4), (w, q[:1], 0))
+        self.assertEqual(plan.fit_budget(w, q, 0), ([], [], 0))
+
+
+def option(airport, price, minutes, flight="DL 100"):
+    return {"price": price, "total_duration": minutes,
+            "flights": [{"departure_airport": {"id": airport}, "arrival_airport": {"id": "ORD"},
+                         "airline": "Delta", "flight_number": flight}]}
+
+
+class Watches(unittest.TestCase):
+    WATCH = {"id": "chicago-oct", "name": "Chicago", "arrival_id": "ORD,MDW", "start": "2026-10-09", "end": "2026-10-12"}
+    INSIGHTS = {"lowest_price": 150, "price_level": "typical", "typical_price_range": [140, 260]}
+
+    def body(self, *options):
+        return {"best_flights": list(options), "price_insights": self.INSIGHTS,
+                "search_metadata": {"google_flights_url": "https://x"}}
+
+    def test_jfk_lga_wins_unless_ewr_is_clearly_cheaper(self):
+        row = run.parse_watch(self.body(option("LGA", 200, 150), option("EWR", 185, 150)), self.WATCH, TODAY)
+        self.assertEqual((row["airport"], row["price"], row["ewr_saving"]), ("LGA", 200, None))
+        row = run.parse_watch(self.body(option("LGA", 200, 150), option("EWR", 150, 150)), self.WATCH, TODAY)
+        self.assertEqual((row["airport"], row["price"], row["ewr_saving"]), ("EWR", 150, 50))
+        self.assertEqual((row["nyc_price"], row["ewr_price"]), (200, 150))
+
+    def test_detours_and_bare_fares_dont_win(self):
+        row = run.parse_watch(self.body(option("JFK", 90, 600), option("LGA", 200, 150)), self.WATCH, TODAY)
+        self.assertEqual(row["price"], 200)
+        self.assertEqual(row["alt"], {"price": 90, "airport": "JFK", "stops": 0, "minutes": 600})
+        # Spirit from EWR at $150 is $210 after the carry-on penalty: not enough to beat LGA at $200.
+        row = run.parse_watch(self.body(option("LGA", 200, 150), option("EWR", 150, 150, "NK 5")), self.WATCH, TODAY)
+        self.assertEqual(row["airport"], "LGA")
+
+    def test_board_tracks_change_and_lowest(self):
+        rows = []
+        for back, price in ((2, 210), (1, 180), (0, 195)):
+            day = TODAY - timedelta(days=back)
+            rows.append(run.parse_watch(self.body(option("LGA", price, 150)), self.WATCH, day))
+        board = [b for b in run.build_watches(rows, TODAY) if b["id"] == "chicago-oct"][0]
+        self.assertEqual((board["price"], board["change"], board["lowest_seen"], board["days_tracked"]), (195, 15, 180, 3))
+        self.assertEqual((board["level"], board["days_out"], board["tier"]), ("typical", 21, None))
+
+    def test_unchecked_watch_is_pending_and_departed_watch_disappears(self):
+        self.assertTrue(all(b.get("pending") for b in run.build_watches([], TODAY)))
+        self.assertEqual([b["id"] for b in run.build_watches([], date(2026, 11, 20))], ["toronto-nov"])
 
 
 if __name__ == "__main__":

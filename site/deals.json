@@ -1,6 +1,113 @@
 {
- "updated_at": "2026-09-18T20:51:19+00:00",
+ "updated_at": "2026-09-18T21:12:42+00:00",
  "routes_tracked": 196,
+ "watches": [
+  {
+   "id": "chicago-oct",
+   "name": "Chicago",
+   "arrival_id": "ORD,MDW",
+   "start": "2026-10-09",
+   "end": "2026-10-12",
+   "price": 505,
+   "airport": "LGA",
+   "arrives": "ORD",
+   "ewr_saving": null,
+   "airline": "American",
+   "stops": 0,
+   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTEwLTA5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNPUkRyBwgBEgNNRFcaOxIKMjAyNi0xMC0xMigBagcIARIDT1JEagcIARIDTURXcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
+   "checked_at": "2026-09-18T21:12:41+00:00",
+   "is_ewr": false,
+   "alt": {
+    "price": 315,
+    "airport": "EWR",
+    "stops": 1,
+    "minutes": 706
+   },
+   "bare_fare": false,
+   "level": "high",
+   "typical": [
+    130,
+    270
+   ],
+   "tier": null,
+   "under_pct": -288,
+   "change": null,
+   "lowest_seen": 505,
+   "lowest_seen_on": "2026-09-18",
+   "days_tracked": 1,
+   "days_out": 21
+  },
+  {
+   "id": "toronto-nov",
+   "name": "Toronto",
+   "arrival_id": "YYZ,YTZ",
+   "start": "2026-11-27",
+   "end": "2026-11-30",
+   "price": 314,
+   "airport": "LGA",
+   "arrives": "YYZ",
+   "ewr_saving": null,
+   "airline": "Air Canada",
+   "stops": 0,
+   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTExLTI3KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNZWVpyBwgBEgNZVFoaOxIKMjAyNi0xMS0zMCgBagcIARIDWVlaagcIARIDWVRacgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
+   "checked_at": "2026-09-18T21:12:41+00:00",
+   "is_ewr": false,
+   "alt": {
+    "price": 274,
+    "airport": "EWR",
+    "stops": 0,
+    "minutes": 113
+   },
+   "bare_fare": false,
+   "level": "typical",
+   "typical": [
+    230,
+    430
+   ],
+   "tier": null,
+   "under_pct": -37,
+   "change": null,
+   "lowest_seen": 314,
+   "lowest_seen_on": "2026-09-18",
+   "days_tracked": 1,
+   "days_out": 70
+  },
+  {
+   "id": "phoenix-nov",
+   "name": "Phoenix",
+   "arrival_id": "PHX",
+   "start": "2026-11-19",
+   "end": "2026-11-22",
+   "price": 447,
+   "airport": "JFK",
+   "arrives": "PHX",
+   "ewr_saving": null,
+   "airline": "JetBlue",
+   "stops": 0,
+   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTExLTE5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNQSFgaMhIKMjAyNi0xMS0yMigBagcIARIDUEhYcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
+   "checked_at": "2026-09-18T21:12:42+00:00",
+   "is_ewr": false,
+   "alt": {
+    "price": 364,
+    "airport": "LGA",
+    "stops": 1,
+    "minutes": 653
+   },
+   "bare_fare": false,
+   "level": "typical",
+   "typical": [
+    175,
+    390
+   ],
+   "tier": null,
+   "under_pct": -155,
+   "change": null,
+   "lowest_seen": 447,
+   "lowest_seen_on": "2026-09-18",
+   "days_tracked": 1,
+   "days_out": 62
+  }
+ ],
  "deals": [],
  "honorable_mentions": [
   {

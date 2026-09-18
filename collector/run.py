@@ -3,6 +3,7 @@
     python -m collector.run            # real run, spends SerpApi searches
     python -m collector.run --dry-run  # print today's plan, spend nothing
     python -m collector.run --build    # rebuild deals.json from stored data only
+    python -m collector.run --watches-only  # check just the watchlist trips (one search each)
 """
 
 import json
@@ -16,6 +17,7 @@ from . import plan, score, serp
 ROOT = Path(__file__).resolve().parent.parent
 OBS_DIR = ROOT / "data" / "observations"
 VER_DIR = ROOT / "data" / "verified"
+WATCH_DIR = ROOT / "data" / "watches"
 DEALS = ROOT / "site" / "deals.json"
 
 HISTORY_DAYS = 90
@@ -130,17 +132,104 @@ def pick_candidates(todays, observations, verified, slots, today):
     return chosen
 
 
-def parse_flights(body, obs, today):
+def _departs_from(option):
+    return ((option.get("flights") or [{}])[0].get("departure_airport") or {}).get("id")
+
+
+def best_itinerary(body, airports=None):
+    """Cheapest itinerary that isn't a long detour, optionally limited to some departure airports."""
     options = (body.get("best_flights") or []) + (body.get("other_flights") or [])
     options = [o for o in options if o.get("price") and o.get("total_duration")]
     if not options:
         return None
-    # The absolute cheapest is often a long detour; take the cheapest itinerary that isn't.
+    # Judge detours against the fastest option from any airport, so a slow-only airport doesn't get a pass.
     fastest = min(o["total_duration"] for o in options)
-    best = min((o for o in options if o["total_duration"] <= MAX_DETOUR * fastest), key=lambda o: o["price"])
-    legs = best.get("flights") or [{}]
+    ok = [o for o in options if o["total_duration"] <= MAX_DETOUR * fastest
+          and (airports is None or _departs_from(o) in airports)]
+    return min(ok, key=lambda o: o["price"]) if ok else None
+
+
+def _airline_code(legs):
     codes = {(leg.get("flight_number") or "").split(" ")[0] for leg in legs}
     ulcc = sorted(codes & score.ULCC)
+    return ulcc[0] if ulcc else (legs[0].get("flight_number") or "").split(" ")[0]
+
+
+def parse_watch(body, watch, today):
+    """One row per daily check of a watched trip: best JFK/LGA fare, and EWR's only if it clearly wins."""
+    nyc, ewr = best_itinerary(body, {"JFK", "LGA"}), best_itinerary(body, {"EWR"})
+    pick, saving = nyc, None
+    if ewr and (not nyc or score.ewr_passes(_eff(ewr), "great", _eff(nyc))):
+        pick, saving = ewr, (_eff(nyc) - _eff(ewr) if nyc else None)
+    if not pick:
+        return None
+    legs = pick["flights"]
+    insights = body.get("price_insights") or {}
+    # The detour filter can hide a much cheaper long-layover option; for a trip you're set on, that's worth knowing.
+    options = [o for o in (body.get("best_flights") or []) + (body.get("other_flights") or []) if o.get("price")]
+    cheapest = min(options, key=lambda o: o["price"])
+    alt = None
+    if cheapest["price"] < pick["price"]:
+        alt = {"price": cheapest["price"], "airport": _departs_from(cheapest),
+               "stops": len(cheapest["flights"]) - 1, "minutes": cheapest.get("total_duration")}
+    return {
+        "date": today.isoformat(),
+        "checked_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "id": watch["id"],
+        "price": pick["price"],
+        "airport": _departs_from(pick),
+        "arrives": (legs[-1].get("arrival_airport") or {}).get("id"),
+        "ewr_saving": saving,
+        "alt": alt,
+        "nyc_price": nyc["price"] if nyc else None,
+        "ewr_price": ewr["price"] if ewr else None,
+        "airline": legs[0].get("airline"),
+        "airline_code": _airline_code(legs),
+        "stops": len(legs) - 1,
+        "insights": {k: insights.get(k) for k in ("lowest_price", "price_level", "typical_price_range")},
+        "url": (body.get("search_metadata") or {}).get("google_flights_url"),
+    }
+
+
+def _eff(option):
+    return score.effective_price(option["price"], _airline_code(option["flights"]))
+
+
+def build_watches(watch_rows, today):
+    """Latest check per active watch plus how the price has moved since we started looking."""
+    out = []
+    for w in plan.active_watches(today):
+        rows = [r for r in watch_rows if r["id"] == w["id"]]
+        if not rows:
+            out.append({**w, "pending": True})
+            continue
+        latest, low = rows[-1], min(rows, key=lambda r: r["price"])
+        earlier = [r for r in rows if r["date"] < latest["date"]]
+        rng = latest["insights"].get("typical_price_range")
+        eff = score.effective_price(latest["price"], latest.get("airline_code"))
+        out.append({
+            **w, **{k: latest[k] for k in ("price", "airport", "arrives", "ewr_saving", "airline", "stops", "url", "checked_at")},
+            "is_ewr": latest["airport"] == "EWR",
+            "alt": latest.get("alt"),
+            "bare_fare": latest.get("airline_code") in score.ULCC,
+            "level": latest["insights"].get("price_level"),
+            "typical": rng,
+            "tier": score.tier(eff, latest["insights"]),
+            "under_pct": round(100 * (rng[0] - eff) / rng[0]) if rng and rng[0] else None,
+            "change": latest["price"] - earlier[-1]["price"] if earlier else None,
+            "lowest_seen": low["price"],
+            "lowest_seen_on": low["date"],
+            "days_tracked": len({r["date"] for r in rows}),
+            "days_out": (date.fromisoformat(w["start"]) - today).days,
+        })
+    return out
+
+
+def parse_flights(body, obs, today):
+    best = best_itinerary(body)
+    if not best:
+        return None
+    legs = best.get("flights") or [{}]
     return {
         "date": today.isoformat(),
         "verified_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -155,7 +244,7 @@ def parse_flights(body, obs, today):
         "end": obs["end"],
         "duration": obs["duration"],
         "airline": legs[0].get("airline") or obs.get("airline"),
-        "airline_code": ulcc[0] if ulcc else (legs[0].get("flight_number") or "").split(" ")[0],
+        "airline_code": _airline_code(legs),
         "stops": len(legs) - 1,
         "insights": {k: (body.get("price_insights") or {}).get(k)
                      for k in ("lowest_price", "price_level", "typical_price_range")},
@@ -230,12 +319,13 @@ def build_mentions(observations, verified, today):
     return near[:MENTION_LIMIT]
 
 
-def write_deals(observations, verified, today):
+def write_deals(observations, verified, today, watch_rows=()):
     DEALS.parent.mkdir(parents=True, exist_ok=True)
     deals = build_deals(observations, verified, today)
     DEALS.write_text(json.dumps({
         "updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "routes_tracked": len({(o["origin"], o["dest"]) for o in observations}),
+        "watches": build_watches(list(watch_rows), today),
         "deals": deals,
         "honorable_mentions": [] if deals else build_mentions(observations, verified, today),
     }, indent=1))
@@ -245,22 +335,43 @@ def write_deals(observations, verified, today):
 def main(argv):
     today = date.today()
     since = today - timedelta(days=HISTORY_DAYS)
-    observations, verified = _read(OBS_DIR, since), _read(VER_DIR, since)
+    observations, verified, watch_rows = _read(OBS_DIR, since), _read(VER_DIR, since), _read(WATCH_DIR, since)
 
     if "--build" in argv:
-        print(f"{len(write_deals(observations, verified, today))} deals written")
+        print(f"{len(write_deals(observations, verified, today, watch_rows))} deals written")
         return 0
 
-    queries = plan.discovery_queries(today)
+    watches, queries = plan.active_watches(today), plan.discovery_queries(today)
     if "--dry-run" in argv:
+        watches, queries, slots = plan.fit_budget(watches, queries, 250)
+        for w in watches:
+            print("watch  ", w)
         for q in queries:
             print("explore", q)
-        print(f"+ up to {plan.VERIFY_PER_DAY} verifications = {len(queries) + plan.VERIFY_PER_DAY} calls max")
+        print(f"+ up to {slots} verifications = {len(watches) + len(queries) + slots} calls max")
         return 0
 
     left = serp.searches_left()
-    queries, slots = plan.fit_budget(queries, left)
-    print(f"{left} searches left; running {len(queries)} discovery, up to {slots} verification")
+    if "--watches-only" in argv:
+        queries = []
+    watches, queries, slots = plan.fit_budget(watches, queries, left)
+    if "--watches-only" in argv:
+        slots = 0
+    print(f"{left} searches left; running {len(watches)} watches, {len(queries)} discovery, up to {slots} verification")
+
+    checked = []
+    for w in watches:
+        try:
+            row = parse_watch(serp.flights(plan.ALL_NYC, w["arrival_id"], w["start"], w["end"]), w, today)
+        except serp.SerpError as e:
+            print(f"watch failed {w['id']}: {e}", file=sys.stderr)
+            continue
+        if row:
+            print(f"watch {w['id']}: {row['airport']}-{row['arrives']} ${row['price']} level={row['insights']['price_level']} "
+                  f"(JFK/LGA ${row['nyc_price']}, EWR ${row['ewr_price']})")
+            checked.append(row)
+    _append(WATCH_DIR, checked, today)
+    watch_rows += checked
 
     todays = []
     for q in queries:
@@ -288,8 +399,8 @@ def main(argv):
     _append(VER_DIR, new, today)
     verified += new
 
-    print(f"{len(write_deals(observations, verified, today))} deals on the site")
-    return 0 if todays or not queries else 1
+    print(f"{len(write_deals(observations, verified, today, watch_rows))} deals on the site")
+    return 0 if todays or checked or not queries else 1
 
 
 if __name__ == "__main__":

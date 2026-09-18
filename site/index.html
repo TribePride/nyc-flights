@@ -35,7 +35,11 @@
   .deal:hover { transform: translateY(-2px); border-color: var(--c); }
   .deal.rare { --c: var(--rare); --c-bg: var(--rare-bg); } .deal.great { --c: var(--great); --c-bg: var(--great-bg); }
   .deal.good { --c: var(--good); --c-bg: var(--good-bg); }
-  .deal:not(.mention) .price, .under { color: var(--c); }
+  .deal.lvl-low { --c: var(--great); --c-bg: var(--great-bg); } .deal.lvl-typical { --c: var(--ewr); --c-bg: var(--ewr-bg); }
+  .deal.lvl-high { --c: var(--warn); --c-bg: var(--warn-bg); }
+  .down { color: var(--great); font-weight: 600; } .up { color: var(--warn); font-weight: 600; }
+  #watches { margin-bottom: 28px; } #watches h2 { margin-top: 0; }
+  .deal:not(.mention):not(.pending) .price, .under { color: var(--c); }
   .under { font-weight: 650; }
   .nonstop { color: var(--great); font-weight: 600; }
   .top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
@@ -66,6 +70,11 @@
 <main>
   <h1>NYC Flight Deals</h1>
   <p class="sub" id="sub">Round trips from JFK and LGA priced well under normal. Newark only when it clearly wins.</p>
+  <section id="watches" hidden>
+    <h2>Your trips</h2>
+    <p>Fixed dates, checked every morning. Color shows where today's fare sits for those exact dates.</p>
+    <div class="grid" id="wgrid"></div>
+  </section>
   <div class="filters" id="filters"></div>
   <div class="legend">
     <span style="--k:var(--rare)">Rare · 35%+ under typical</span><span style="--k:var(--great)">Great · 20%+</span>
@@ -104,9 +113,9 @@ function ago(iso) {
 
 function bar(d) {
   if (!d.typical) return "";
-  const [lo, hi] = d.typical, min = Math.min(d.price, lo) * 0.85, max = hi * 1.1, pct = v => 100 * (v - min) / (max - min);
+  const [lo, hi] = d.typical, min = Math.min(d.price, lo) * 0.85, max = Math.max(hi * 1.1, d.price * 1.05), pct = v => 100 * (v - min) / (max - min);
   return `<div class="bar"><i class="low" style="width:${pct(lo)}%"></i><i class="typ" style="width:${pct(hi) - pct(lo)}%"></i><i class="high" style="flex:1"></i><div class="dot" style="left:${pct(d.price)}%"></div></div>
-    <div class="barlabel"><span class="under">${d.under_pct > 0 ? d.under_pct + "% under typical" : d.under_pct < 0 ? "low end of typical" : "at typical low"}</span><span>typical $${lo}–$${hi}</span></div>`;
+    <div class="barlabel"><span class="under">${d.under_pct > 0 ? d.under_pct + "% under typical" : d.under_pct < 0 ? (d.price > d.typical[1] ? "above typical" : "within typical") : "at typical low"}</span><span>typical $${lo}–$${hi}</span></div>`;
 }
 
 function card(d) {
@@ -119,6 +128,26 @@ function card(d) {
     <div class="meta">${fmtDate(d.start)} → ${fmtDate(d.end)}</div>
     <div class="meta">${esc(d.airline)} · ${stops} · checked ${ago(d.verified_at)}</div>
     ${bar(d)}</a>`;
+}
+
+const LEVEL = { low: "Low for these dates", typical: "Typical for these dates", high: "High for these dates" };
+
+function watchCard(w) {
+  const dates = `${fmtDate(w.start)} → ${fmtDate(w.end)}`;
+  if (w.pending) return `<div class="deal mention pending"><div class="top"><div class="place">${esc(w.name)}</div><div class="price">—</div></div>
+    <div class="tags"><span class="tag tier">first check tomorrow</span></div><div class="meta">${dates}</div></div>`;
+  const stops = w.stops === 0 ? '<span class="nonstop">Nonstop</span>' : w.stops === 1 ? "1 stop" : `${w.stops} stops`;
+  const from = w.is_ewr ? `<span class="tag ewr">From Newark${w.ewr_saving ? ` · $${Math.round(w.ewr_saving)} under JFK/LGA` : ""}</span>` : `<span class="tag plain">${esc(w.airport)}</span>`;
+  const move = w.change == null ? "first check" : w.change === 0 ? "no change since last check"
+    : `<span class="${w.change < 0 ? "down" : "up"}">${w.change < 0 ? "▼" : "▲"} $${Math.abs(w.change)}</span> since last check`;
+  const alt = w.alt ? `<div class="meta">Cheaper: <strong>$${w.alt.price}</strong> from ${esc(w.alt.airport)} · ${w.alt.stops === 0 ? "nonstop" : w.alt.stops + " stop"} · ${Math.floor(w.alt.minutes / 60)}h ${w.alt.minutes % 60}m outbound</div>` : "";
+  const low = w.days_tracked > 1 ? ` · lowest seen $${w.lowest_seen}` : "";
+  return `<a class="deal ${w.tier || "lvl-" + (w.level || "typical")}" href="${esc(w.url || "#")}" target="_blank" rel="noopener">
+    <div class="top"><div><div class="place">${esc(w.name)} <span class="country">${esc(w.arrives)}</span></div><div class="country">${dates} · ${w.days_out} days out</div></div><div class="price">$${w.price}</div></div>
+    <div class="tags"><span class="tag tier">${w.tier ? w.tier + " deal" : LEVEL[w.level] || "Checked"}</span>${from}${w.bare_fare ? '<span class="tag warn">bare fare</span>' : ""}</div>
+    <div class="meta">${esc(w.airline)} · ${stops} · checked ${ago(w.checked_at)}</div>
+    <div class="meta">${move}${low}</div>${alt}
+    ${bar(w)}</a>`;
 }
 
 function render() {
@@ -141,6 +170,9 @@ fetch(new URLSearchParams(location.search).has("sample") ? "deals.sample.json" :
   .then(data => {
     deals = data.deals || [];
     mentions = data.honorable_mentions || [];
+    const watches = data.watches || [];
+    document.getElementById("watches").hidden = !watches.length;
+    document.getElementById("wgrid").innerHTML = watches.map(watchCard).join("");
     document.getElementById("sub").textContent += ` Updated ${ago(data.updated_at)} · ${data.routes_tracked} routes tracked.`;
     render();
   })

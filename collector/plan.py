@@ -1,6 +1,8 @@
 """Decide which queries to spend today's SerpApi budget on."""
 
+import json
 from datetime import date
+from pathlib import Path
 
 ORIGINS = {"NYC": "JFK,LGA", "EWR": "EWR"}
 
@@ -11,7 +13,9 @@ REGIONS = {"Europe": "/m/02j9z", "Caribbean": "/m/0261m", "South America": "/m/0
 WEEKEND, WEEK = 1, 2
 ANY_MONTH = 0             # cheapest dates in the next 6 months
 
-VERIFY_PER_DAY = 5
+DAILY_BUDGET = 8          # 8 x 31 = 248, just under the free tier's 250 a month
+WATCHLIST = Path(__file__).resolve().parent.parent / "watchlist.json"
+ALL_NYC = "JFK,LGA,EWR"   # a watch checks all three in one call; EWR still has to clearly win to be shown
 VERIFY_EWR_MAX = 1        # EWR never takes more than one verification slot
 RESERVE = 2               # never spend the last few searches
 
@@ -38,8 +42,20 @@ def discovery_queries(today=None):
     ]
 
 
-def fit_budget(queries, searches_left):
-    """Trim the plan to what the account can afford. Returns (discovery queries, verification slots)."""
-    spendable = max(searches_left - RESERVE, 0)
-    queries = queries[:spendable]
-    return queries, min(VERIFY_PER_DAY, spendable - len(queries))
+def active_watches(today=None):
+    """Fixed-date trips from watchlist.json that haven't departed yet."""
+    today = today or date.today()
+    if not WATCHLIST.exists():
+        return []
+    return [w for w in json.loads(WATCHLIST.read_text()) if w["start"] > today.isoformat()]
+
+
+def fit_budget(watches, queries, searches_left):
+    """Split today's searches. Watches come first, then discovery, and verification gets what's left.
+
+    Returns (watches, discovery queries, verification slots).
+    """
+    spendable = min(max(searches_left - RESERVE, 0), DAILY_BUDGET)
+    watches = watches[:spendable]
+    queries = queries[:spendable - len(watches)]
+    return watches, queries, spendable - len(watches) - len(queries)

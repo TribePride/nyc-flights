@@ -1,37 +1,37 @@
-#·Palette:·what·each·color·means·and·why␊
-␊
-Researched·2026-09-18.␊
-␊
-##·The·read␊
-Color·on·a·deal·page·has·one·job:·say·how·good·the·price·is·before·you·read·a·number.·So·color·is·spent·on·price·meaning,·and·everything·that·is·merely·normal·(JFK,·LGA,·trip·length)·stays·neutral.·The·only·non-price·colors·are·the·two·exceptions·worth·noticing:·Newark·and·bare-fare·airlines.␊
-␊
-##·What·the·research·found␊
--·**Flight·shoppers·already·know·one·code.**·Google·Flights·marks·fares·low·=·green,·typical·=·yellow,·high·=·red,·in·price·insights,·the·calendar·and·the·date·grid.·The·price·bar·on·each·card·reuses·exactly·that,·so·nobody·has·to·learn·it.␊
--·**Red·therefore·can't·be·a·deal·color.**·A·red·"RARE"·badge·(the·first·version·of·this·page)·reads·as·"expensive"·to·anyone·trained·by·Google·Flights.·Rare·is·purple·instead,·the·loot-rarity·convention,·and·the·hue·furthest·from·the·green/yellow/red·price·scale.␊
--·**Hues·come·from·Okabe-Ito**,·the·colorblind-safe·set·recommended·by·Nature·Methods:·bluish·green·`#009E73`,·blue·`#0072B2`,·reddish·purple·`#CC79A7`,·orange·`#E69F00`,·vermillion·`#D55E00`,·yellow·`#F0E442`.·They·were·chosen·to·stay·distinct·under·deuteranopia,·protanopia·and·tritanopia.·Tier·is·also·always·written·as·a·word,·so·color·is·never·the·only·signal.␊
--·**Light/dark·pairing·follows·the·Radix·Colors·pattern**:·a·quiet·tint·for·the·badge·background,·a·strong·step·of·the·same·hue·for·text,·and·a·separate·pair·for·dark·mode·rather·than·one·color·forced·to·work·in·both.␊
-␊
-##·Tokens␊
-Contrast·is·WCAG·text-on-tint·/·text-on-card.·AA·needs·4.5.␊
-␊
-|·Meaning·|·Light·text·/·tint·|·Contrast·|·Dark·text·/·tint·|·Contrast·|␊
-|---|---|---|---|---|␊
-|·Rare·(35%+·under)·|·`#8E2A6B`·/·`#FBE7F2`·|·6.6·/·7.7·|·`#F2A3D0`·/·`#3A1A2E`·|·8.0·/·8.7·|␊
-|·Great·(20%+·under)·|·`#0B6B50`·/·`#DDF5EC`·|·5.7·/·6.4·|·`#6FD9B4`·/·`#0F2E25`·|·8.5·/·9.8·|␊
-|·Good·(at·typical·low)·|·`#0A4F80`·/·`#DCEBF7`·|·7.1·/·8.5·|·`#8CC8F2`·/·`#10283A`·|·8.4·/·9.3·|␊
-|·Close·(honorable·mention)·|·`#5F5A50`·/·`#EEEAE1`·|·5.7·/·6.7·|·`#B5AFA3`·/·`#2A2823`·|·6.7·/·7.7·|␊
-|·Newark·|·`#8A5A00`·/·`#FBF0D9`·|·5.2·/·5.8·|·`#F0C060`·/·`#33290F`·|·8.5·/·9.9·|␊
-|·Bare·fare·(warning)·|·`#A84300`·/·`#FDE9DC`·|·5.2·/·6.0·|·`#FF9B6A`·/·`#3A1D0F`·|·7.4·/·8.1·|␊
-␊
-Price·bar·zones·(fills,·not·text):·below·typical·`#009E73`·/·`#2FBF95`,·typical·`#D4A90F`·/·`#E3C12F`,·high·`#D55E00`·/·`#F07A2A`.␊
-␊
-##·Where·color·is·applied␊
-Card·left·stripe,·tier·badge,·price,·"%·under·typical"·label·and·the·bar·marker·all·take·the·tier·color.·"Nonstop"·is·green.·JFK/LGA·chips·are·neutral·on·purpose.␊
-␊
-##·What·would·change·this␊
-If·a·purple·"rare"·tests·as·confusing,·swap·rare·and·great·(rare·=·green,·great·=·teal-blue).·Don't·reach·for·red.␊
-␊
-##·Sources␊
--·Google·Flights·color·coding:·https://www.going.com/guides/how-to-use-google-flights·,·https://thriftytraveler.com/guides/google-flights/␊
--·Okabe-Ito·palette:·https://conceptviz.app/blog/okabe-ito-palette-hex-codes-complete-reference␊
--·Radix·Colors·scale·roles:·https://www.radix-ui.com/colors/docs/palette-composition/understanding-the-scale␊
+# Palette: what each color means and why
+
+Researched 2026-09-18.
+
+## The read
+Color on a deal page has one job: say how good the price is before you read a number. So color is spent on price meaning, and everything that is merely normal (JFK, LGA, trip length) stays neutral. The only non-price colors are the two exceptions worth noticing: Newark and bare-fare airlines.
+
+## What the research found
+- **Flight shoppers already know one code.** Google Flights marks fares low = green, typical = yellow, high = red, in price insights, the calendar and the date grid. The price bar on each card reuses exactly that, so nobody has to learn it.
+- **Red therefore can't be a deal color.** A red "RARE" badge (the first version of this page) reads as "expensive" to anyone trained by Google Flights. Rare is purple instead, the loot-rarity convention, and the hue furthest from the green/yellow/red price scale.
+- **Hues come from Okabe-Ito**, the colorblind-safe set recommended by Nature Methods: bluish green `#009E73`, blue `#0072B2`, reddish purple `#CC79A7`, orange `#E69F00`, vermillion `#D55E00`, yellow `#F0E442`. They were chosen to stay distinct under deuteranopia, protanopia and tritanopia. Tier is also always written as a word, so color is never the only signal.
+- **Light/dark pairing follows the Radix Colors pattern**: a quiet tint for the badge background, a strong step of the same hue for text, and a separate pair for dark mode rather than one color forced to work in both.
+
+## Tokens
+Contrast is WCAG text-on-tint / text-on-card. AA needs 4.5.
+
+| Meaning | Light text / tint | Contrast | Dark text / tint | Contrast |
+|---|---|---|---|---|
+| Rare (35%+ under) | `#8E2A6B` / `#FBE7F2` | 6.6 / 7.7 | `#F2A3D0` / `#3A1A2E` | 8.0 / 8.7 |
+| Great (20%+ under) | `#0B6B50` / `#DDF5EC` | 5.7 / 6.4 | `#6FD9B4` / `#0F2E25` | 8.5 / 9.8 |
+| Good (at typical low) | `#0A4F80` / `#DCEBF7` | 7.1 / 8.5 | `#8CC8F2` / `#10283A` | 8.4 / 9.3 |
+| Close (honorable mention) | `#5F5A50` / `#EEEAE1` | 5.7 / 6.7 | `#B5AFA3` / `#2A2823` | 6.7 / 7.7 |
+| Newark | `#8A5A00` / `#FBF0D9` | 5.2 / 5.8 | `#F0C060` / `#33290F` | 8.5 / 9.9 |
+| Bare fare (warning) | `#A84300` / `#FDE9DC` | 5.2 / 6.0 | `#FF9B6A` / `#3A1D0F` | 7.4 / 8.1 |
+
+Price bar zones (fills, not text): below typical `#009E73` / `#2FBF95`, typical `#D4A90F` / `#E3C12F`, high `#D55E00` / `#F07A2A`.
+
+## Where color is applied
+Card left stripe, tier badge, price, "% under typical" label and the bar marker all take the tier color. "Nonstop" is green. JFK/LGA chips are neutral on purpose.
+
+## What would change this
+If a purple "rare" tests as confusing, swap rare and great (rare = green, great = teal-blue). Don't reach for red.
+
+## Sources
+- Google Flights color coding: https://www.going.com/guides/how-to-use-google-flights , https://thriftytraveler.com/guides/google-flights/
+- Okabe-Ito palette: https://conceptviz.app/blog/okabe-ito-palette-hex-codes-complete-reference
+- Radix Colors scale roles: https://www.radix-ui.com/colors/docs/palette-composition/understanding-the-scale
