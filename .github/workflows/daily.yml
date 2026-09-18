@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "0 10 * * *"   # 6am New York (EDT)
   workflow_dispatch:
+    inputs:
+      collect:
+        description: "Collect prices (spends up to 8 SerpApi searches). Untick to only redeploy the site."
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -22,11 +27,14 @@ jobs:
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main   # a re-run otherwise checks out the original commit and its push gets rejected
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: python -m unittest -q
       - run: python -m collector.run
+        if: github.event_name == 'schedule' || inputs.collect
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
       - name: Commit data
