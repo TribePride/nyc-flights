@@ -50,6 +50,12 @@ def active_watches(today=None):
     return [w for w in json.loads(WATCHLIST.read_text()) if w["start"] > today.isoformat()]
 
 
+def due_watches(today=None):
+    """Active watches to check today. A watch with "every": N is only checked every Nth day, to save searches."""
+    today = today or date.today()
+    return [w for w in active_watches(today) if today.toordinal() % w.get("every", 1) == 0]
+
+
 def fit_budget(watches, queries, searches_left):
     """Split today's searches. Watches come first, then discovery, and verification gets what's left.
 

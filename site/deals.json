@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-18T21:12:42+00:00",
+ "updated_at": "2026-09-18T23:09:34+00:00",
  "routes_tracked": 196,
  "watches": [
   {
@@ -106,6 +106,37 @@
    "lowest_seen_on": "2026-09-18",
    "days_tracked": 1,
    "days_out": 62
+  },
+  {
+   "id": "manila-mar",
+   "name": "Manila",
+   "arrival_id": "MNL",
+   "start": "2027-03-26",
+   "end": "2027-04-10",
+   "every": 2,
+   "price": 945,
+   "airport": "LGA",
+   "arrives": "MNL",
+   "ewr_saving": null,
+   "airline": "Air Canada",
+   "stops": 1,
+   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI3LTAzLTI2KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNNTkwaMhIKMjAyNy0wNC0xMCgBagcIARIDTU5McgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
+   "checked_at": "2026-09-18T23:09:34+00:00",
+   "is_ewr": false,
+   "alt": null,
+   "bare_fare": false,
+   "level": "low",
+   "typical": [
+    960,
+    1400
+   ],
+   "tier": "good",
+   "under_pct": 2,
+   "change": null,
+   "lowest_seen": 945,
+   "lowest_seen_on": "2026-09-18",
+   "days_tracked": 1,
+   "days_out": 189
   }
  ],
  "deals": [],

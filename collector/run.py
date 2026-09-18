@@ -341,7 +341,9 @@ def main(argv):
         print(f"{len(write_deals(observations, verified, today, watch_rows))} deals written")
         return 0
 
-    watches, queries = plan.active_watches(today), plan.discovery_queries(today)
+    watches, queries = plan.due_watches(today), plan.discovery_queries(today)
+    if "--only" in argv:  # e.g. --watches-only --only manila-mar, to check a newly added trip right away
+        watches = [w for w in plan.active_watches(today) if w["id"] == argv[argv.index("--only") + 1]]
     if "--dry-run" in argv:
         watches, queries, slots = plan.fit_budget(watches, queries, 250)
         for w in watches:

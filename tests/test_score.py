@@ -209,9 +209,14 @@ class Watches(unittest.TestCase):
         self.assertEqual((board["price"], board["change"], board["lowest_seen"], board["days_tracked"]), (195, 15, 180, 3))
         self.assertEqual((board["level"], board["days_out"], board["tier"]), ("typical", 21, None))
 
+    def test_every_n_days_watch_skips_off_days(self):
+        due = [[w["id"] for w in plan.due_watches(TODAY + timedelta(days=d))] for d in range(2)]
+        self.assertEqual(sorted(len(d) for d in due), [3, 4])
+        self.assertTrue(all("chicago-oct" in d for d in due))
+
     def test_unchecked_watch_is_pending_and_departed_watch_disappears(self):
         self.assertTrue(all(b.get("pending") for b in run.build_watches([], TODAY)))
-        self.assertEqual([b["id"] for b in run.build_watches([], date(2026, 11, 20))], ["toronto-nov"])
+        self.assertEqual([b["id"] for b in run.build_watches([], date(2026, 11, 20))], ["toronto-nov", "manila-mar"])
 
 
 if __name__ == "__main__":

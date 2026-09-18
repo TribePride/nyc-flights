@@ -1,5 +1,6 @@
 [
   {"id": "chicago-oct", "name": "Chicago", "arrival_id": "ORD,MDW", "start": "2026-10-09", "end": "2026-10-12"},
   {"id": "toronto-nov", "name": "Toronto", "arrival_id": "YYZ,YTZ", "start": "2026-11-27", "end": "2026-11-30"},
-  {"id": "phoenix-nov", "name": "Phoenix", "arrival_id": "PHX", "start": "2026-11-19", "end": "2026-11-22"}
+  {"id": "phoenix-nov", "name": "Phoenix", "arrival_id": "PHX", "start": "2026-11-19", "end": "2026-11-22"},
+  {"id": "manila-mar", "name": "Manila", "arrival_id": "MNL", "start": "2027-03-26", "end": "2027-04-10", "every": 2}
 ]

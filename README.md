@@ -16,7 +16,7 @@ Newark fares must be Great or better and beat the best JFK/LGA fare to the same 
 
 ## Watched trips
 
-`watchlist.json` lists fixed-date trips to check every morning, shown at the top of the page as "Your trips". Each costs one search a day (JFK, LGA and EWR in a single call) and comes out of the verification slots, so the daily total stays at 8: with 3 watches, that's 3 watches + 3 discovery + 2 verifications. A watch stops on its own once the departure date passes. The card shows the best sensible JFK/LGA fare (Newark only if it wins by 15% and $40), Google's low/typical/high call for those dates, the move since the last check, the lowest price seen, and any cheaper option the rules skipped (a long layover, or a Newark fare that didn't clear the margin).
+`watchlist.json` lists fixed-date trips to check every morning, shown at the top of the page as "Your trips". Each costs one search a day (JFK, LGA and EWR in a single call) and comes out of the verification slots, so the daily total stays at 8: with 3 watches, that's 3 watches + 3 discovery + 2 verifications. A watch stops on its own once the departure date passes. Add `"every": 2` to a watch to check it every other day instead (Manila uses this, since it is six months out); `--watches-only --only <id>` checks one trip right now. The card shows the best sensible JFK/LGA fare (Newark only if it wins by 15% and $40), Google's low/typical/high call for those dates, the move since the last check, the lowest price seen, and any cheaper option the rules skipped (a long layover, or a Newark fare that didn't clear the margin).
 
 ```json
 {"id": "chicago-oct", "name": "Chicago", "arrival_id": "ORD,MDW", "start": "2026-10-09", "end": "2026-10-12"}
