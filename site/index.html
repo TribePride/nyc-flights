@@ -7,12 +7,18 @@
 <style>
   :root {
     --bg: #f6f4ef; --card: #fffdf9; --ink: #1c1b18; --muted: #6f6a60; --line: #e4dfd4;
-    --rare: #b4371f; --great: #1f6f4a; --good: #3b5b8c; --ewr: #8a5a00; --ewr-bg: #fbf0d9;
+    /* Hues from the Okabe-Ito colorblind-safe set; each pair is text-on-tint at WCAG AA (>= 4.5:1).
+       Red is never a deal color: on Google Flights red means expensive. */
+    --rare: #8e2a6b; --rare-bg: #fbe7f2; --great: #0b6b50; --great-bg: #ddf5ec; --good: #0a4f80; --good-bg: #dcebf7;
+    --close: #5f5a50; --close-bg: #eeeae1; --ewr: #8a5a00; --ewr-bg: #fbf0d9; --warn: #a84300; --warn-bg: #fde9dc;
+    --zone-low: #009e73; --zone-typ: #d4a90f; --zone-high: #d55e00;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #151412; --card: #1f1d1a; --ink: #eeeae2; --muted: #9a9488; --line: #33302a;
-      --rare: #ff8a70; --great: #6fd0a0; --good: #8fb2e8; --ewr: #f0c060; --ewr-bg: #33290f;
+      --rare: #f2a3d0; --rare-bg: #3a1a2e; --great: #6fd9b4; --great-bg: #0f2e25; --good: #8cc8f2; --good-bg: #10283a;
+      --close: #b5afa3; --close-bg: #2a2823; --ewr: #f0c060; --ewr-bg: #33290f; --warn: #ff9b6a; --warn-bg: #3a1d0f;
+      --zone-low: #2fbf95; --zone-typ: #e3c12f; --zone-high: #f07a2a;
     }
   }
   * { box-sizing: border-box; }
@@ -24,24 +30,33 @@
   .filters button { font: inherit; font-size: .88rem; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; }
   .filters button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 14px; }
-  .deal { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; color: inherit; text-decoration: none; transition: transform .12s, border-color .12s; }
-  .deal:hover { transform: translateY(-2px); border-color: var(--muted); }
+  .deal { --c: var(--close); --c-bg: var(--close-bg); position: relative; overflow: hidden; display: block; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; color: inherit; text-decoration: none; transition: transform .12s, border-color .12s; }
+  .deal::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--c); }
+  .deal:hover { transform: translateY(-2px); border-color: var(--c); }
+  .deal.rare { --c: var(--rare); --c-bg: var(--rare-bg); } .deal.great { --c: var(--great); --c-bg: var(--great-bg); }
+  .deal.good { --c: var(--good); --c-bg: var(--good-bg); }
+  .deal:not(.mention) .price, .under { color: var(--c); }
+  .under { font-weight: 650; }
+  .nonstop { color: var(--great); font-weight: 600; }
   .top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
   .place { font-weight: 650; font-size: 1.12rem; }
   .country { color: var(--muted); font-size: .85rem; }
   .price { font-size: 1.6rem; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
   .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 12px; }
-  .tag { font-size: .72rem; font-weight: 650; text-transform: uppercase; letter-spacing: .05em; padding: 2px 8px; border-radius: 5px; border: 1px solid currentColor; }
-  .tag.rare { color: var(--rare); } .tag.great { color: var(--great); } .tag.good { color: var(--good); }
-  .tag.ewr { color: var(--ewr); background: var(--ewr-bg); border-color: transparent; text-transform: none; letter-spacing: 0; }
-  .tag.plain, .tag.mention { color: var(--muted); }
-  .deal.mention .dot { background: var(--muted); }
+  .tag { font-size: .72rem; font-weight: 650; text-transform: uppercase; letter-spacing: .05em; padding: 3px 8px; border-radius: 5px; }
+  .tag.tier { color: var(--c); background: var(--c-bg); }
+  .tag.ewr { color: var(--ewr); background: var(--ewr-bg); text-transform: none; letter-spacing: 0; }
+  .tag.warn { color: var(--warn); background: var(--warn-bg); }
+  .tag.plain { color: var(--muted); box-shadow: inset 0 0 0 1px var(--line); }
   h2 { font-size: 1.05rem; margin: 28px 0 4px; }
   h2 + p { color: var(--muted); font-size: .9rem; margin: 0 0 14px; }
   .meta { color: var(--muted); font-size: .88rem; }
-  .bar { position: relative; height: 6px; border-radius: 3px; background: var(--line); margin: 14px 0 6px; }
-  .bar .typical { position: absolute; top: 0; bottom: 0; background: var(--muted); opacity: .45; border-radius: 3px; }
-  .bar .dot { position: absolute; top: -4px; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: var(--great); border: 2px solid var(--card); }
+  .bar { position: relative; height: 6px; border-radius: 3px; margin: 14px 0 6px; display: flex; gap: 2px; }
+  .bar i { display: block; height: 100%; border-radius: 3px; opacity: .8; }
+  .bar .low { background: var(--zone-low); } .bar .typ { background: var(--zone-typ); } .bar .high { background: var(--zone-high); }
+  .bar .dot { position: absolute; top: -5px; width: 16px; height: 16px; margin-left: -8px; border-radius: 50%; background: var(--c); border: 3px solid var(--card); box-shadow: 0 0 0 1px var(--c); }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 0 0 18px; font-size: .8rem; color: var(--muted); }
+  .legend span::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; background: var(--k); }
   .barlabel { display: flex; justify-content: space-between; font-size: .78rem; color: var(--muted); }
   .empty { border: 1px dashed var(--line); border-radius: 12px; padding: 40px 20px; text-align: center; color: var(--muted); }
   footer { margin-top: 36px; color: var(--muted); font-size: .82rem; }
@@ -52,6 +67,11 @@
   <h1>NYC Flight Deals</h1>
   <p class="sub" id="sub">Round trips from JFK and LGA priced well under normal. Newark only when it clearly wins.</p>
   <div class="filters" id="filters"></div>
+  <div class="legend">
+    <span style="--k:var(--rare)">Rare · 35%+ under typical</span><span style="--k:var(--great)">Great · 20%+</span>
+    <span style="--k:var(--good)">Good · at or under typical low</span><span style="--k:var(--ewr)">Newark</span>
+    <span style="--k:var(--zone-low)">below typical</span><span style="--k:var(--zone-typ)">typical</span><span style="--k:var(--zone-high)">high</span>
+  </div>
   <div class="grid" id="grid"></div>
   <section id="mentions" hidden>
     <h2>Honorable mentions</h2>
@@ -85,17 +105,17 @@ function ago(iso) {
 function bar(d) {
   if (!d.typical) return "";
   const [lo, hi] = d.typical, min = Math.min(d.price, lo) * 0.85, max = hi * 1.1, pct = v => 100 * (v - min) / (max - min);
-  return `<div class="bar"><div class="typical" style="left:${pct(lo)}%;width:${pct(hi) - pct(lo)}%"></div><div class="dot" style="left:${pct(d.price)}%"></div></div>
-    <div class="barlabel"><span>${d.under_pct > 0 ? d.under_pct + "% under typical" : d.under_pct < 0 ? "low end of typical" : "at typical low"}</span><span>typical $${lo}–$${hi}</span></div>`;
+  return `<div class="bar"><i class="low" style="width:${pct(lo)}%"></i><i class="typ" style="width:${pct(hi) - pct(lo)}%"></i><i class="high" style="flex:1"></i><div class="dot" style="left:${pct(d.price)}%"></div></div>
+    <div class="barlabel"><span class="under">${d.under_pct > 0 ? d.under_pct + "% under typical" : d.under_pct < 0 ? "low end of typical" : "at typical low"}</span><span>typical $${lo}–$${hi}</span></div>`;
 }
 
 function card(d) {
-  const stops = d.stops === 0 ? "Nonstop" : d.stops === 1 ? "1 stop" : `${d.stops} stops`;
+  const stops = d.stops === 0 ? '<span class="nonstop">Nonstop</span>' : d.stops === 1 ? "1 stop" : `${d.stops} stops`;
   const ewr = d.is_ewr ? `<span class="tag ewr">From Newark${d.ewr_saving ? ` · $${Math.round(d.ewr_saving)} under JFK/LGA` : ""}</span>` : `<span class="tag plain">${esc(d.origin)}</span>`;
-  const tag = d.tier ? `<span class="tag ${d.tier}">${d.tier}</span>` : `<span class="tag mention">close</span>`;
-  return `<a class="deal${d.tier ? "" : " mention"}" href="${esc(d.url || "#")}" target="_blank" rel="noopener">
+  const tag = d.tier ? `<span class="tag tier">${d.tier}</span>` : `<span class="tag tier">close</span>`;
+  return `<a class="deal ${d.tier || "mention"}" href="${esc(d.url || "#")}" target="_blank" rel="noopener">
     <div class="top"><div><div class="place">${esc(d.name)} <span class="country">${esc(d.dest)}</span></div><div class="country">${esc(d.country)}</div></div><div class="price">$${d.price}</div></div>
-    <div class="tags">${tag}${ewr}${d.bare_fare ? '<span class="tag plain">bare fare</span>' : ""}</div>
+    <div class="tags">${tag}${ewr}${d.bare_fare ? '<span class="tag warn">bare fare</span>' : ""}</div>
     <div class="meta">${fmtDate(d.start)} → ${fmtDate(d.end)}</div>
     <div class="meta">${esc(d.airline)} · ${stops} · checked ${ago(d.verified_at)}</div>
     ${bar(d)}</a>`;
