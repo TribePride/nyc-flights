@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NYC Flight Deals</title>
+<style>
+  :root {
+    --bg: #f6f4ef; --card: #fffdf9; --ink: #1c1b18; --muted: #6f6a60; --line: #e4dfd4;
+    --rare: #b4371f; --great: #1f6f4a; --good: #3b5b8c; --ewr: #8a5a00; --ewr-bg: #fbf0d9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #151412; --card: #1f1d1a; --ink: #eeeae2; --muted: #9a9488; --line: #33302a;
+      --rare: #ff8a70; --great: #6fd0a0; --good: #8fb2e8; --ewr: #f0c060; --ewr-bg: #33290f;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.45 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 1.7rem; margin: 0 0 4px; letter-spacing: -0.02em; }
+  .sub { color: var(--muted); margin: 0 0 20px; font-size: .95rem; }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .filters button { font: inherit; font-size: .88rem; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; }
+  .filters button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 14px; }
+  .deal { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; color: inherit; text-decoration: none; transition: transform .12s, border-color .12s; }
+  .deal:hover { transform: translateY(-2px); border-color: var(--muted); }
+  .top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .place { font-weight: 650; font-size: 1.12rem; }
+  .country { color: var(--muted); font-size: .85rem; }
+  .price { font-size: 1.6rem; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 12px; }
+  .tag { font-size: .72rem; font-weight: 650; text-transform: uppercase; letter-spacing: .05em; padding: 2px 8px; border-radius: 5px; border: 1px solid currentColor; }
+  .tag.rare { color: var(--rare); } .tag.great { color: var(--great); } .tag.good { color: var(--good); }
+  .tag.ewr { color: var(--ewr); background: var(--ewr-bg); border-color: transparent; text-transform: none; letter-spacing: 0; }
+  .tag.plain { color: var(--muted); }
+  .meta { color: var(--muted); font-size: .88rem; }
+  .bar { position: relative; height: 6px; border-radius: 3px; background: var(--line); margin: 14px 0 6px; }
+  .bar .typical { position: absolute; top: 0; bottom: 0; background: var(--muted); opacity: .45; border-radius: 3px; }
+  .bar .dot { position: absolute; top: -4px; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: var(--great); border: 2px solid var(--card); }
+  .barlabel { display: flex; justify-content: space-between; font-size: .78rem; color: var(--muted); }
+  .empty { border: 1px dashed var(--line); border-radius: 12px; padding: 40px 20px; text-align: center; color: var(--muted); }
+  footer { margin-top: 36px; color: var(--muted); font-size: .82rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>NYC Flight Deals</h1>
+  <p class="sub" id="sub">Round trips from JFK and LGA priced well under normal. Newark only when it clearly wins.</p>
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="grid"></div>
+  <footer>
+    Prices come from Google Flights and were checked at the time shown; fares move fast, so confirm before you plan around one.
+    Good = at or under Google's typical low. Great = 20%+ under it. Rare = 35%+ under it.
+    "Bare fare" airlines charge extra for a carry-on; we add $60 before judging them.
+  </footer>
+</main>
+<script>
+const FILTERS = [
+  ["all", "All", () => true],
+  ["weekend", "Weekends", d => d.trip === "weekend"],
+  ["week", "Week+", d => d.trip !== "weekend"],
+  ["domestic", "Domestic", d => d.domestic],
+  ["intl", "International", d => !d.domestic],
+];
+let deals = [], active = "all";
+
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const fmtDate = s => new Date(s + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", weekday: "short" });
+
+function ago(iso) {
+  const h = Math.round((Date.now() - new Date(iso)) / 36e5);
+  return h < 1 ? "just now" : h < 24 ? `${h}h ago` : `${Math.round(h / 24)}d ago`;
+}
+
+function bar(d) {
+  if (!d.typical) return "";
+  const [lo, hi] = d.typical, min = Math.min(d.price, lo) * 0.85, max = hi * 1.1, pct = v => 100 * (v - min) / (max - min);
+  return `<div class="bar"><div class="typical" style="left:${pct(lo)}%;width:${pct(hi) - pct(lo)}%"></div><div class="dot" style="left:${pct(d.price)}%"></div></div>
+    <div class="barlabel"><span>${d.under_pct > 0 ? d.under_pct + "% under typical" : "at typical low"}</span><span>typical $${lo}–$${hi}</span></div>`;
+}
+
+function card(d) {
+  const stops = d.stops === 0 ? "Nonstop" : d.stops === 1 ? "1 stop" : `${d.stops} stops`;
+  const ewr = d.is_ewr ? `<span class="tag ewr">From Newark${d.ewr_saving ? ` · $${Math.round(d.ewr_saving)} under JFK/LGA` : ""}</span>` : `<span class="tag plain">${esc(d.origin)}</span>`;
+  return `<a class="deal" href="${esc(d.url || "#")}" target="_blank" rel="noopener">
+    <div class="top"><div><div class="place">${esc(d.name)} <span class="country">${esc(d.dest)}</span></div><div class="country">${esc(d.country)}</div></div><div class="price">$${d.price}</div></div>
+    <div class="tags"><span class="tag ${d.tier}">${d.tier}</span>${ewr}${d.bare_fare ? '<span class="tag plain">bare fare</span>' : ""}</div>
+    <div class="meta">${fmtDate(d.start)} → ${fmtDate(d.end)}</div>
+    <div class="meta">${esc(d.airline)} · ${stops} · checked ${ago(d.verified_at)}</div>
+    ${bar(d)}</a>`;
+}
+
+function render() {
+  document.getElementById("filters").innerHTML = FILTERS.map(([id, label]) =>
+    `<button data-f="${id}" aria-pressed="${id === active}">${label}</button>`).join("");
+  const shown = deals.filter(FILTERS.find(f => f[0] === active)[2]);
+  document.getElementById("grid").innerHTML = shown.length ? shown.map(card).join("")
+    : `<div class="empty" style="grid-column:1/-1">Nothing clears the bar right now. That's the point: most days most fares are ordinary. Check back tomorrow.</div>`;
+}
+
+document.getElementById("filters").addEventListener("click", e => {
+  if (e.target.dataset.f) { active = e.target.dataset.f; render(); }
+});
+
+fetch(new URLSearchParams(location.search).has("sample") ? "deals.sample.json" : "deals.json", { cache: "no-store" })
+  .then(r => r.json())
+  .then(data => {
+    deals = data.deals || [];
+    document.getElementById("sub").textContent += ` Updated ${ago(data.updated_at)} · ${data.routes_tracked} routes tracked.`;
+    render();
+  })
+  .catch(() => { document.getElementById("grid").innerHTML = '<div class="empty" style="grid-column:1/-1">No data yet. The collector hasn\'t run.</div>'; });
+</script>
+</body>
+</html>

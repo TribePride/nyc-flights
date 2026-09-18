@@ -1,0 +1,610 @@
+{
+ "search_metadata": {
+  "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhopEgoyMDI2LTEwLTI0KAFqBwgBEgNKRktqBwgBEgNMR0FyBwgBEgNBVEwaKRIKMjAyNi0xMC0zMSgBagcIARIDQVRMcgcIARIDSkZLcgcIARIDTEdBQAFIAXABmAEB&tfu=EgIIAQ"
+ },
+ "best_flights": [
+  {
+   "flights": [
+    {
+     "departure_airport": {
+      "name": "LaGuardia Airport",
+      "id": "LGA",
+      "time": "2026-10-24 15:59"
+     },
+     "arrival_airport": {
+      "name": "Fort Lauderdale-Hollywood International Airport",
+      "id": "FLL",
+      "time": "2026-10-24 19:12"
+     },
+     "duration": 193,
+     "airplane": "Airbus A320",
+     "airline": "JetBlue",
+     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/B6.png",
+     "travel_class": "Economy",
+     "flight_number": "B6 471",
+     "legroom": "32 in",
+     "extensions": [
+      "Above average legroom (32 in)",
+      "Free Wi-Fi",
+      "In-seat power & USB outlets",
+      "Live TV",
+      "Carbon emissions estimate: 173 kg"
+     ],
+     "often_delayed_by_over_30_min": true
+    },
+    {
+     "departure_airport": {
+      "name": "Fort Lauderdale-Hollywood International Airport",
+      "id": "FLL",
+      "time": "2026-10-24 20:54"
+     },
+     "arrival_airport": {
+      "name": "Hartsfield-Jackson Atlanta International Airport",
+      "id": "ATL",
+      "time": "2026-10-24 22:51"
+     },
+     "duration": 117,
+     "airplane": "Airbus A220-300 Passenger",
+     "airline": "JetBlue",
+     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/B6.png",
+     "travel_class": "Economy",
+     "flight_number": "B6 1798",
+     "legroom": "32 in",
+     "extensions": [
+      "Above average legroom (32 in)",
+      "Free Wi-Fi",
+      "In-seat power & USB outlets",
+      "Live TV",
+      "Carbon emissions estimate: 123 kg"
+     ],
+     "often_delayed_by_over_30_min": true
+    }
+   ],
+   "layovers": [
+    {
+     "duration": 102,
+     "name": "Fort Lauderdale-Hollywood International Airport",
+     "id": "FLL"
+    }
+   ],
+   "total_duration": 412,
+   "carbon_emissions": {
+    "this_flight": 297000,
+    "typical_for_this_route": 177000,
+    "difference_percent": 68
+   },
+   "price": 128,
+   "type": "Round trip",
+   "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/B6.png",
+   "extensions": [
+    "Checked baggage for a fee",
+    "Bag and fare conditions depend on the return flight"
+   ]
+  },
+  {
+   "flights": [
+    {
+     "departure_airport": {
+      "name": "LaGuardia Airport",
+      "id": "LGA",
+      "time": "2026-10-24 06:10"
+     },
+     "arrival_airport": {
+      "name": "Hartsfield-Jackson Atlanta International Airport",
+      "id": "ATL",
+      "time": "2026-10-24 09:01"
+     },
+     "duration": 171,
+     "airplane": "Airbus A320neo",
+     "airline": "Frontier",
+     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/F9.png",
+     "travel_class": "Economy",
+     "flight_number": "F9 3287",
+     "legroom": "28 in",
+     "extensions": [
+      "Below average legroom (28 in)",
+      "Carbon emissions estimate: 87 kg"
+     ],
+     "often_delayed_by_over_30_min": true
+    }
+   ],
+   "total_duration": 171,
+   "carbon_emissions": {
+    "this_flight": 87000,
+    "typical_for_this_route": 177000,
+    "difference_percent": -51
+   },
+   "price": 183,
+   "type": "Round trip",
+   "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/F9.png",
+   "extensions": [
+    "Checked baggage for a fee",
+    "Bag and fare conditions depend on the return flight"
+   ]
+  },
+  {
+   "flights": [
+    {
+     "departure_airport": {
+      "name": "LaGuardia Airport",
+      "id": "LGA",
+      "time": "2026-10-24 16:59"
+     },
+     "arrival_airport": {
+      "name": "Hartsfield-Jackson Atlanta International Airport",
+      "id": "ATL",
+      "time": "2026-10-24 19:53"
+     },
+     "duration": 174,
+     "airplane": "Airbus A320neo",
+     "airline": "Frontier",
+     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/F9.png",
+     "travel_class": "Economy",
+     "flight_number": "F9 3453",
+     "legroom": "28 in",
+     "extensions": [
+      "Below average legroom (28 in)",
+      "Carbon emissions estimate: 87 kg"
+     ],
+     "often_delayed_by_over_30_min": true
+    }
+   ],
+   "total_duration": 174,
+   "carbon_emissions": {
+    "this_flight": 87000,
+    "typical_for_this_route": 177000,
+    "difference_percent": -51
+   },
+   "price": 183,
+   "type": "Round trip",
+   "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/F9.png",
+   "extensions": [
+    "Checked baggage for a fee",
+    "Bag and fare conditions depend on the return flight"
+   ]
+  },
+  {
+   "flights": [
+    {
+     "departure_airport": {
+      "name": "John F. Kennedy International Airport",
+      "id": "JFK",
+      "time": "2026-10-24 06:45"
+     },
+     "arrival_airport": {
+      "name": "Hartsfield-Jackson Atlanta International Airport",
+      "id": "ATL",
+      "time": "2026-10-24 09:20"
+     },
+     "duration": 155,
+     "airplane": "Airbus A220-300 Passenger",
+     "airline": "JetBlue",
+     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/B6.png",
+     "travel_class": "Economy",
+     "flight_number": "B6 519",
+     "legroom": "32 in",
+     "extensions": [
+      "Above average legroom (32 in)",
+      "Free Wi-Fi",
+      "In-seat power & USB outlets",
+      "Live TV",
+      "Carbon emissions estimate: 132 kg"
+     ],
+     "often_delayed_by_over_30_min": true
+    }
+   ],
+   "total_duration": 155,
+   "carbon_emissions": {
+    "this_flight": 133000,
+    "typical_for_this_route": 177000,
+    "difference_percent": -25
+   },
+   "price": 191,
+   "type": "Round trip",
+   "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/B6.png",
+   "extensions": [
+    "Checked baggage for a fee",
+    "Bag and fare conditions depend on the return flight"
+   ]
+  },
+  {
+   "flights": [
+    {
+     "departure_airport": {
+      "name": "John F. Kennedy International Airport",
+      "id": "JFK",
+      "time": "2026-10-24 08:35"
+     },
+     "arrival_airport": {
+      "name": "Hartsfield-Jackson Atlanta International Airport",
+      "id": "ATL",
+      "time": "2026-10-24 11:11"
+     },
+     "duration": 156,
+     "airplane": "Boeing 757",
+     "airline": "Delta",
+     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+     "travel_class": "Economy",
+     "flight_number": "DL 2227",
+     "legroom": "31 in",
+     "extensions": [
+      "Average legroom (31 in)",
+      "Free Wi-Fi",
+      "In-seat power & USB outlets",
+      "Live TV",
+      "Carbon emissions estimate: 161 kg"
+     ]
+    }
+   ],
+   "total_duration": 156,
+   "carbon_emissions": {
+    "this_flight": 162000,
+    "typical_for_this_route": 177000,
+    "difference_percent": -8
+   },
+   "price": 273,
+   "type": "Round trip",
+   "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+   "extensions": [
+    "Checked baggage for a fee",
+    "Bag and fare conditions depend on the return flight"
+   ]
+  }
+ ],
+ "other_flights": [
+  {
+   "flights": [
+    {
+     "departure_airport": {
+      "name": "John F. Kennedy International Airport",
+      "id": "JFK",
+      "time": "2026-10-24 15:15"
+     },
+     "arrival_airport": {
+      "name": "Hartsfield-Jackson Atlanta International Airport",
+      "id": "ATL",
+      "time": "2026-10-24 17:47"
+     },
+     "duration": 152,
+     "airplane": "Airbus A220-300 Passenger",
+     "airline": "JetBlue",
+     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/B6.png",
+     "travel_class": "Economy",
+     "flight_number": "B6 419",
+     "legroom": "32 in",
+     "extensions": [
+      "Above average legroom (32 in)",
+      "Free Wi-Fi",
+      "In-seat power & USB outlets",
+      "Live TV",
+      "Carbon emissions estimate: 132 kg"
+     ],
+     "often_delayed_by_over_30_min": true
+    }
+   ],
+   "total_duration": 152,
+   "carbon_emissions": {
+    "this_flight": 133000,
+    "typical_for_this_route": 177000,
+    "difference_percent": -25
+   },
+   "price": 191,
+   "type": "Round trip",
+   "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/B6.png",
+   "extensions": [
+    "Checked baggage for a fee",
+    "Bag and fare conditions depend on the return flight"
+   ]
+  },
+  {
+   "flights": [
+    {
+     "departure_airport": {
+      "name": "John F. Kennedy International Airport",
+      "id": "JFK",
+      "time": "2026-10-24 19:59"
+     },
+     "arrival_airport": {
+      "name": "Hartsfield-Jackson Atlanta International Airport",
+      "id": "ATL",
+      "time": "2026-10-24 22:41"
+     },
+     "duration": 162,
+     "airplane": "Airbus A220-300 Passenger",
+     "airline": "JetBlue",
+     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/B6.png",
+     "travel_class": "Economy",
+     "flight_number": "B6 719",
+     "legroom": "32 in",
+     "extensions": [
+      "Above average legroom (32 in)",
+      "Free Wi-Fi",
+      "In-seat power & USB outlets",
+      "Live TV",
+      "Carbon emissions estimate: 132 kg"
+     ],
+     "often_delayed_by_over_30_min": true
+    }
+   ],
+   "total_duration": 162,
+   "carbon_emissions": {
+    "this_flight": 133000,
+    "typical_for_this_route": 177000,
+    "difference_percent": -25
+   },
+   "price": 191,
+   "type": "Round trip",
+   "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/B6.png",
+   "extensions": [
+    "Checked baggage for a fee",
+    "Bag and fare conditions depend on the return flight"
+   ]
+  },
+  {
+   "flights": [
+    {
+     "departure_airport": {
+      "name": "John F. Kennedy International Airport",
+      "id": "JFK",
+      "time": "2026-10-24 10:48"
+     },
+     "arrival_airport": {
+      "name": "Hartsfield-Jackson Atlanta International Airport",
+      "id": "ATL",
+      "time": "2026-10-24 13:29"
+     },
+     "duration": 161,
+     "airplane": "Airbus A220-300 Passenger",
+     "airline": "JetBlue",
+     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/B6.png",
+     "travel_class": "Economy",
+     "flight_number": "B6 119",
+     "legroom": "32 in",
+     "extensions": [
+      "Above average legroom (32 in)",
+      "Free Wi-Fi",
+      "In-seat power & USB outlets",
+      "Live TV",
+      "Carbon emissions estimate: 132 kg"
+     ]
+    }
+   ],
+   "total_duration": 161,
+   "carbon_emissions": {
+    "this_flight": 133000,
+    "typical_for_this_route": 177000,
+    "difference_percent": -25
+   },
+   "price": 219,
+   "type": "Round trip",
+   "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/B6.png",
+   "extensions": [
+    "Checked baggage for a fee",
+    "Bag and fare conditions depend on the return flight"
+   ]
+  },
+  {
+   "flights": [
+    {
+     "departure_airport": {
+      "name": "John F. Kennedy International Airport",
+      "id": "JFK",
+      "time": "2026-10-24 06:00"
+     },
+     "arrival_airport": {
+      "name": "Hartsfield-Jackson Atlanta International Airport",
+      "id": "ATL",
+      "time": "2026-10-24 08:33"
+     },
+     "duration": 153,
+     "airplane": "Airbus A321neo",
+     "airline": "Delta",
+     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+     "travel_class": "Economy",
+     "flight_number": "DL 2286",
+     "legroom": "31 in",
+     "extensions": [
+      "Average legroom (31 in)",
+      "Free Wi-Fi",
+      "In-seat power & USB outlets",
+      "Live TV",
+      "Carbon emissions estimate: 102 kg"
+     ]
+    }
+   ],
+   "total_duration": 153,
+   "carbon_emissions": {
+    "this_flight": 102000,
+    "typical_for_this_route": 177000,
+    "difference_percent": -42
+   },
+   "price": 273,
+   "type": "Round trip",
+   "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+   "extensions": [
+    "Checked baggage for a fee",
+    "Bag and fare conditions depend on the return flight"
+   ]
+  },
+  {
+   "flights": [
+    {
+     "departure_airport": {
+      "name": "John F. Kennedy International Airport",
+      "id": "JFK",
+      "time": "2026-10-24 11:30"
+     },
+     "arrival_airport": {
+      "name": "Hartsfield-Jackson Atlanta International Airport",
+      "id": "ATL",
+      "time": "2026-10-24 14:08"
+     },
+     "duration": 158,
+     "airplane": "Boeing 737",
+     "airline": "Delta",
+     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+     "travel_class": "Economy",
+     "flight_number": "DL 1029",
+     "legroom": "31 in",
+     "extensions": [
+      "Average legroom (31 in)",
+      "Free Wi-Fi",
+      "In-seat power & USB outlets",
+      "Live TV",
+      "Carbon emissions estimate: 119 kg"
+     ]
+    }
+   ],
+   "total_duration": 158,
+   "carbon_emissions": {
+    "this_flight": 120000,
+    "typical_for_this_route": 177000,
+    "difference_percent": -32
+   },
+   "price": 273,
+   "type": "Round trip",
+   "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+   "extensions": [
+    "Checked baggage for a fee",
+    "Bag and fare conditions depend on the return flight"
+   ]
+  },
+  {
+   "flights": [
+    {
+     "departure_airport": {
+      "name": "LaGuardia Airport",
+      "id": "LGA",
+      "time": "2026-10-24 06:00"
+     },
+     "arrival_airport": {
+      "name": "Hartsfield-Jackson Atlanta International Airport",
+      "id": "ATL",
+      "time": "2026-10-24 08:21"
+     },
+     "duration": 141,
+     "airplane": "Airbus A321",
+     "airline": "Delta",
+     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+     "travel_class": "Economy",
+     "flight_number": "DL 550",
+     "legroom": "31 in",
+     "extensions": [
+      "Average legroom (31 in)",
+      "Free Wi-Fi",
+      "In-seat power & USB outlets",
+      "Live TV",
+      "Carbon emissions estimate: 129 kg"
+     ]
+    }
+   ],
+   "total_duration": 141,
+   "carbon_emissions": {
+    "this_flight": 129000,
+    "typical_for_this_route": 177000,
+    "difference_percent": -27
+   },
+   "price": 321,
+   "type": "Round trip",
+   "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+   "extensions": [
+    "Checked baggage for a fee",
+    "Bag and fare conditions depend on the return flight"
+   ]
+  },
+  {
+   "flights": [
+    {
+     "departure_airport": {
+      "name": "LaGuardia Airport",
+      "id": "LGA",
+      "time": "2026-10-24 07:00"
+     },
+     "arrival_airport": {
+      "name": "Hartsfield-Jackson Atlanta International Airport",
+      "id": "ATL",
+      "time": "2026-10-24 09:23"
+     },
+     "duration": 143,
+     "airplane": "Airbus A321",
+     "airline": "Delta",
+     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+     "travel_class": "Economy",
+     "flight_number": "DL 342",
+     "legroom": "31 in",
+     "extensions": [
+      "Average legroom (31 in)",
+      "Free Wi-Fi",
+      "In-seat power & USB outlets",
+      "Live TV",
+      "Carbon emissions estimate: 129 kg"
+     ]
+    }
+   ],
+   "total_duration": 143,
+   "carbon_emissions": {
+    "this_flight": 129000,
+    "typical_for_this_route": 177000,
+    "difference_percent": -27
+   },
+   "price": 321,
+   "type": "Round trip",
+   "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+   "extensions": [
+    "Checked baggage for a fee",
+    "Bag and fare conditions depend on the return flight"
+   ]
+  },
+  {
+   "flights": [
+    {
+     "departure_airport": {
+      "name": "LaGuardia Airport",
+      "id": "LGA",
+      "time": "2026-10-24 09:00"
+     },
+     "arrival_airport": {
+      "name": "Hartsfield-Jackson Atlanta International Airport",
+      "id": "ATL",
+      "time": "2026-10-24 11:32"
+     },
+     "duration": 152,
+     "airplane": "Airbus A321",
+     "airline": "Delta",
+     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+     "travel_class": "Economy",
+     "flight_number": "DL 992",
+     "legroom": "31 in",
+     "extensions": [
+      "Average legroom (31 in)",
+      "Free Wi-Fi",
+      "In-seat power & USB outlets",
+      "Live TV",
+      "Carbon emissions estimate: 129 kg"
+     ]
+    }
+   ],
+   "total_duration": 152,
+   "carbon_emissions": {
+    "this_flight": 129000,
+    "typical_for_this_route": 177000,
+    "difference_percent": -27
+   },
+   "price": 321,
+   "type": "Round trip",
+   "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/DL.png",
+   "extensions": [
+    "Checked baggage for a fee",
+    "Bag and fare conditions depend on the return flight"
+   ]
+  }
+ ],
+ "price_insights": {
+  "lowest_price": 128,
+  "price_level": "typical",
+  "typical_price_range": [
+   95,
+   255
+  ]
+ }
+}

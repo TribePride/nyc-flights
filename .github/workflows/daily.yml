@@ -1,0 +1,43 @@
+name: daily
+
+on:
+  schedule:
+    - cron: "0 10 * * *"   # 6am New York (EDT)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: daily
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m unittest -q
+      - run: python -m collector.run
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+      - name: Commit data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data site/deals.json
+          git diff --cached --quiet || git commit -m "data: $(date -u +%F)"
+          git push
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@v4
