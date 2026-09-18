@@ -20,6 +20,8 @@ DEALS = ROOT / "site" / "deals.json"
 
 HISTORY_DAYS = 90
 DEAL_TTL_DAYS = 3
+MENTION_MAX_POSITION = 0.35   # honorable mention: within the bottom 35% of the typical range
+MENTION_LIMIT = 6
 MAX_DETOUR = 1.75         # skip itineraries this many times longer than the fastest option
 TRIP_DAYS = {1: 3, 2: 7, 3: 14}
 DURATION_LABEL = {1: "weekend", 2: "week", 3: "two weeks"}
@@ -162,7 +164,8 @@ def parse_flights(body, obs, today):
     }
 
 
-def build_deals(observations, verified, today):
+def _cards(observations, verified, today):
+    """One card per recently verified route, tier set to None when it misses the bar. Applies the EWR gate."""
     history = route_history(observations)
     cutoff = (today - timedelta(days=DEAL_TTL_DAYS)).isoformat()
     latest = {}
@@ -170,23 +173,23 @@ def build_deals(observations, verified, today):
         if v["date"] >= cutoff and v["start"] > today.isoformat():
             latest[(v["origin"], v["dest"])] = v  # rows are in date order, last one wins
 
-    deals = []
+    cards = []
     for (origin, dest), v in latest.items():
         eff = score.effective_price(v["price"], v.get("airline_code"))
         z = score.robust_z(eff, history.get((origin, dest, v["duration"]), []))
         t = score.tier(eff, v.get("insights"), z)
-        if not t:
-            continue
         saving = None
         if origin == "EWR":
             nyc = latest.get(("NYC", dest))
             nyc_price = (score.effective_price(nyc["price"], nyc.get("airline_code")) if nyc
                          else best_nyc_price(observations, dest, today - timedelta(days=7)))
-            if not score.ewr_passes(eff, t, nyc_price):
-                continue
+            if not score.ewr_passes(eff, "great", nyc_price):
+                continue  # doesn't beat JFK/LGA by enough to show anywhere
+            if t == "good":
+                t = None  # EWR needs great+ to be a deal; a merely good one can still earn a mention
             saving = nyc_price - eff if nyc_price else None
         rng = (v.get("insights") or {}).get("typical_price_range")
-        deals.append({
+        cards.append({
             "tier": t,
             "origin": v.get("airport") or ("EWR" if origin == "EWR" else "JFK/LGA"),
             "is_ewr": origin == "EWR",
@@ -198,6 +201,7 @@ def build_deals(observations, verified, today):
             "price": v["price"],
             "typical": rng,
             "under_pct": round(100 * (rng[0] - eff) / rng[0]) if rng and rng[0] else None,
+            "position": round((eff - rng[0]) / (rng[1] - rng[0]), 2) if rng and rng[1] > rng[0] else None,
             "z": round(z, 1) if z is not None else None,
             "start": v["start"],
             "end": v["end"],
@@ -209,8 +213,21 @@ def build_deals(observations, verified, today):
             "thumbnail": v.get("thumbnail"),
             "verified_at": v["verified_at"],
         })
+    return cards
+
+
+def build_deals(observations, verified, today):
+    deals = [c for c in _cards(observations, verified, today) if c["tier"]]
     deals.sort(key=lambda d: (score.TIER_RANK[d["tier"]], d["is_ewr"], -(d["under_pct"] or 0)))
     return deals
+
+
+def build_mentions(observations, verified, today):
+    """Near misses for days with no deals: checked fares sitting in the low end of Google's typical range."""
+    near = [c for c in _cards(observations, verified, today)
+            if not c["tier"] and c["position"] is not None and c["position"] <= MENTION_MAX_POSITION]
+    near.sort(key=lambda c: (c["is_ewr"], c["position"]))
+    return near[:MENTION_LIMIT]
 
 
 def write_deals(observations, verified, today):
@@ -220,6 +237,7 @@ def write_deals(observations, verified, today):
         "updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "routes_tracked": len({(o["origin"], o["dest"]) for o in observations}),
         "deals": deals,
+        "honorable_mentions": [] if deals else build_mentions(observations, verified, today),
     }, indent=1))
     return deals
 

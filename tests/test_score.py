@@ -105,6 +105,21 @@ class Deals(unittest.TestCase):
         self.assertEqual(run.build_deals([], [old, gone], TODAY), [])
 
 
+class Mentions(unittest.TestCase):
+    def test_near_misses_ranked_and_capped_to_low_end(self):
+        verified = [
+            ver("NYC", "ATL", 230, [200, 300], level="typical"),   # 30% into the range -> mention
+            ver("NYC", "ORD", 210, [200, 300], level="typical"),   # 10% -> mention, ranked first
+            ver("NYC", "BOS", 260, [200, 300], level="typical"),   # 60% -> no
+            ver("NYC", "MIA", 150, [200, 300]),                    # a real deal, never a mention
+            ver("EWR", "DEN", 220, [200, 300], level="typical"),   # no NYC fare to compare -> mention, after NYC
+            ver("EWR", "ATL", 215, [200, 300], level="typical"),   # doesn't beat NYC's $230 by enough -> no
+            ver("EWR", "SFO", 190, [200, 300]),                    # only "good", so not an EWR deal, but a mention
+        ]
+        self.assertEqual([m["dest"] for m in run.build_mentions([], verified, TODAY)], ["ORD", "ATL", "SFO", "DEN"])
+        self.assertEqual([d["dest"] for d in run.build_deals([], verified, TODAY)], ["MIA"])
+
+
 class Fixtures(unittest.TestCase):
     """Real SerpApi responses captured 2026-09-18 (trimmed)."""
 

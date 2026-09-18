@@ -34,7 +34,10 @@
   .tag { font-size: .72rem; font-weight: 650; text-transform: uppercase; letter-spacing: .05em; padding: 2px 8px; border-radius: 5px; border: 1px solid currentColor; }
   .tag.rare { color: var(--rare); } .tag.great { color: var(--great); } .tag.good { color: var(--good); }
   .tag.ewr { color: var(--ewr); background: var(--ewr-bg); border-color: transparent; text-transform: none; letter-spacing: 0; }
-  .tag.plain { color: var(--muted); }
+  .tag.plain, .tag.mention { color: var(--muted); }
+  .deal.mention .dot { background: var(--muted); }
+  h2 { font-size: 1.05rem; margin: 28px 0 4px; }
+  h2 + p { color: var(--muted); font-size: .9rem; margin: 0 0 14px; }
   .meta { color: var(--muted); font-size: .88rem; }
   .bar { position: relative; height: 6px; border-radius: 3px; background: var(--line); margin: 14px 0 6px; }
   .bar .typical { position: absolute; top: 0; bottom: 0; background: var(--muted); opacity: .45; border-radius: 3px; }
@@ -50,6 +53,11 @@
   <p class="sub" id="sub">Round trips from JFK and LGA priced well under normal. Newark only when it clearly wins.</p>
   <div class="filters" id="filters"></div>
   <div class="grid" id="grid"></div>
+  <section id="mentions" hidden>
+    <h2>Honorable mentions</h2>
+    <p>Not deals, but the closest of the fares we checked: each sits in the low end of its normal range.</p>
+    <div class="grid" id="mgrid"></div>
+  </section>
   <footer>
     Prices come from Google Flights and were checked at the time shown; fares move fast, so confirm before you plan around one.
     Good = at or under Google's typical low. Great = 20%+ under it. Rare = 35%+ under it.
@@ -64,7 +72,7 @@ const FILTERS = [
   ["domestic", "Domestic", d => d.domestic],
   ["intl", "International", d => !d.domestic],
 ];
-let deals = [], active = "all";
+let deals = [], mentions = [], active = "all";
 
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const fmtDate = s => new Date(s + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", weekday: "short" });
@@ -78,15 +86,16 @@ function bar(d) {
   if (!d.typical) return "";
   const [lo, hi] = d.typical, min = Math.min(d.price, lo) * 0.85, max = hi * 1.1, pct = v => 100 * (v - min) / (max - min);
   return `<div class="bar"><div class="typical" style="left:${pct(lo)}%;width:${pct(hi) - pct(lo)}%"></div><div class="dot" style="left:${pct(d.price)}%"></div></div>
-    <div class="barlabel"><span>${d.under_pct > 0 ? d.under_pct + "% under typical" : "at typical low"}</span><span>typical $${lo}–$${hi}</span></div>`;
+    <div class="barlabel"><span>${d.under_pct > 0 ? d.under_pct + "% under typical" : d.under_pct < 0 ? "low end of typical" : "at typical low"}</span><span>typical $${lo}–$${hi}</span></div>`;
 }
 
 function card(d) {
   const stops = d.stops === 0 ? "Nonstop" : d.stops === 1 ? "1 stop" : `${d.stops} stops`;
   const ewr = d.is_ewr ? `<span class="tag ewr">From Newark${d.ewr_saving ? ` · $${Math.round(d.ewr_saving)} under JFK/LGA` : ""}</span>` : `<span class="tag plain">${esc(d.origin)}</span>`;
-  return `<a class="deal" href="${esc(d.url || "#")}" target="_blank" rel="noopener">
+  const tag = d.tier ? `<span class="tag ${d.tier}">${d.tier}</span>` : `<span class="tag mention">close</span>`;
+  return `<a class="deal${d.tier ? "" : " mention"}" href="${esc(d.url || "#")}" target="_blank" rel="noopener">
     <div class="top"><div><div class="place">${esc(d.name)} <span class="country">${esc(d.dest)}</span></div><div class="country">${esc(d.country)}</div></div><div class="price">$${d.price}</div></div>
-    <div class="tags"><span class="tag ${d.tier}">${d.tier}</span>${ewr}${d.bare_fare ? '<span class="tag plain">bare fare</span>' : ""}</div>
+    <div class="tags">${tag}${ewr}${d.bare_fare ? '<span class="tag plain">bare fare</span>' : ""}</div>
     <div class="meta">${fmtDate(d.start)} → ${fmtDate(d.end)}</div>
     <div class="meta">${esc(d.airline)} · ${stops} · checked ${ago(d.verified_at)}</div>
     ${bar(d)}</a>`;
@@ -95,7 +104,10 @@ function card(d) {
 function render() {
   document.getElementById("filters").innerHTML = FILTERS.map(([id, label]) =>
     `<button data-f="${id}" aria-pressed="${id === active}">${label}</button>`).join("");
-  const shown = deals.filter(FILTERS.find(f => f[0] === active)[2]);
+  const match = FILTERS.find(f => f[0] === active)[2];
+  const shown = deals.filter(match), near = deals.length ? [] : mentions.filter(match);
+  document.getElementById("mentions").hidden = !near.length;
+  document.getElementById("mgrid").innerHTML = near.map(card).join("");
   document.getElementById("grid").innerHTML = shown.length ? shown.map(card).join("")
     : `<div class="empty" style="grid-column:1/-1">Nothing clears the bar right now. That's the point: most days most fares are ordinary. Check back tomorrow.</div>`;
 }
@@ -108,6 +120,7 @@ fetch(new URLSearchParams(location.search).has("sample") ? "deals.sample.json" :
   .then(r => r.json())
   .then(data => {
     deals = data.deals || [];
+    mentions = data.honorable_mentions || [];
     document.getElementById("sub").textContent += ` Updated ${ago(data.updated_at)} · ${data.routes_tracked} routes tracked.`;
     render();
   })

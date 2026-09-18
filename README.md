@@ -10,6 +10,7 @@ A daily GitHub Actions job pulls Google Flights data through SerpApi (free tier,
 2. **Score** — each route is ranked against its own 90-day history (median/MAD z-score). Until a route has 14 days of history, it is ranked by how far its fare sits under a price-vs-distance curve fitted to that day's data.
 3. **Verify** — the top 5 candidates get a `google_flights` call, which returns the live price plus Google's typical price range. Itineraries more than 1.75x the fastest option's travel time are ignored, so a $128 fare that connects through Florida to reach Atlanta doesn't count. Stored in `data/verified/`.
 4. **Publish** — a verified fare is shown if it is Good (at or under typical low), Great (20%+ under, or z ≤ −2.2) or Rare (35%+ under, or z ≤ −2.6). Deals expire after 3 days.
+5. **Honorable mentions** — on days with no deals at all, the page lists up to 6 near misses instead: checked fares in the bottom 35% of their typical range, JFK/LGA first.
 
 Newark fares must be Great or better and beat the best JFK/LGA fare to the same place by at least 15% and $40. Spirit, Frontier and similar get $60 added before any comparison.
 
