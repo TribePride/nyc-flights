@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-09-18T23:09:34+00:00",
- "routes_tracked": 196,
+ "updated_at": "2026-09-19T13:32:11+00:00",
+ "routes_tracked": 240,
  "watches": [
   {
    "id": "chicago-oct",
@@ -8,14 +8,14 @@
    "arrival_id": "ORD,MDW",
    "start": "2026-10-09",
    "end": "2026-10-12",
-   "price": 505,
+   "price": 468,
    "airport": "LGA",
    "arrives": "ORD",
    "ewr_saving": null,
-   "airline": "American",
+   "airline": "United",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTEwLTA5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNPUkRyBwgBEgNNRFcaOxIKMjAyNi0xMC0xMigBagcIARIDT1JEagcIARIDTURXcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-09-18T21:12:41+00:00",
+   "checked_at": "2026-09-19T13:31:36+00:00",
    "is_ewr": false,
    "alt": {
     "price": 315,
@@ -30,12 +30,12 @@
     270
    ],
    "tier": null,
-   "under_pct": -288,
-   "change": null,
-   "lowest_seen": 505,
-   "lowest_seen_on": "2026-09-18",
-   "days_tracked": 1,
-   "days_out": 21
+   "under_pct": -260,
+   "change": -37,
+   "lowest_seen": 468,
+   "lowest_seen_on": "2026-09-19",
+   "days_tracked": 2,
+   "days_out": 20
   },
   {
    "id": "toronto-nov",
@@ -50,7 +50,7 @@
    "airline": "Air Canada",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTExLTI3KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNZWVpyBwgBEgNZVFoaOxIKMjAyNi0xMS0zMCgBagcIARIDWVlaagcIARIDWVRacgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-09-18T21:12:41+00:00",
+   "checked_at": "2026-09-19T13:31:42+00:00",
    "is_ewr": false,
    "alt": {
     "price": 274,
@@ -66,11 +66,11 @@
    ],
    "tier": null,
    "under_pct": -37,
-   "change": null,
+   "change": 0,
    "lowest_seen": 314,
    "lowest_seen_on": "2026-09-18",
-   "days_tracked": 1,
-   "days_out": 70
+   "days_tracked": 2,
+   "days_out": 69
   },
   {
    "id": "phoenix-nov",
@@ -85,10 +85,10 @@
    "airline": "JetBlue",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTExLTE5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNQSFgaMhIKMjAyNi0xMS0yMigBagcIARIDUEhYcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-09-18T21:12:42+00:00",
+   "checked_at": "2026-09-19T13:31:52+00:00",
    "is_ewr": false,
    "alt": {
-    "price": 364,
+    "price": 379,
     "airport": "LGA",
     "stops": 1,
     "minutes": 653
@@ -101,11 +101,11 @@
    ],
    "tier": null,
    "under_pct": -155,
-   "change": null,
+   "change": 0,
    "lowest_seen": 447,
    "lowest_seen_on": "2026-09-18",
-   "days_tracked": 1,
-   "days_out": 62
+   "days_tracked": 2,
+   "days_out": 61
   },
   {
    "id": "manila-mar",
@@ -114,14 +114,14 @@
    "start": "2027-03-26",
    "end": "2027-04-10",
    "every": 2,
-   "price": 945,
+   "price": 944,
    "airport": "LGA",
    "arrives": "MNL",
    "ewr_saving": null,
    "airline": "Air Canada",
    "stops": 1,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI3LTAzLTI2KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNNTkwaMhIKMjAyNy0wNC0xMCgBagcIARIDTU5McgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-09-18T23:09:34+00:00",
+   "checked_at": "2026-09-19T13:31:57+00:00",
    "is_ewr": false,
    "alt": null,
    "bare_fare": false,
@@ -132,11 +132,11 @@
    ],
    "tier": "good",
    "under_pct": 2,
-   "change": null,
-   "lowest_seen": 945,
-   "lowest_seen_on": "2026-09-18",
-   "days_tracked": 1,
-   "days_out": 189
+   "change": -1,
+   "lowest_seen": 944,
+   "lowest_seen_on": "2026-09-19",
+   "days_tracked": 2,
+   "days_out": 188
   }
  ],
  "deals": [],
