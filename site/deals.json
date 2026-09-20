@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-09-19T13:32:11+00:00",
- "routes_tracked": 240,
+ "updated_at": "2026-09-20T13:47:28+00:00",
+ "routes_tracked": 287,
  "watches": [
   {
    "id": "chicago-oct",
@@ -15,10 +15,10 @@
    "airline": "United",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTEwLTA5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNPUkRyBwgBEgNNRFcaOxIKMjAyNi0xMC0xMigBagcIARIDT1JEagcIARIDTURXcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-09-19T13:31:36+00:00",
+   "checked_at": "2026-09-20T13:46:53+00:00",
    "is_ewr": false,
    "alt": {
-    "price": 315,
+    "price": 338,
     "airport": "EWR",
     "stops": 1,
     "minutes": 706
@@ -31,11 +31,11 @@
    ],
    "tier": null,
    "under_pct": -260,
-   "change": -37,
+   "change": 0,
    "lowest_seen": 468,
    "lowest_seen_on": "2026-09-19",
-   "days_tracked": 2,
-   "days_out": 20
+   "days_tracked": 3,
+   "days_out": 19
   },
   {
    "id": "toronto-nov",
@@ -50,7 +50,7 @@
    "airline": "Air Canada",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTExLTI3KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNZWVpyBwgBEgNZVFoaOxIKMjAyNi0xMS0zMCgBagcIARIDWVlaagcIARIDWVRacgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-09-19T13:31:42+00:00",
+   "checked_at": "2026-09-20T13:47:04+00:00",
    "is_ewr": false,
    "alt": {
     "price": 274,
@@ -69,8 +69,8 @@
    "change": 0,
    "lowest_seen": 314,
    "lowest_seen_on": "2026-09-18",
-   "days_tracked": 2,
-   "days_out": 69
+   "days_tracked": 3,
+   "days_out": 68
   },
   {
    "id": "phoenix-nov",
@@ -78,34 +78,34 @@
    "arrival_id": "PHX",
    "start": "2026-11-19",
    "end": "2026-11-22",
-   "price": 447,
-   "airport": "JFK",
+   "price": 429,
+   "airport": "LGA",
    "arrives": "PHX",
    "ewr_saving": null,
-   "airline": "JetBlue",
-   "stops": 0,
+   "airline": "Southwest",
+   "stops": 1,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTExLTE5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNQSFgaMhIKMjAyNi0xMS0yMigBagcIARIDUEhYcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-09-19T13:31:52+00:00",
+   "checked_at": "2026-09-20T13:47:09+00:00",
    "is_ewr": false,
    "alt": {
-    "price": 379,
-    "airport": "LGA",
-    "stops": 1,
-    "minutes": 653
+    "price": 409,
+    "airport": "EWR",
+    "stops": 0,
+    "minutes": 347
    },
    "bare_fare": false,
-   "level": "typical",
+   "level": "high",
    "typical": [
     175,
     390
    ],
    "tier": null,
-   "under_pct": -155,
-   "change": 0,
-   "lowest_seen": 447,
-   "lowest_seen_on": "2026-09-18",
-   "days_tracked": 2,
-   "days_out": 61
+   "under_pct": -145,
+   "change": -18,
+   "lowest_seen": 429,
+   "lowest_seen_on": "2026-09-20",
+   "days_tracked": 3,
+   "days_out": 60
   },
   {
    "id": "manila-mar",
@@ -136,7 +136,7 @@
    "lowest_seen": 944,
    "lowest_seen_on": "2026-09-19",
    "days_tracked": 2,
-   "days_out": 188
+   "days_out": 187
   }
  ],
  "deals": [],
@@ -197,33 +197,6 @@
   },
   {
    "tier": null,
-   "origin": "LGA",
-   "is_ewr": false,
-   "ewr_saving": null,
-   "dest": "ATL",
-   "name": "Atlanta",
-   "country": "United States",
-   "domestic": true,
-   "price": 128,
-   "typical": [
-    95,
-    255
-   ],
-   "under_pct": -35,
-   "position": 0.21,
-   "z": null,
-   "start": "2026-10-24",
-   "end": "2026-10-31",
-   "trip": "week",
-   "airline": "JetBlue",
-   "stops": 1,
-   "bare_fare": false,
-   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhopEgoyMDI2LTEwLTI0KAFqBwgBEgNKRktqBwgBEgNMR0FyBwgBEgNBVEwaKRIKMjAyNi0xMC0zMSgBagcIARIDQVRMcgcIARIDSkZLcgcIARIDTEdBQAFIAXABmAEB&tfu=EgIIAQ",
-   "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTJcNkmexDz0rCu-7-0YJxrxK3NHqgqxUPA1C0qPvCDWhAnwiP19PFPLWtxsLqtWO_AeB7NxseBEBBvUeZ2yKofiZWde-xYITCvjffRew",
-   "verified_at": "2026-09-18T15:42:33+00:00"
-  },
-  {
-   "tier": null,
    "origin": "JFK",
    "is_ewr": false,
    "ewr_saving": null,
@@ -251,6 +224,33 @@
   },
   {
    "tier": null,
+   "origin": "LGA",
+   "is_ewr": false,
+   "ewr_saving": null,
+   "dest": "TPA",
+   "name": "Tampa",
+   "country": "United States",
+   "domestic": true,
+   "price": 167,
+   "typical": [
+    125,
+    275
+   ],
+   "under_pct": -34,
+   "position": 0.28,
+   "z": null,
+   "start": "2026-10-23",
+   "end": "2026-10-31",
+   "trip": "week",
+   "airline": "Delta",
+   "stops": 0,
+   "bare_fare": false,
+   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhopEgoyMDI2LTEwLTIzKAFqBwgBEgNKRktqBwgBEgNMR0FyBwgBEgNUUEEaKRIKMjAyNi0xMC0zMSgBagcIARIDVFBBcgcIARIDSkZLcgcIARIDTEdBQAFIAXABmAEB&tfu=EgIIAQ",
+   "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQOnQ4SLeJ6rvncy6TM9KXTzObp3W6fobZgCHZCiXr6jqGl9FLcAUmqyvJjf6M3tAyq96hwIaSXec0UlqRbr3w339cc0anHQkA_UQ8MMA",
+   "verified_at": "2026-09-20T13:47:28+00:00"
+  },
+  {
+   "tier": null,
    "origin": "JFK",
    "is_ewr": false,
    "ewr_saving": null,
@@ -275,33 +275,6 @@
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhopEgoyMDI2LTEwLTMxKAFqBwgBEgNKRktqBwgBEgNMR0FyBwgBEgNPUkQaKRIKMjAyNi0xMS0wNygBagcIARIDT1JEcgcIARIDSkZLcgcIARIDTEdBQAFIAXABmAEB&tfu=EgIIAQ",
    "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSJMxpnOjhPrxERWX-ArNulerDUMCP8pP6LE52vhHPK3QhmiftGGZsUyHM7HQ_Z8Ja1ZkAWje5IDSzlz3rianoBqOBuatJwnj4pUyEZlA",
    "verified_at": "2026-09-18T15:42:44+00:00"
-  },
-  {
-   "tier": null,
-   "origin": "EWR",
-   "is_ewr": true,
-   "ewr_saving": null,
-   "dest": "BOM",
-   "name": "Mumbai",
-   "country": "India",
-   "domestic": false,
-   "price": 633,
-   "typical": [
-    720,
-    1100
-   ],
-   "under_pct": 12,
-   "position": -0.23,
-   "z": null,
-   "start": "2027-02-18",
-   "end": "2027-02-24",
-   "trip": "week",
-   "airline": "Scandinavian Airlines",
-   "stops": 1,
-   "bare_fare": false,
-   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhogEgoyMDI3LTAyLTE4KAFqBwgBEgNFV1JyBwgBEgNCT00aIBIKMjAyNy0wMi0yNCgBagcIARIDQk9NcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTRRckp8mseYnYQ7l8HELq1GoFqwH1zksN3R-F36DAYjcG5Vt5RRGV-jd25K06kaNDTLkxXdzk0QUW09L6kHJOKEQg3Txbhyf9_10ZiXg",
-   "verified_at": "2026-09-18T15:46:07+00:00"
   }
  ]
 }
