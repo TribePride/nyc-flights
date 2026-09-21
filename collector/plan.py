@@ -43,11 +43,12 @@ def discovery_queries(today=None):
 
 
 def active_watches(today=None):
-    """Fixed-date trips from watchlist.json that haven't departed yet."""
+    """Fixed-date trips from watchlist.json that haven't departed yet, in departure order."""
     today = today or date.today()
     if not WATCHLIST.exists():
         return []
-    return [w for w in json.loads(WATCHLIST.read_text()) if w["start"] > today.isoformat()]
+    watches = [w for w in json.loads(WATCHLIST.read_text()) if w["start"] > today.isoformat()]
+    return sorted(watches, key=lambda w: (w["start"], w["end"]))  # soonest departure first, whatever the file order
 
 
 def due_watches(today=None):

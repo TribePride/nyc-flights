@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-21T14:57:04+00:00",
+ "updated_at": "2026-09-21T15:07:55+00:00",
  "routes_tracked": 287,
  "watches": [
   {
@@ -55,58 +55,6 @@
    "days_out": 18
   },
   {
-   "id": "toronto-nov",
-   "name": "Toronto",
-   "arrival_id": "YYZ,YTZ",
-   "start": "2026-11-27",
-   "end": "2026-11-30",
-   "price": 314,
-   "airport": "LGA",
-   "arrives": "YYZ",
-   "ewr_saving": null,
-   "airline": "Air Canada",
-   "stops": 0,
-   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTExLTI3KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNZWVpyBwgBEgNZVFoaOxIKMjAyNi0xMS0zMCgBagcIARIDWVlaagcIARIDWVRacgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-09-20T13:47:04+00:00",
-   "is_ewr": false,
-   "alt": {
-    "price": 274,
-    "airport": "EWR",
-    "stops": 0,
-    "minutes": 113
-   },
-   "bare_fare": false,
-   "level": "typical",
-   "typical": [
-    230,
-    430
-   ],
-   "tier": null,
-   "under_pct": -37,
-   "history": [
-    [
-     "2026-09-18",
-     314
-    ],
-    [
-     "2026-09-19",
-     314
-    ],
-    [
-     "2026-09-20",
-     314
-    ]
-   ],
-   "change": 0,
-   "change_since": "2026-09-19",
-   "change_total": 0,
-   "first_date": "2026-09-18",
-   "lowest_seen": 314,
-   "lowest_seen_on": "2026-09-18",
-   "days_tracked": 3,
-   "days_out": 67
-  },
-  {
    "id": "phoenix-nov",
    "name": "Phoenix",
    "arrival_id": "PHX",
@@ -157,6 +105,58 @@
    "lowest_seen_on": "2026-09-20",
    "days_tracked": 3,
    "days_out": 59
+  },
+  {
+   "id": "toronto-nov",
+   "name": "Toronto",
+   "arrival_id": "YYZ,YTZ",
+   "start": "2026-11-27",
+   "end": "2026-11-30",
+   "price": 314,
+   "airport": "LGA",
+   "arrives": "YYZ",
+   "ewr_saving": null,
+   "airline": "Air Canada",
+   "stops": 0,
+   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTExLTI3KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNZWVpyBwgBEgNZVFoaOxIKMjAyNi0xMS0zMCgBagcIARIDWVlaagcIARIDWVRacgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
+   "checked_at": "2026-09-20T13:47:04+00:00",
+   "is_ewr": false,
+   "alt": {
+    "price": 274,
+    "airport": "EWR",
+    "stops": 0,
+    "minutes": 113
+   },
+   "bare_fare": false,
+   "level": "typical",
+   "typical": [
+    230,
+    430
+   ],
+   "tier": null,
+   "under_pct": -37,
+   "history": [
+    [
+     "2026-09-18",
+     314
+    ],
+    [
+     "2026-09-19",
+     314
+    ],
+    [
+     "2026-09-20",
+     314
+    ]
+   ],
+   "change": 0,
+   "change_since": "2026-09-19",
+   "change_total": 0,
+   "first_date": "2026-09-18",
+   "lowest_seen": 314,
+   "lowest_seen_on": "2026-09-18",
+   "days_tracked": 3,
+   "days_out": 67
   },
   {
    "id": "manila-mar",
