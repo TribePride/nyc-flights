@@ -22,6 +22,10 @@ Newark fares must be Great or better and beat the best JFK/LGA fare to the same 
 {"id": "chicago-oct", "name": "Chicago", "arrival_id": "ORD,MDW", "start": "2026-10-09", "end": "2026-10-12"}
 ```
 
+## Price movement
+
+Every card shows whether the price went up or down since the previous check (green ▼ is cheaper, orange ▲ is dearer), the overall move since tracking began, and a sparkline of up to 30 daily points. For watched trips this is the fare for those exact dates. For deal and honorable-mention cards it is the route's cheapest listing for that trip length, whose dates can shift from day to day.
+
 All thresholds live at the top of `collector/score.py`; the query budget lives in `collector/plan.py`. The reasoning behind them is in `docs/research.md`.
 
 ## Run it

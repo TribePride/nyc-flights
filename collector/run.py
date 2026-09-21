@@ -24,6 +24,7 @@ HISTORY_DAYS = 90
 DEAL_TTL_DAYS = 3
 MENTION_MAX_POSITION = 0.35   # honorable mention: within the bottom 35% of the typical range
 MENTION_LIMIT = 6
+SPARK_POINTS = 30         # days of price history sent to the page per card
 MAX_DETOUR = 1.75         # skip itineraries this many times longer than the fastest option
 TRIP_DAYS = {1: 3, 2: 7, 3: 14}
 DURATION_LABEL = {1: "weekend", 2: "week", 3: "two weeks"}
@@ -84,6 +85,31 @@ def route_history(observations):
         day = daily[(o["origin"], o["dest"], o["duration"])]
         day[o["date"]] = min(p, day.get(o["date"], p))
     return {k: list(v.values()) for k, v in daily.items()}
+
+
+def route_daily(observations):
+    """(origin, dest, duration) -> {date: lowest listed price that day}, for showing movement."""
+    daily = defaultdict(dict)
+    for o in observations:
+        day = daily[(o["origin"], o["dest"], o["duration"])]
+        day[o["date"]] = min(o["price"], day.get(o["date"], o["price"]))
+    return daily
+
+
+def movement(series, latest_date, latest_price):
+    """Price movement fields for a card. series is {date: price}; the latest point overrides that day's entry."""
+    # Listings newer than the card's own check are left out, so the last point is always the price shown.
+    series = {d: p for d, p in series.items() if d < latest_date}
+    points = sorted({**series, latest_date: latest_price}.items())[-SPARK_POINTS:]
+    earlier = [(d, p) for d, p in points if d < latest_date]
+    prev = earlier[-1] if earlier else None
+    return {
+        "history": [[d, p] for d, p in points],
+        "change": latest_price - prev[1] if prev else None,
+        "change_since": prev[0] if prev else None,
+        "change_total": latest_price - points[0][1] if len(earlier) > 1 else None,
+        "first_date": points[0][0],
+    }
 
 
 def best_nyc_price(observations, dest, since):
@@ -204,7 +230,6 @@ def build_watches(watch_rows, today):
             out.append({**w, "pending": True})
             continue
         latest, low = rows[-1], min(rows, key=lambda r: r["price"])
-        earlier = [r for r in rows if r["date"] < latest["date"]]
         rng = latest["insights"].get("typical_price_range")
         eff = score.effective_price(latest["price"], latest.get("airline_code"))
         out.append({
@@ -216,7 +241,7 @@ def build_watches(watch_rows, today):
             "typical": rng,
             "tier": score.tier(eff, latest["insights"]),
             "under_pct": round(100 * (rng[0] - eff) / rng[0]) if rng and rng[0] else None,
-            "change": latest["price"] - earlier[-1]["price"] if earlier else None,
+            **movement({r["date"]: r["price"] for r in rows}, latest["date"], latest["price"]),
             "lowest_seen": low["price"],
             "lowest_seen_on": low["date"],
             "days_tracked": len({r["date"] for r in rows}),
@@ -255,7 +280,7 @@ def parse_flights(body, obs, today):
 
 def _cards(observations, verified, today):
     """One card per recently verified route, tier set to None when it misses the bar. Applies the EWR gate."""
-    history = route_history(observations)
+    history, daily = route_history(observations), route_daily(observations)
     cutoff = (today - timedelta(days=DEAL_TTL_DAYS)).isoformat()
     latest = {}
     for v in verified:
@@ -301,6 +326,7 @@ def _cards(observations, verified, today):
             "url": v["url"],
             "thumbnail": v.get("thumbnail"),
             "verified_at": v["verified_at"],
+            **movement(daily.get((origin, dest, v["duration"]), {}), v["date"], v["price"]),
         })
     return cards
 

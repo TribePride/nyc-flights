@@ -120,6 +120,24 @@ class Mentions(unittest.TestCase):
         self.assertEqual([d["dest"] for d in run.build_deals([], verified, TODAY)], ["MIA"])
 
 
+class Movement(unittest.TestCase):
+    def test_up_down_and_first_check(self):
+        m = run.movement({"2026-09-16": 210, "2026-09-17": 180}, "2026-09-18", 195)
+        self.assertEqual((m["change"], m["change_since"], m["change_total"]), (15, "2026-09-17", -15))
+        self.assertEqual(m["history"][-1], ["2026-09-18", 195])
+        m = run.movement({}, "2026-09-18", 195)
+        self.assertEqual((m["change"], m["change_total"], len(m["history"])), (None, None, 1))
+
+    def test_verified_price_replaces_same_day_listing(self):
+        m = run.movement({"2026-09-17": 200, "2026-09-18": 190}, "2026-09-18", 230)
+        self.assertEqual((m["change"], [p for _, p in m["history"]]), (30, [200, 230]))
+
+    def test_deal_cards_carry_route_movement(self):
+        past = [obs("NYC", "MIA", 170, day=TODAY - timedelta(days=2)), obs("NYC", "MIA", 150, day=TODAY - timedelta(days=1))]
+        deal = run.build_deals(past, [ver("NYC", "MIA", 120, [200, 300])], TODAY)[0]
+        self.assertEqual((deal["change"], deal["change_total"]), (-30, -50))
+
+
 class Fixtures(unittest.TestCase):
     """Real SerpApi responses captured 2026-09-18 (trimmed)."""
 

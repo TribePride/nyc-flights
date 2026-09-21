@@ -37,7 +37,17 @@
   .deal.good { --c: var(--good); --c-bg: var(--good-bg); }
   .deal.lvl-low { --c: var(--great); --c-bg: var(--great-bg); } .deal.lvl-typical { --c: var(--ewr); --c-bg: var(--ewr-bg); }
   .deal.lvl-high { --c: var(--warn); --c-bg: var(--warn-bg); }
-  .down { color: var(--great); font-weight: 600; } .up { color: var(--warn); font-weight: 600; }
+  /* Movement: a cheaper fare is the good direction. The arrow carries the color; the words stay in ink. */
+  .move { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 8px; font-size: .88rem; }
+  .move b { font-weight: 650; font-variant-numeric: tabular-nums; }
+  .move .sub2 { color: var(--muted); }
+  .move > span:first-child { white-space: nowrap; }
+  .arrow { font-size: .8em; margin-right: 3px; }
+  .down .arrow { color: var(--great); } .up .arrow { color: var(--warn); } .flat .arrow { color: var(--muted); }
+  .spark { flex: none; overflow: visible; }
+  .spark polyline { fill: none; stroke: var(--muted); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; opacity: .55; }
+  .spark circle { stroke: var(--card); stroke-width: 2; }
+  .spark .down { fill: var(--great); } .spark .up { fill: var(--warn); } .spark .flat { fill: var(--muted); }
   #watches { margin-bottom: 28px; } #watches h2 { margin-top: 0; }
   .deal:not(.mention):not(.pending) .price, .under { color: var(--c); }
   .under { font-weight: 650; }
@@ -118,6 +128,29 @@ function bar(d) {
     <div class="barlabel"><span class="under">${d.under_pct > 0 ? d.under_pct + "% under typical" : d.under_pct < 0 ? (d.price > d.typical[1] ? "above typical" : "within typical") : "at typical low"}</span><span>typical $${lo}–$${hi}</span></div>`;
 }
 
+const shortDate = s => new Date(s + "T12:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" });
+const dir = n => n < 0 ? "down" : n > 0 ? "up" : "flat";
+
+function sparkline(h, change) {
+  if (!h || h.length < 2) return "";
+  const W = 92, H = 24, P = 5, prices = h.map(p => p[1]), lo = Math.min(...prices), hi = Math.max(...prices);
+  const x = i => P + i * (W - 2 * P) / (h.length - 1), y = v => hi === lo ? H / 2 : P + (hi - v) * (H - 2 * P) / (hi - lo);
+  const pts = h.map((p, i) => `${x(i).toFixed(1)},${y(p[1]).toFixed(1)}`);
+  const label = `${h.length} checks, ${shortDate(h[0][0])} to ${shortDate(h[h.length - 1][0])}: low $${lo}, high $${hi}`;
+  return `<svg class="spark" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${label}"><title>${label}</title>
+    <polyline points="${pts.join(" ")}"/><circle class="${dir(change)}" cx="${x(h.length - 1).toFixed(1)}" cy="${y(prices[prices.length - 1]).toFixed(1)}" r="4"/></svg>`;
+}
+
+// what: the thing being compared. For deal cards it's the route's cheapest listing, whose dates can shift day to day.
+function movement(d, what) {
+  if (d.change == null) return `<div class="move"><span class="sub2">First check · movement shows from tomorrow</span></div>`;
+  const arrow = { down: "▼", up: "▲", flat: "●" }[dir(d.change)];
+  const main = d.change === 0 ? `<b>No change</b> since ${shortDate(d.change_since)}`
+    : `<b>${d.change < 0 ? "Down" : "Up"} $${Math.abs(d.change)}</b> since ${shortDate(d.change_since)}`;
+  const total = d.change_total && d.change_total !== d.change ? `<br><span class="sub2">${d.change_total < 0 ? "Down" : "Up"} $${Math.abs(d.change_total)} overall since ${shortDate(d.first_date)}</span>` : "";
+  return `<div class="move"><span class="${dir(d.change)}" title="Change in the ${what}"><span class="arrow">${arrow}</span>${main}${total}</span>${sparkline(d.history, d.change)}</div>`;
+}
+
 function card(d) {
   const stops = d.stops === 0 ? '<span class="nonstop">Nonstop</span>' : d.stops === 1 ? "1 stop" : `${d.stops} stops`;
   const ewr = d.is_ewr ? `<span class="tag ewr">From Newark${d.ewr_saving ? ` · $${Math.round(d.ewr_saving)} under JFK/LGA` : ""}</span>` : `<span class="tag plain">${esc(d.origin)}</span>`;
@@ -127,6 +160,7 @@ function card(d) {
     <div class="tags">${tag}${ewr}${d.bare_fare ? '<span class="tag warn">bare fare</span>' : ""}</div>
     <div class="meta">${fmtDate(d.start)} → ${fmtDate(d.end)}</div>
     <div class="meta">${esc(d.airline)} · ${stops} · checked ${ago(d.verified_at)}</div>
+    ${movement(d, "cheapest listed fare on this route")}
     ${bar(d)}</a>`;
 }
 
@@ -138,15 +172,13 @@ function watchCard(w) {
     <div class="tags"><span class="tag tier">first check tomorrow</span></div><div class="meta">${dates}</div></div>`;
   const stops = w.stops === 0 ? '<span class="nonstop">Nonstop</span>' : w.stops === 1 ? "1 stop" : `${w.stops} stops`;
   const from = w.is_ewr ? `<span class="tag ewr">From Newark${w.ewr_saving ? ` · $${Math.round(w.ewr_saving)} under JFK/LGA` : ""}</span>` : `<span class="tag plain">${esc(w.airport)}</span>`;
-  const move = w.change == null ? "first check" : w.change === 0 ? "no change since last check"
-    : `<span class="${w.change < 0 ? "down" : "up"}">${w.change < 0 ? "▼" : "▲"} $${Math.abs(w.change)}</span> since last check`;
   const alt = w.alt ? `<div class="meta">Cheaper: <strong>$${w.alt.price}</strong> from ${esc(w.alt.airport)} · ${w.alt.stops === 0 ? "nonstop" : w.alt.stops + " stop"} · ${Math.floor(w.alt.minutes / 60)}h ${w.alt.minutes % 60}m outbound</div>` : "";
-  const low = w.days_tracked > 1 ? ` · lowest seen $${w.lowest_seen}` : "";
+  const low = w.days_tracked > 1 ? `<div class="meta">Lowest seen $${w.lowest_seen} on ${shortDate(w.lowest_seen_on)}</div>` : "";
   return `<a class="deal ${w.tier || "lvl-" + (w.level || "typical")}" href="${esc(w.url || "#")}" target="_blank" rel="noopener">
     <div class="top"><div><div class="place">${esc(w.name)} <span class="country">${esc(w.arrives)}</span></div><div class="country">${dates} · ${w.days_out} days out</div></div><div class="price">$${w.price}</div></div>
     <div class="tags"><span class="tag tier">${w.tier ? w.tier + " deal" : LEVEL[w.level] || "Checked"}</span>${from}${w.bare_fare ? '<span class="tag warn">bare fare</span>' : ""}</div>
     <div class="meta">${esc(w.airline)} · ${stops} · checked ${ago(w.checked_at)}</div>
-    <div class="meta">${move}${low}</div>${alt}
+    ${movement(w, "fare for these exact dates")}${low}${alt}
     ${bar(w)}</a>`;
 }
 
