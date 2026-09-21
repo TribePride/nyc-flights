@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-09-21T15:07:55+00:00",
- "routes_tracked": 287,
+ "updated_at": "2026-09-21T16:04:30+00:00",
+ "routes_tracked": 385,
  "watches": [
   {
    "id": "chicago-oct",
@@ -8,20 +8,20 @@
    "arrival_id": "ORD,MDW",
    "start": "2026-10-09",
    "end": "2026-10-12",
-   "price": 468,
+   "price": 505,
    "airport": "LGA",
    "arrives": "ORD",
    "ewr_saving": null,
-   "airline": "United",
+   "airline": "American",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTEwLTA5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNPUkRyBwgBEgNNRFcaOxIKMjAyNi0xMC0xMigBagcIARIDT1JEagcIARIDTURXcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-09-20T13:46:53+00:00",
+   "checked_at": "2026-09-21T16:03:33+00:00",
    "is_ewr": false,
    "alt": {
-    "price": 338,
+    "price": 418,
     "airport": "EWR",
     "stops": 1,
-    "minutes": 706
+    "minutes": 339
    },
    "bare_fare": false,
    "level": "high",
@@ -30,7 +30,7 @@
     270
    ],
    "tier": null,
-   "under_pct": -260,
+   "under_pct": -288,
    "history": [
     [
      "2026-09-18",
@@ -43,15 +43,19 @@
     [
      "2026-09-20",
      468
+    ],
+    [
+     "2026-09-21",
+     505
     ]
    ],
-   "change": 0,
-   "change_since": "2026-09-19",
-   "change_total": -37,
+   "change": 37,
+   "change_since": "2026-09-20",
+   "change_total": 0,
    "first_date": "2026-09-18",
    "lowest_seen": 468,
    "lowest_seen_on": "2026-09-19",
-   "days_tracked": 3,
+   "days_tracked": 4,
    "days_out": 18
   },
   {
@@ -60,29 +64,29 @@
    "arrival_id": "PHX",
    "start": "2026-11-19",
    "end": "2026-11-22",
-   "price": 429,
-   "airport": "LGA",
+   "price": 447,
+   "airport": "JFK",
    "arrives": "PHX",
    "ewr_saving": null,
-   "airline": "Southwest",
-   "stops": 1,
+   "airline": "JetBlue",
+   "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTExLTE5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNQSFgaMhIKMjAyNi0xMS0yMigBagcIARIDUEhYcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-09-20T13:47:09+00:00",
+   "checked_at": "2026-09-21T16:03:38+00:00",
    "is_ewr": false,
    "alt": {
-    "price": 409,
-    "airport": "EWR",
-    "stops": 0,
-    "minutes": 347
+    "price": 408,
+    "airport": "LGA",
+    "stops": 1,
+    "minutes": 653
    },
    "bare_fare": false,
    "level": "high",
    "typical": [
-    175,
-    390
+    180,
+    400
    ],
    "tier": null,
-   "under_pct": -145,
+   "under_pct": -148,
    "history": [
     [
      "2026-09-18",
@@ -95,15 +99,19 @@
     [
      "2026-09-20",
      429
+    ],
+    [
+     "2026-09-21",
+     447
     ]
    ],
-   "change": -18,
-   "change_since": "2026-09-19",
-   "change_total": -18,
+   "change": 18,
+   "change_since": "2026-09-20",
+   "change_total": 0,
    "first_date": "2026-09-18",
    "lowest_seen": 429,
    "lowest_seen_on": "2026-09-20",
-   "days_tracked": 3,
+   "days_tracked": 4,
    "days_out": 59
   },
   {
@@ -119,7 +127,7 @@
    "airline": "Air Canada",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTExLTI3KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNZWVpyBwgBEgNZVFoaOxIKMjAyNi0xMS0zMCgBagcIARIDWVlaagcIARIDWVRacgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-09-20T13:47:04+00:00",
+   "checked_at": "2026-09-21T16:03:43+00:00",
    "is_ewr": false,
    "alt": {
     "price": 274,
@@ -147,15 +155,19 @@
     [
      "2026-09-20",
      314
+    ],
+    [
+     "2026-09-21",
+     314
     ]
    ],
    "change": 0,
-   "change_since": "2026-09-19",
+   "change_since": "2026-09-20",
    "change_total": 0,
    "first_date": "2026-09-18",
    "lowest_seen": 314,
    "lowest_seen_on": "2026-09-18",
-   "days_tracked": 3,
+   "days_tracked": 4,
    "days_out": 67
   },
   {
@@ -172,7 +184,7 @@
    "airline": "Air Canada",
    "stops": 1,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI3LTAzLTI2KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNNTkwaMhIKMjAyNy0wNC0xMCgBagcIARIDTU5McgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-09-19T13:31:57+00:00",
+   "checked_at": "2026-09-21T16:03:48+00:00",
    "is_ewr": false,
    "alt": null,
    "bare_fare": false,
@@ -191,15 +203,19 @@
     [
      "2026-09-19",
      944
+    ],
+    [
+     "2026-09-21",
+     944
     ]
    ],
-   "change": -1,
-   "change_since": "2026-09-18",
-   "change_total": null,
+   "change": 0,
+   "change_since": "2026-09-19",
+   "change_total": -1,
    "first_date": "2026-09-18",
    "lowest_seen": 944,
    "lowest_seen_on": "2026-09-19",
-   "days_tracked": 2,
+   "days_tracked": 3,
    "days_out": 186
   }
  ],
@@ -355,6 +371,51 @@
    "change": 7,
    "change_since": "2026-09-18",
    "change_total": null,
+   "first_date": "2026-09-18"
+  },
+  {
+   "tier": null,
+   "origin": "LGA",
+   "is_ewr": false,
+   "ewr_saving": null,
+   "dest": "ATL",
+   "name": "Atlanta",
+   "country": "United States",
+   "domestic": true,
+   "price": 113,
+   "typical": [
+    115,
+    295
+   ],
+   "under_pct": -50,
+   "position": 0.32,
+   "z": null,
+   "start": "2026-10-31",
+   "end": "2026-11-01",
+   "trip": "weekend",
+   "airline": "Frontier",
+   "stops": 0,
+   "bare_fare": true,
+   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhopEgoyMDI2LTEwLTMxKAFqBwgBEgNKRktqBwgBEgNMR0FyBwgBEgNBVEwaKRIKMjAyNi0xMS0wMSgBagcIARIDQVRMcgcIARIDSkZLcgcIARIDTEdBQAFIAXABmAEB&tfu=EgIIAQ",
+   "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTJcNkmexDz0rCu-7-0YJxrxK3NHqgqxUPA1C0qPvCDWhAnwiP19PFPLWtxsLqtWO_AeB7NxseBEBBvUeZ2yKofiZWde-xYITCvjffRew",
+   "verified_at": "2026-09-21T16:04:30+00:00",
+   "history": [
+    [
+     "2026-09-18",
+     128
+    ],
+    [
+     "2026-09-19",
+     110
+    ],
+    [
+     "2026-09-21",
+     113
+    ]
+   ],
+   "change": 3,
+   "change_since": "2026-09-19",
+   "change_total": -15,
    "first_date": "2026-09-18"
   },
   {
