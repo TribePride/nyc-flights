@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-09-23T14:30:42+00:00",
- "routes_tracked": 454,
+ "updated_at": "2026-09-24T14:30:24+00:00",
+ "routes_tracked": 459,
  "watches": [
   {
    "id": "chicago-oct",
@@ -8,29 +8,24 @@
    "arrival_id": "ORD,MDW",
    "start": "2026-10-09",
    "end": "2026-10-12",
-   "price": 600,
-   "airport": "LGA",
-   "arrives": "MDW",
-   "ewr_saving": null,
-   "airline": "Southwest",
+   "price": 370,
+   "airport": "EWR",
+   "arrives": "ORD",
+   "ewr_saving": 215,
+   "airline": "United",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTEwLTA5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNPUkRyBwgBEgNNRFcaOxIKMjAyNi0xMC0xMigBagcIARIDT1JEagcIARIDTURXcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-09-23T14:30:10+00:00",
-   "is_ewr": false,
-   "alt": {
-    "price": 393,
-    "airport": "EWR",
-    "stops": 1,
-    "minutes": 1695
-   },
+   "checked_at": "2026-09-24T14:29:45+00:00",
+   "is_ewr": true,
+   "alt": null,
    "bare_fare": false,
    "level": "high",
    "typical": [
-    130,
-    270
+    140,
+    280
    ],
    "tier": null,
-   "under_pct": -362,
+   "under_pct": -164,
    "history": [
     [
      "2026-09-18",
@@ -55,16 +50,20 @@
     [
      "2026-09-23",
      600
+    ],
+    [
+     "2026-09-24",
+     370
     ]
    ],
-   "change": 31,
-   "change_since": "2026-09-22",
-   "change_total": 95,
+   "change": -230,
+   "change_since": "2026-09-23",
+   "change_total": -135,
    "first_date": "2026-09-18",
-   "lowest_seen": 468,
-   "lowest_seen_on": "2026-09-19",
-   "days_tracked": 6,
-   "days_out": 16
+   "lowest_seen": 370,
+   "lowest_seen_on": "2026-09-24",
+   "days_tracked": 7,
+   "days_out": 15
   },
   {
    "id": "phoenix-nov",
@@ -79,7 +78,7 @@
    "airline": "Southwest",
    "stops": 1,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTExLTE5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNQSFgaMhIKMjAyNi0xMS0yMigBagcIARIDUEhYcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-09-23T14:30:16+00:00",
+   "checked_at": "2026-09-24T14:29:52+00:00",
    "is_ewr": false,
    "alt": {
     "price": 409,
@@ -88,13 +87,13 @@
     "minutes": 347
    },
    "bare_fare": false,
-   "level": "high",
+   "level": "typical",
    "typical": [
-    180,
-    400
+    185,
+    410
    ],
    "tier": null,
-   "under_pct": -138,
+   "under_pct": -132,
    "history": [
     [
      "2026-09-18",
@@ -119,16 +118,20 @@
     [
      "2026-09-23",
      429
+    ],
+    [
+     "2026-09-24",
+     429
     ]
    ],
-   "change": -8,
-   "change_since": "2026-09-22",
+   "change": 0,
+   "change_since": "2026-09-23",
    "change_total": -18,
    "first_date": "2026-09-18",
    "lowest_seen": 429,
    "lowest_seen_on": "2026-09-20",
-   "days_tracked": 6,
-   "days_out": 57
+   "days_tracked": 7,
+   "days_out": 56
   },
   {
    "id": "toronto-nov",
@@ -136,20 +139,20 @@
    "arrival_id": "YYZ,YTZ",
    "start": "2026-11-27",
    "end": "2026-11-30",
-   "price": 334,
+   "price": 341,
    "airport": "LGA",
    "arrives": "YYZ",
    "ewr_saving": null,
-   "airline": "Air Canada",
+   "airline": "American",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTExLTI3KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNZWVpyBwgBEgNZVFoaOxIKMjAyNi0xMS0zMCgBagcIARIDWVlaagcIARIDWVRacgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-09-23T14:30:24+00:00",
+   "checked_at": "2026-09-24T14:29:57+00:00",
    "is_ewr": false,
    "alt": {
-    "price": 291,
+    "price": 318,
     "airport": "EWR",
     "stops": 0,
-    "minutes": 98
+    "minutes": 113
    },
    "bare_fare": false,
    "level": "typical",
@@ -158,7 +161,7 @@
     430
    ],
    "tier": null,
-   "under_pct": -45,
+   "under_pct": -48,
    "history": [
     [
      "2026-09-18",
@@ -183,16 +186,20 @@
     [
      "2026-09-23",
      334
+    ],
+    [
+     "2026-09-24",
+     341
     ]
    ],
-   "change": 20,
-   "change_since": "2026-09-22",
-   "change_total": 20,
+   "change": 7,
+   "change_since": "2026-09-23",
+   "change_total": 27,
    "first_date": "2026-09-18",
    "lowest_seen": 314,
    "lowest_seen_on": "2026-09-18",
-   "days_tracked": 6,
-   "days_out": 65
+   "days_tracked": 7,
+   "days_out": 64
   },
   {
    "id": "manila-mar",
@@ -244,7 +251,7 @@
    "lowest_seen": 944,
    "lowest_seen_on": "2026-09-19",
    "days_tracked": 4,
-   "days_out": 184
+   "days_out": 183
   }
  ],
  "deals": [
