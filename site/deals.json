@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-25T14:50:35+00:00",
+ "updated_at": "2026-09-26T13:56:55+00:00",
  "routes_tracked": 461,
  "watches": [
   {
@@ -8,16 +8,21 @@
    "arrival_id": "ORD,MDW",
    "start": "2026-10-09",
    "end": "2026-10-12",
-   "price": 459,
-   "airport": "EWR",
-   "arrives": "ORD",
-   "ewr_saving": 148,
-   "airline": "United",
+   "price": 586,
+   "airport": "LGA",
+   "arrives": "MDW",
+   "ewr_saving": null,
+   "airline": "Southwest",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTEwLTA5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNPUkRyBwgBEgNNRFcaOxIKMjAyNi0xMC0xMigBagcIARIDT1JEagcIARIDTURXcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-09-25T14:49:45+00:00",
-   "is_ewr": true,
-   "alt": null,
+   "checked_at": "2026-09-26T13:56:22+00:00",
+   "is_ewr": false,
+   "alt": {
+    "price": 473,
+    "airport": "EWR",
+    "stops": 1,
+    "minutes": 1695
+   },
    "bare_fare": false,
    "level": "high",
    "typical": [
@@ -25,7 +30,7 @@
     280
    ],
    "tier": null,
-   "under_pct": -228,
+   "under_pct": -319,
    "history": [
     [
      "2026-09-18",
@@ -58,16 +63,20 @@
     [
      "2026-09-25",
      459
+    ],
+    [
+     "2026-09-26",
+     586
     ]
    ],
-   "change": 89,
-   "change_since": "2026-09-24",
-   "change_total": -46,
+   "change": 127,
+   "change_since": "2026-09-25",
+   "change_total": 81,
    "first_date": "2026-09-18",
    "lowest_seen": 370,
    "lowest_seen_on": "2026-09-24",
-   "days_tracked": 8,
-   "days_out": 14
+   "days_tracked": 9,
+   "days_out": 13
   },
   {
    "id": "phoenix-nov",
@@ -75,14 +84,14 @@
    "arrival_id": "PHX",
    "start": "2026-11-19",
    "end": "2026-11-22",
-   "price": 429,
-   "airport": "LGA",
+   "price": 456,
+   "airport": "JFK",
    "arrives": "PHX",
    "ewr_saving": null,
-   "airline": "United",
+   "airline": "JetBlue",
    "stops": 1,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTExLTE5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNQSFgaMhIKMjAyNi0xMS0yMigBagcIARIDUEhYcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-09-25T14:49:51+00:00",
+   "checked_at": "2026-09-26T13:56:35+00:00",
    "is_ewr": false,
    "alt": {
     "price": 418,
@@ -97,7 +106,7 @@
     410
    ],
    "tier": null,
-   "under_pct": -132,
+   "under_pct": -146,
    "history": [
     [
      "2026-09-18",
@@ -130,16 +139,20 @@
     [
      "2026-09-25",
      429
+    ],
+    [
+     "2026-09-26",
+     456
     ]
    ],
-   "change": 0,
-   "change_since": "2026-09-24",
-   "change_total": -18,
+   "change": 27,
+   "change_since": "2026-09-25",
+   "change_total": 9,
    "first_date": "2026-09-18",
    "lowest_seen": 429,
    "lowest_seen_on": "2026-09-20",
-   "days_tracked": 8,
-   "days_out": 55
+   "days_tracked": 9,
+   "days_out": 54
   },
   {
    "id": "toronto-nov",
@@ -154,7 +167,7 @@
    "airline": "American",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTExLTI3KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNZWVpyBwgBEgNZVFoaOxIKMjAyNi0xMS0zMCgBagcIARIDWVlaagcIARIDWVRacgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-09-25T14:50:02+00:00",
+   "checked_at": "2026-09-26T13:56:41+00:00",
    "is_ewr": false,
    "alt": {
     "price": 309,
@@ -202,16 +215,20 @@
     [
      "2026-09-25",
      341
+    ],
+    [
+     "2026-09-26",
+     341
     ]
    ],
    "change": 0,
-   "change_since": "2026-09-24",
+   "change_since": "2026-09-25",
    "change_total": 27,
    "first_date": "2026-09-18",
    "lowest_seen": 314,
    "lowest_seen_on": "2026-09-18",
-   "days_tracked": 8,
-   "days_out": 63
+   "days_tracked": 9,
+   "days_out": 62
   },
   {
    "id": "manila-mar",
@@ -267,7 +284,7 @@
    "lowest_seen": 944,
    "lowest_seen_on": "2026-09-19",
    "days_tracked": 5,
-   "days_out": 182
+   "days_out": 181
   }
  ],
  "deals": [
