@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-10-01T16:46:38+00:00",
- "routes_tracked": 467,
+ "updated_at": "2026-10-02T16:00:53+00:00",
+ "routes_tracked": 468,
  "watches": [
   {
    "id": "chicago-oct",
@@ -8,14 +8,14 @@
    "arrival_id": "ORD,MDW",
    "start": "2026-10-09",
    "end": "2026-10-12",
-   "price": 427,
+   "price": 414,
    "airport": "EWR",
    "arrives": "ORD",
-   "ewr_saving": 194,
-   "airline": "American",
+   "ewr_saving": 133,
+   "airline": "United",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTEwLTA5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNPUkRyBwgBEgNNRFcaOxIKMjAyNi0xMC0xMigBagcIARIDT1JEagcIARIDTURXcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-01T16:45:53+00:00",
+   "checked_at": "2026-10-02T16:00:11+00:00",
    "is_ewr": true,
    "alt": null,
    "bare_fare": false,
@@ -25,7 +25,7 @@
     295
    ],
    "tier": null,
-   "under_pct": -144,
+   "under_pct": -137,
    "history": [
     [
      "2026-09-18",
@@ -82,16 +82,20 @@
     [
      "2026-10-01",
      427
+    ],
+    [
+     "2026-10-02",
+     414
     ]
    ],
-   "change": -190,
-   "change_since": "2026-09-30",
-   "change_total": -78,
+   "change": -13,
+   "change_since": "2026-10-01",
+   "change_total": -91,
    "first_date": "2026-09-18",
    "lowest_seen": 370,
    "lowest_seen_on": "2026-09-24",
-   "days_tracked": 14,
-   "days_out": 8
+   "days_tracked": 15,
+   "days_out": 7
   },
   {
    "id": "phoenix-nov",
@@ -106,10 +110,10 @@
    "airline": "Alaska",
    "stops": 1,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTExLTE5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNQSFgaMhIKMjAyNi0xMS0yMigBagcIARIDUEhYcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-01T16:46:07+00:00",
+   "checked_at": "2026-10-02T16:00:16+00:00",
    "is_ewr": false,
    "alt": {
-    "price": 418,
+    "price": 423,
     "airport": "LGA",
     "stops": 1,
     "minutes": 653
@@ -178,16 +182,20 @@
     [
      "2026-10-01",
      444
+    ],
+    [
+     "2026-10-02",
+     444
     ]
    ],
    "change": 0,
-   "change_since": "2026-09-30",
+   "change_since": "2026-10-01",
    "change_total": -3,
    "first_date": "2026-09-18",
    "lowest_seen": 429,
    "lowest_seen_on": "2026-09-20",
-   "days_tracked": 14,
-   "days_out": 49
+   "days_tracked": 15,
+   "days_out": 48
   },
   {
    "id": "toronto-nov",
@@ -195,20 +203,20 @@
    "arrival_id": "YYZ,YTZ",
    "start": "2026-11-27",
    "end": "2026-11-30",
-   "price": 392,
+   "price": 359,
    "airport": "LGA",
    "arrives": "YYZ",
    "ewr_saving": null,
-   "airline": "Porter Airlines",
+   "airline": "Air Canada",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTExLTI3KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNZWVpyBwgBEgNZVFoaOxIKMjAyNi0xMS0zMCgBagcIARIDWVlaagcIARIDWVRacgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-01T16:46:18+00:00",
+   "checked_at": "2026-10-02T16:00:27+00:00",
    "is_ewr": false,
    "alt": {
-    "price": 357,
+    "price": 332,
     "airport": "EWR",
-    "stops": 1,
-    "minutes": 296
+    "stops": 0,
+    "minutes": 103
    },
    "bare_fare": false,
    "level": "typical",
@@ -217,7 +225,7 @@
     430
    ],
    "tier": null,
-   "under_pct": -70,
+   "under_pct": -56,
    "history": [
     [
      "2026-09-18",
@@ -274,16 +282,20 @@
     [
      "2026-10-01",
      392
+    ],
+    [
+     "2026-10-02",
+     359
     ]
    ],
-   "change": 21,
-   "change_since": "2026-09-30",
-   "change_total": 78,
+   "change": -33,
+   "change_since": "2026-10-01",
+   "change_total": 45,
    "first_date": "2026-09-18",
    "lowest_seen": 314,
    "lowest_seen_on": "2026-09-18",
-   "days_tracked": 14,
-   "days_out": 57
+   "days_tracked": 15,
+   "days_out": 56
   },
   {
    "id": "manila-mar",
@@ -351,68 +363,11 @@
    "lowest_seen": 916,
    "lowest_seen_on": "2026-10-01",
    "days_tracked": 8,
-   "days_out": 176
+   "days_out": 175
   }
  ],
  "deals": [],
  "honorable_mentions": [
-  {
-   "tier": null,
-   "origin": "LGA",
-   "is_ewr": false,
-   "ewr_saving": null,
-   "dest": "TPA",
-   "name": "Tampa",
-   "country": "United States",
-   "domestic": true,
-   "price": 158,
-   "typical": [
-    130,
-    295
-   ],
-   "under_pct": -22,
-   "position": 0.17,
-   "z": null,
-   "start": "2026-11-09",
-   "end": "2026-11-18",
-   "trip": "week",
-   "airline": "American",
-   "stops": 0,
-   "bare_fare": false,
-   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhopEgoyMDI2LTExLTA5KAFqBwgBEgNKRktqBwgBEgNMR0FyBwgBEgNUUEEaKRIKMjAyNi0xMS0xOCgBagcIARIDVFBBcgcIARIDSkZLcgcIARIDTEdBQAFIAXABmAEB&tfu=EgIIAQ",
-   "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQOnQ4SLeJ6rvncy6TM9KXTzObp3W6fobZgCHZCiXr6jqGl9FLcAUmqyvJjf6M3tAyq96hwIaSXec0UlqRbr3w339cc0anHQkA_UQ8MMA",
-   "verified_at": "2026-09-28T17:51:49+00:00",
-   "history": [
-    [
-     "2026-09-18",
-     160
-    ],
-    [
-     "2026-09-20",
-     167
-    ],
-    [
-     "2026-09-22",
-     167
-    ],
-    [
-     "2026-09-24",
-     167
-    ],
-    [
-     "2026-09-26",
-     158
-    ],
-    [
-     "2026-09-28",
-     158
-    ]
-   ],
-   "change": 0,
-   "change_since": "2026-09-26",
-   "change_total": -2,
-   "first_date": "2026-09-18"
-  },
   {
    "tier": null,
    "origin": "LGA",
