@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-05T18:55:50+00:00",
+ "updated_at": "2026-10-06T16:21:26+00:00",
  "routes_tracked": 470,
  "watches": [
   {
@@ -8,21 +8,16 @@
    "arrival_id": "ORD,MDW",
    "start": "2026-10-09",
    "end": "2026-10-12",
-   "price": 594,
-   "airport": "LGA",
+   "price": 337,
+   "airport": "EWR",
    "arrives": "ORD",
-   "ewr_saving": null,
-   "airline": "American",
+   "ewr_saving": 220,
+   "airline": "United",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTEwLTA5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNPUkRyBwgBEgNNRFcaOxIKMjAyNi0xMC0xMigBagcIARIDT1JEagcIARIDTURXcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-05T18:55:18+00:00",
-   "is_ewr": false,
-   "alt": {
-    "price": 423,
-    "airport": "EWR",
-    "stops": 1,
-    "minutes": 528
-   },
+   "checked_at": "2026-10-06T16:20:37+00:00",
+   "is_ewr": true,
+   "alt": null,
    "bare_fare": false,
    "level": "high",
    "typical": [
@@ -30,7 +25,7 @@
     305
    ],
    "tier": null,
-   "under_pct": -213,
+   "under_pct": -77,
    "history": [
     [
      "2026-09-18",
@@ -103,16 +98,20 @@
     [
      "2026-10-05",
      594
+    ],
+    [
+     "2026-10-06",
+     337
     ]
    ],
-   "change": 97,
-   "change_since": "2026-10-04",
-   "change_total": 89,
+   "change": -257,
+   "change_since": "2026-10-05",
+   "change_total": -168,
    "first_date": "2026-09-18",
-   "lowest_seen": 370,
-   "lowest_seen_on": "2026-09-24",
-   "days_tracked": 18,
-   "days_out": 4
+   "lowest_seen": 337,
+   "lowest_seen_on": "2026-10-06",
+   "days_tracked": 19,
+   "days_out": 3
   },
   {
    "id": "phoenix-nov",
@@ -120,20 +119,20 @@
    "arrival_id": "PHX",
    "start": "2026-11-19",
    "end": "2026-11-22",
-   "price": 449,
-   "airport": "LGA",
+   "price": 462,
+   "airport": "JFK",
    "arrives": "PHX",
    "ewr_saving": null,
-   "airline": "American",
-   "stops": 1,
+   "airline": "JetBlue",
+   "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTExLTE5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNQSFgaMhIKMjAyNi0xMS0yMigBagcIARIDUEhYcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-05T18:55:24+00:00",
+   "checked_at": "2026-10-06T16:20:46+00:00",
    "is_ewr": false,
    "alt": {
-    "price": 424,
-    "airport": "EWR",
+    "price": 420,
+    "airport": "LGA",
     "stops": 1,
-    "minutes": 658
+    "minutes": 701
    },
    "bare_fare": false,
    "level": "typical",
@@ -142,7 +141,7 @@
     430
    ],
    "tier": null,
-   "under_pct": -114,
+   "under_pct": -120,
    "history": [
     [
      "2026-09-18",
@@ -215,16 +214,20 @@
     [
      "2026-10-05",
      449
+    ],
+    [
+     "2026-10-06",
+     462
     ]
    ],
-   "change": 9,
-   "change_since": "2026-10-04",
-   "change_total": 2,
+   "change": 13,
+   "change_since": "2026-10-05",
+   "change_total": 15,
    "first_date": "2026-09-18",
    "lowest_seen": 429,
    "lowest_seen_on": "2026-09-20",
-   "days_tracked": 18,
-   "days_out": 45
+   "days_tracked": 19,
+   "days_out": 44
   },
   {
    "id": "toronto-nov",
@@ -232,14 +235,14 @@
    "arrival_id": "YYZ,YTZ",
    "start": "2026-11-27",
    "end": "2026-11-30",
-   "price": 359,
+   "price": 334,
    "airport": "LGA",
    "arrives": "YYZ",
    "ewr_saving": null,
-   "airline": "Delta",
+   "airline": "American",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTExLTI3KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNZWVpyBwgBEgNZVFoaOxIKMjAyNi0xMS0zMCgBagcIARIDWVlaagcIARIDWVRacgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-05T18:55:31+00:00",
+   "checked_at": "2026-10-06T16:20:54+00:00",
    "is_ewr": false,
    "alt": null,
    "bare_fare": false,
@@ -249,7 +252,7 @@
     430
    ],
    "tier": null,
-   "under_pct": -44,
+   "under_pct": -34,
    "history": [
     [
      "2026-09-18",
@@ -322,16 +325,20 @@
     [
      "2026-10-05",
      359
+    ],
+    [
+     "2026-10-06",
+     334
     ]
    ],
-   "change": 1,
-   "change_since": "2026-10-04",
-   "change_total": 45,
+   "change": -25,
+   "change_since": "2026-10-05",
+   "change_total": 20,
    "first_date": "2026-09-18",
    "lowest_seen": 314,
    "lowest_seen_on": "2026-09-18",
-   "days_tracked": 18,
-   "days_out": 53
+   "days_tracked": 19,
+   "days_out": 52
   },
   {
    "id": "manila-mar",
@@ -407,7 +414,7 @@
    "lowest_seen": 874,
    "lowest_seen_on": "2026-10-03",
    "days_tracked": 10,
-   "days_out": 172
+   "days_out": 171
   }
  ],
  "deals": [
@@ -478,6 +485,79 @@
    "change": -107,
    "change_since": "2026-10-03",
    "change_total": -107,
+   "first_date": "2026-09-18"
+  },
+  {
+   "tier": "good",
+   "origin": "LGA",
+   "is_ewr": false,
+   "ewr_saving": null,
+   "dest": "PSP",
+   "name": "Palm Springs",
+   "country": "United States",
+   "domestic": true,
+   "price": 239,
+   "typical": [
+    295,
+    540
+   ],
+   "under_pct": 19,
+   "position": -0.23,
+   "z": null,
+   "start": "2027-01-21",
+   "end": "2027-01-27",
+   "trip": "week",
+   "airline": "United",
+   "stops": 1,
+   "bare_fare": false,
+   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhopEgoyMDI3LTAxLTIxKAFqBwgBEgNKRktqBwgBEgNMR0FyBwgBEgNQU1AaKRIKMjAyNy0wMS0yNygBagcIARIDUFNQcgcIARIDSkZLcgcIARIDTEdBQAFIAXABmAEB&tfu=EgIIAQ",
+   "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSZLfw77kgP57dLOlr76GJKYRmeIF5hTxOmAmw9ov85f6blQYZjITWwclDPFIgetF8ddW9I1WG8xGEwuFHNmid0Gty7veh90LJoT6EeEg",
+   "verified_at": "2026-10-06T16:21:22+00:00",
+   "history": [
+    [
+     "2026-09-18",
+     367
+    ],
+    [
+     "2026-09-20",
+     367
+    ],
+    [
+     "2026-09-22",
+     367
+    ],
+    [
+     "2026-09-24",
+     367
+    ],
+    [
+     "2026-09-26",
+     367
+    ],
+    [
+     "2026-09-28",
+     367
+    ],
+    [
+     "2026-09-30",
+     367
+    ],
+    [
+     "2026-10-02",
+     367
+    ],
+    [
+     "2026-10-04",
+     367
+    ],
+    [
+     "2026-10-06",
+     239
+    ]
+   ],
+   "change": -128,
+   "change_since": "2026-10-04",
+   "change_total": -128,
    "first_date": "2026-09-18"
   }
  ],
