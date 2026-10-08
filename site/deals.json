@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-07T17:04:55+00:00",
+ "updated_at": "2026-10-08T17:03:59+00:00",
  "routes_tracked": 471,
  "watches": [
   {
@@ -8,16 +8,21 @@
    "arrival_id": "ORD,MDW",
    "start": "2026-10-09",
    "end": "2026-10-12",
-   "price": 374,
-   "airport": "EWR",
+   "price": 356,
+   "airport": "JFK",
    "arrives": "ORD",
-   "ewr_saving": 137,
-   "airline": "United",
+   "ewr_saving": null,
+   "airline": "JetBlue",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTEwLTA5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNPUkRyBwgBEgNNRFcaOxIKMjAyNi0xMC0xMigBagcIARIDT1JEagcIARIDTURXcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-07T17:04:07+00:00",
-   "is_ewr": true,
-   "alt": null,
+   "checked_at": "2026-10-08T17:03:18+00:00",
+   "is_ewr": false,
+   "alt": {
+    "price": 347,
+    "airport": "EWR",
+    "stops": 1,
+    "minutes": 285
+   },
    "bare_fare": false,
    "level": "high",
    "typical": [
@@ -25,7 +30,7 @@
     305
    ],
    "tier": null,
-   "under_pct": -97,
+   "under_pct": -87,
    "history": [
     [
      "2026-09-18",
@@ -106,16 +111,20 @@
     [
      "2026-10-07",
      374
+    ],
+    [
+     "2026-10-08",
+     356
     ]
    ],
-   "change": 37,
-   "change_since": "2026-10-06",
-   "change_total": -131,
+   "change": -18,
+   "change_since": "2026-10-07",
+   "change_total": -149,
    "first_date": "2026-09-18",
    "lowest_seen": 337,
    "lowest_seen_on": "2026-10-06",
-   "days_tracked": 20,
-   "days_out": 2
+   "days_tracked": 21,
+   "days_out": 1
   },
   {
    "id": "phoenix-nov",
@@ -123,20 +132,20 @@
    "arrival_id": "PHX",
    "start": "2026-11-19",
    "end": "2026-11-22",
-   "price": 477,
-   "airport": "JFK",
+   "price": 449,
+   "airport": "LGA",
    "arrives": "PHX",
    "ewr_saving": null,
-   "airline": "Delta",
-   "stops": 0,
+   "airline": "American",
+   "stops": 1,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTExLTE5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNQSFgaMhIKMjAyNi0xMS0yMigBagcIARIDUEhYcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-07T17:04:17+00:00",
+   "checked_at": "2026-10-08T17:03:30+00:00",
    "is_ewr": false,
    "alt": {
-    "price": 410,
+    "price": 377,
     "airport": "EWR",
     "stops": 1,
-    "minutes": 690
+    "minutes": 658
    },
    "bare_fare": false,
    "level": "typical",
@@ -145,7 +154,7 @@
     430
    ],
    "tier": null,
-   "under_pct": -127,
+   "under_pct": -114,
    "history": [
     [
      "2026-09-18",
@@ -226,16 +235,20 @@
     [
      "2026-10-07",
      477
+    ],
+    [
+     "2026-10-08",
+     449
     ]
    ],
-   "change": 15,
-   "change_since": "2026-10-06",
-   "change_total": 30,
+   "change": -28,
+   "change_since": "2026-10-07",
+   "change_total": 2,
    "first_date": "2026-09-18",
    "lowest_seen": 429,
    "lowest_seen_on": "2026-09-20",
-   "days_tracked": 20,
-   "days_out": 43
+   "days_tracked": 21,
+   "days_out": 42
   },
   {
    "id": "toronto-nov",
@@ -250,7 +263,7 @@
    "airline": "Air Canada",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTExLTI3KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNZWVpyBwgBEgNZVFoaOxIKMjAyNi0xMS0zMCgBagcIARIDWVlaagcIARIDWVRacgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-07T17:04:23+00:00",
+   "checked_at": "2026-10-08T17:03:37+00:00",
    "is_ewr": false,
    "alt": {
     "price": 245,
@@ -346,16 +359,20 @@
     [
      "2026-10-07",
      254
+    ],
+    [
+     "2026-10-08",
+     254
     ]
    ],
-   "change": -80,
-   "change_since": "2026-10-06",
+   "change": 0,
+   "change_since": "2026-10-07",
    "change_total": -60,
    "first_date": "2026-09-18",
    "lowest_seen": 254,
    "lowest_seen_on": "2026-10-07",
-   "days_tracked": 20,
-   "days_out": 51
+   "days_tracked": 21,
+   "days_out": 50
   },
   {
    "id": "manila-mar",
@@ -435,7 +452,7 @@
    "lowest_seen": 874,
    "lowest_seen_on": "2026-10-03",
    "days_tracked": 11,
-   "days_out": 170
+   "days_out": 169
   }
  ],
  "deals": [
