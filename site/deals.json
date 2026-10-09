@@ -1,148 +1,24 @@
 {
- "updated_at": "2026-10-08T17:03:59+00:00",
- "routes_tracked": 471,
+ "updated_at": "2026-10-09T16:41:34+00:00",
+ "routes_tracked": 479,
  "watches": [
-  {
-   "id": "chicago-oct",
-   "name": "Chicago",
-   "arrival_id": "ORD,MDW",
-   "start": "2026-10-09",
-   "end": "2026-10-12",
-   "price": 356,
-   "airport": "JFK",
-   "arrives": "ORD",
-   "ewr_saving": null,
-   "airline": "JetBlue",
-   "stops": 0,
-   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTEwLTA5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNPUkRyBwgBEgNNRFcaOxIKMjAyNi0xMC0xMigBagcIARIDT1JEagcIARIDTURXcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-08T17:03:18+00:00",
-   "is_ewr": false,
-   "alt": {
-    "price": 347,
-    "airport": "EWR",
-    "stops": 1,
-    "minutes": 285
-   },
-   "bare_fare": false,
-   "level": "high",
-   "typical": [
-    190,
-    305
-   ],
-   "tier": null,
-   "under_pct": -87,
-   "history": [
-    [
-     "2026-09-18",
-     505
-    ],
-    [
-     "2026-09-19",
-     468
-    ],
-    [
-     "2026-09-20",
-     468
-    ],
-    [
-     "2026-09-21",
-     505
-    ],
-    [
-     "2026-09-22",
-     569
-    ],
-    [
-     "2026-09-23",
-     600
-    ],
-    [
-     "2026-09-24",
-     370
-    ],
-    [
-     "2026-09-25",
-     459
-    ],
-    [
-     "2026-09-26",
-     586
-    ],
-    [
-     "2026-09-27",
-     614
-    ],
-    [
-     "2026-09-28",
-     564
-    ],
-    [
-     "2026-09-29",
-     538
-    ],
-    [
-     "2026-09-30",
-     617
-    ],
-    [
-     "2026-10-01",
-     427
-    ],
-    [
-     "2026-10-02",
-     414
-    ],
-    [
-     "2026-10-03",
-     538
-    ],
-    [
-     "2026-10-04",
-     497
-    ],
-    [
-     "2026-10-05",
-     594
-    ],
-    [
-     "2026-10-06",
-     337
-    ],
-    [
-     "2026-10-07",
-     374
-    ],
-    [
-     "2026-10-08",
-     356
-    ]
-   ],
-   "change": -18,
-   "change_since": "2026-10-07",
-   "change_total": -149,
-   "first_date": "2026-09-18",
-   "lowest_seen": 337,
-   "lowest_seen_on": "2026-10-06",
-   "days_tracked": 21,
-   "days_out": 1
-  },
   {
    "id": "phoenix-nov",
    "name": "Phoenix",
    "arrival_id": "PHX",
    "start": "2026-11-19",
    "end": "2026-11-22",
-   "price": 449,
+   "price": 443,
    "airport": "LGA",
    "arrives": "PHX",
    "ewr_saving": null,
    "airline": "American",
    "stops": 1,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTExLTE5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNQSFgaMhIKMjAyNi0xMS0yMigBagcIARIDUEhYcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-08T17:03:30+00:00",
+   "checked_at": "2026-10-09T16:40:58+00:00",
    "is_ewr": false,
    "alt": {
-    "price": 377,
+    "price": 424,
     "airport": "EWR",
     "stops": 1,
     "minutes": 658
@@ -151,10 +27,10 @@
    "level": "typical",
    "typical": [
     210,
-    430
+    435
    ],
    "tier": null,
-   "under_pct": -114,
+   "under_pct": -111,
    "history": [
     [
      "2026-09-18",
@@ -239,16 +115,20 @@
     [
      "2026-10-08",
      449
+    ],
+    [
+     "2026-10-09",
+     443
     ]
    ],
-   "change": -28,
-   "change_since": "2026-10-07",
-   "change_total": 2,
+   "change": -6,
+   "change_since": "2026-10-08",
+   "change_total": -4,
    "first_date": "2026-09-18",
    "lowest_seen": 429,
    "lowest_seen_on": "2026-09-20",
-   "days_tracked": 21,
-   "days_out": 42
+   "days_tracked": 22,
+   "days_out": 41
   },
   {
    "id": "toronto-nov",
@@ -263,7 +143,7 @@
    "airline": "Air Canada",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTExLTI3KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNZWVpyBwgBEgNZVFoaOxIKMjAyNi0xMS0zMCgBagcIARIDWVlaagcIARIDWVRacgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-08T17:03:37+00:00",
+   "checked_at": "2026-10-09T16:41:03+00:00",
    "is_ewr": false,
    "alt": {
     "price": 245,
@@ -274,11 +154,11 @@
    "bare_fare": false,
    "level": "low",
    "typical": [
-    250,
+    260,
     430
    ],
-   "tier": null,
-   "under_pct": -2,
+   "tier": "good",
+   "under_pct": 2,
    "history": [
     [
      "2026-09-18",
@@ -363,16 +243,20 @@
     [
      "2026-10-08",
      254
+    ],
+    [
+     "2026-10-09",
+     254
     ]
    ],
    "change": 0,
-   "change_since": "2026-10-07",
+   "change_since": "2026-10-08",
    "change_total": -60,
    "first_date": "2026-09-18",
    "lowest_seen": 254,
    "lowest_seen_on": "2026-10-07",
-   "days_tracked": 21,
-   "days_out": 50
+   "days_tracked": 22,
+   "days_out": 49
   },
   {
    "id": "manila-mar",
@@ -381,14 +265,14 @@
    "start": "2027-03-26",
    "end": "2027-04-10",
    "every": 2,
-   "price": 925,
+   "price": 903,
    "airport": "JFK",
    "arrives": "MNL",
    "ewr_saving": null,
    "airline": "Korean Air",
    "stops": 1,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI3LTAzLTI2KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNNTkwaMhIKMjAyNy0wNC0xMCgBagcIARIDTU5McgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-07T17:04:29+00:00",
+   "checked_at": "2026-10-09T16:41:08+00:00",
    "is_ewr": false,
    "alt": null,
    "bare_fare": false,
@@ -398,7 +282,7 @@
     1400
    ],
    "tier": "good",
-   "under_pct": 4,
+   "under_pct": 6,
    "history": [
     [
      "2026-09-18",
@@ -443,88 +327,23 @@
     [
      "2026-10-07",
      925
+    ],
+    [
+     "2026-10-09",
+     903
     ]
    ],
-   "change": 51,
-   "change_since": "2026-10-05",
-   "change_total": -20,
+   "change": -22,
+   "change_since": "2026-10-07",
+   "change_total": -42,
    "first_date": "2026-09-18",
    "lowest_seen": 874,
    "lowest_seen_on": "2026-10-03",
-   "days_tracked": 11,
-   "days_out": 169
+   "days_tracked": 12,
+   "days_out": 168
   }
  ],
  "deals": [
-  {
-   "tier": "rare",
-   "origin": "LGA",
-   "is_ewr": false,
-   "ewr_saving": null,
-   "dest": "FAT",
-   "name": "Yosemite National Park",
-   "country": "United States",
-   "domestic": true,
-   "price": 210,
-   "typical": [
-    345,
-    860
-   ],
-   "under_pct": 39,
-   "position": -0.26,
-   "z": null,
-   "start": "2026-12-03",
-   "end": "2026-12-07",
-   "trip": "weekend",
-   "airline": "Southwest",
-   "stops": 1,
-   "bare_fare": false,
-   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhopEgoyMDI2LTEyLTAzKAFqBwgBEgNKRktqBwgBEgNMR0FyBwgBEgNGQVQaKRIKMjAyNi0xMi0wNygBagcIARIDRkFUcgcIARIDSkZLcgcIARIDTEdBQAFIAXABmAEB&tfu=EgIIAQ",
-   "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRptPuSQ96qbtxIWAgdi0_ZuW-p_qR8AtwSAWdcyuBAAX4w-8q8vkiEnJ6X7kjWbeuJlXWAFX5PqwtpJw",
-   "verified_at": "2026-10-05T18:55:50+00:00",
-   "history": [
-    [
-     "2026-09-18",
-     317
-    ],
-    [
-     "2026-09-21",
-     317
-    ],
-    [
-     "2026-09-23",
-     317
-    ],
-    [
-     "2026-09-25",
-     317
-    ],
-    [
-     "2026-09-27",
-     317
-    ],
-    [
-     "2026-09-29",
-     317
-    ],
-    [
-     "2026-10-01",
-     317
-    ],
-    [
-     "2026-10-03",
-     317
-    ],
-    [
-     "2026-10-05",
-     210
-    ]
-   ],
-   "change": -107,
-   "change_since": "2026-10-03",
-   "change_total": -107,
-   "first_date": "2026-09-18"
-  },
   {
    "tier": "good",
    "origin": "LGA",
