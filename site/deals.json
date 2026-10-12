@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-10-11T16:01:24+00:00",
- "routes_tracked": 513,
+ "updated_at": "2026-10-12T19:29:14+00:00",
+ "routes_tracked": 515,
  "watches": [
   {
    "id": "phoenix-nov",
@@ -8,29 +8,24 @@
    "arrival_id": "PHX",
    "start": "2026-11-19",
    "end": "2026-11-22",
-   "price": 469,
-   "airport": "JFK",
+   "price": 386,
+   "airport": "LGA",
    "arrives": "PHX",
    "ewr_saving": null,
-   "airline": "JetBlue",
-   "stops": 0,
+   "airline": "Southwest",
+   "stops": 1,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTExLTE5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNQSFgaMhIKMjAyNi0xMS0yMigBagcIARIDUEhYcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-11T16:00:36+00:00",
+   "checked_at": "2026-10-12T19:28:41+00:00",
    "is_ewr": false,
-   "alt": {
-    "price": 423,
-    "airport": "LGA",
-    "stops": 1,
-    "minutes": 653
-   },
+   "alt": null,
    "bare_fare": false,
    "level": "typical",
    "typical": [
-    210,
-    435
+    220,
+    440
    ],
    "tier": null,
-   "under_pct": -123,
+   "under_pct": -75,
    "history": [
     [
      "2026-09-18",
@@ -127,16 +122,20 @@
     [
      "2026-10-11",
      469
+    ],
+    [
+     "2026-10-12",
+     386
     ]
    ],
-   "change": 57,
-   "change_since": "2026-10-10",
-   "change_total": 22,
+   "change": -83,
+   "change_since": "2026-10-11",
+   "change_total": -61,
    "first_date": "2026-09-18",
-   "lowest_seen": 412,
-   "lowest_seen_on": "2026-10-10",
-   "days_tracked": 24,
-   "days_out": 39
+   "lowest_seen": 386,
+   "lowest_seen_on": "2026-10-12",
+   "days_tracked": 25,
+   "days_out": 38
   },
   {
    "id": "toronto-nov",
@@ -151,7 +150,7 @@
    "airline": "Air Canada",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTExLTI3KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNZWVpyBwgBEgNZVFoaOxIKMjAyNi0xMS0zMCgBagcIARIDWVlaagcIARIDWVRacgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-11T16:00:48+00:00",
+   "checked_at": "2026-10-12T19:28:49+00:00",
    "is_ewr": false,
    "alt": {
     "price": 254,
@@ -263,16 +262,20 @@
     [
      "2026-10-11",
      264
+    ],
+    [
+     "2026-10-12",
+     264
     ]
    ],
    "change": 0,
-   "change_since": "2026-10-10",
+   "change_since": "2026-10-11",
    "change_total": -50,
    "first_date": "2026-09-18",
    "lowest_seen": 254,
    "lowest_seen_on": "2026-10-07",
-   "days_tracked": 24,
-   "days_out": 47
+   "days_tracked": 25,
+   "days_out": 46
   },
   {
    "id": "manila-mar",
@@ -360,11 +363,149 @@
    "lowest_seen": 874,
    "lowest_seen_on": "2026-10-03",
    "days_tracked": 13,
-   "days_out": 166
+   "days_out": 165
   }
  ],
  "deals": [],
  "honorable_mentions": [
+  {
+   "tier": null,
+   "origin": "JFK",
+   "is_ewr": false,
+   "ewr_saving": null,
+   "dest": "FCA",
+   "name": "Glacier National Park",
+   "country": "United States",
+   "domestic": true,
+   "price": 277,
+   "typical": [
+    275,
+    850
+   ],
+   "under_pct": -1,
+   "position": 0.0,
+   "z": null,
+   "start": "2026-11-05",
+   "end": "2026-11-11",
+   "trip": "week",
+   "airline": "Delta",
+   "stops": 1,
+   "bare_fare": false,
+   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhopEgoyMDI2LTExLTA1KAFqBwgBEgNKRktqBwgBEgNMR0FyBwgBEgNGQ0EaKRIKMjAyNi0xMS0xMSgBagcIARIDRkNBcgcIARIDSkZLcgcIARIDTEdBQAFIAXABmAEB&tfu=EgIIAQ",
+   "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRsMh3klsvnVGAz3dzZLaMHi029od27z70CIAnaZ1qq2h-6vOwLo6IqFDrJ_13mXpsJd86ErMI38QXShNlYIPhlp-50TgrhoN4lZWhNYA",
+   "verified_at": "2026-10-12T19:29:08+00:00",
+   "history": [
+    [
+     "2026-09-20",
+     277
+    ],
+    [
+     "2026-09-22",
+     277
+    ],
+    [
+     "2026-09-24",
+     277
+    ],
+    [
+     "2026-09-26",
+     277
+    ],
+    [
+     "2026-09-28",
+     277
+    ],
+    [
+     "2026-09-30",
+     277
+    ],
+    [
+     "2026-10-02",
+     277
+    ],
+    [
+     "2026-10-04",
+     277
+    ],
+    [
+     "2026-10-12",
+     277
+    ]
+   ],
+   "change": 0,
+   "change_since": "2026-10-04",
+   "change_total": 0,
+   "first_date": "2026-09-20"
+  },
+  {
+   "tier": null,
+   "origin": "JFK",
+   "is_ewr": false,
+   "ewr_saving": null,
+   "dest": "FAT",
+   "name": "Yosemite National Park",
+   "country": "United States",
+   "domestic": true,
+   "price": 317,
+   "typical": [
+    310,
+    580
+   ],
+   "under_pct": -2,
+   "position": 0.03,
+   "z": null,
+   "start": "2027-01-21",
+   "end": "2027-01-27",
+   "trip": "week",
+   "airline": "American",
+   "stops": 1,
+   "bare_fare": false,
+   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhopEgoyMDI3LTAxLTIxKAFqBwgBEgNKRktqBwgBEgNMR0FyBwgBEgNGQVQaKRIKMjAyNy0wMS0yNygBagcIARIDRkFUcgcIARIDSkZLcgcIARIDTEdBQAFIAXABmAEB&tfu=EgIIAQ",
+   "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRptPuSQ96qbtxIWAgdi0_ZuW-p_qR8AtwSAWdcyuBAAX4w-8q8vkiEnJ6X7kjWbeuJlXWAFX5PqwtpJw",
+   "verified_at": "2026-10-12T19:29:11+00:00",
+   "history": [
+    [
+     "2026-09-20",
+     317
+    ],
+    [
+     "2026-09-22",
+     317
+    ],
+    [
+     "2026-09-24",
+     317
+    ],
+    [
+     "2026-09-26",
+     317
+    ],
+    [
+     "2026-09-28",
+     317
+    ],
+    [
+     "2026-09-30",
+     317
+    ],
+    [
+     "2026-10-02",
+     317
+    ],
+    [
+     "2026-10-04",
+     317
+    ],
+    [
+     "2026-10-12",
+     317
+    ]
+   ],
+   "change": 0,
+   "change_since": "2026-10-04",
+   "change_total": 0,
+   "first_date": "2026-09-20"
+  },
   {
    "tier": null,
    "origin": "LGA",
