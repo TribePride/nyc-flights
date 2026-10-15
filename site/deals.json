@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-10-14T14:46:03+00:00",
- "routes_tracked": 515,
+ "updated_at": "2026-10-15T14:31:31+00:00",
+ "routes_tracked": 518,
  "watches": [
   {
    "id": "phoenix-nov",
@@ -15,7 +15,7 @@
    "airline": "JetBlue",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTExLTE5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNQSFgaMhIKMjAyNi0xMS0yMigBagcIARIDUEhYcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-14T14:45:29+00:00",
+   "checked_at": "2026-10-15T14:30:47+00:00",
    "is_ewr": false,
    "alt": {
     "price": 360,
@@ -139,16 +139,20 @@
     [
      "2026-10-14",
      411
+    ],
+    [
+     "2026-10-15",
+     411
     ]
    ],
-   "change": 28,
-   "change_since": "2026-10-13",
+   "change": 0,
+   "change_since": "2026-10-14",
    "change_total": -36,
    "first_date": "2026-09-18",
    "lowest_seen": 383,
    "lowest_seen_on": "2026-10-13",
-   "days_tracked": 27,
-   "days_out": 36
+   "days_tracked": 28,
+   "days_out": 35
   },
   {
    "id": "toronto-nov",
@@ -156,21 +160,16 @@
    "arrival_id": "YYZ,YTZ",
    "start": "2026-11-27",
    "end": "2026-11-30",
-   "price": 281,
+   "price": 282,
    "airport": "LGA",
    "arrives": "YYZ",
    "ewr_saving": null,
-   "airline": "Air Canada",
+   "airline": "American",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTExLTI3KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNZWVpyBwgBEgNZVFoaOxIKMjAyNi0xMS0zMCgBagcIARIDWVlaagcIARIDWVRacgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-14T14:45:39+00:00",
+   "checked_at": "2026-10-15T14:30:52+00:00",
    "is_ewr": false,
-   "alt": {
-    "price": 275,
-    "airport": "EWR",
-    "stops": 0,
-    "minutes": 113
-   },
+   "alt": null,
    "bare_fare": false,
    "level": "typical",
    "typical": [
@@ -287,16 +286,20 @@
     [
      "2026-10-14",
      281
+    ],
+    [
+     "2026-10-15",
+     282
     ]
    ],
-   "change": -1,
-   "change_since": "2026-10-13",
-   "change_total": -33,
+   "change": 1,
+   "change_since": "2026-10-14",
+   "change_total": -32,
    "first_date": "2026-09-18",
    "lowest_seen": 254,
    "lowest_seen_on": "2026-10-07",
-   "days_tracked": 27,
-   "days_out": 44
+   "days_tracked": 28,
+   "days_out": 43
   },
   {
    "id": "manila-mar",
@@ -305,14 +308,14 @@
    "start": "2027-03-26",
    "end": "2027-04-10",
    "every": 2,
-   "price": 995,
+   "price": 1007,
    "airport": "JFK",
    "arrives": "MNL",
    "ewr_saving": null,
-   "airline": "Asiana Airlines",
+   "airline": "Korean Air",
    "stops": 1,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI3LTAzLTI2KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNNTkwaMhIKMjAyNy0wNC0xMCgBagcIARIDTU5McgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-13T17:12:57+00:00",
+   "checked_at": "2026-10-15T14:30:57+00:00",
    "is_ewr": false,
    "alt": null,
    "bare_fare": false,
@@ -322,7 +325,7 @@
     1400
    ],
    "tier": null,
-   "under_pct": -4,
+   "under_pct": -5,
    "history": [
     [
      "2026-09-18",
@@ -379,16 +382,20 @@
     [
      "2026-10-13",
      995
+    ],
+    [
+     "2026-10-15",
+     1007
     ]
    ],
-   "change": 0,
-   "change_since": "2026-10-11",
-   "change_total": 50,
+   "change": 12,
+   "change_since": "2026-10-13",
+   "change_total": 62,
    "first_date": "2026-09-18",
    "lowest_seen": 874,
    "lowest_seen_on": "2026-10-03",
-   "days_tracked": 14,
-   "days_out": 163
+   "days_tracked": 15,
+   "days_out": 162
   }
  ],
  "deals": [
