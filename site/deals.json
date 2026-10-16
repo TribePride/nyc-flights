@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-10-15T14:31:31+00:00",
- "routes_tracked": 518,
+ "updated_at": "2026-10-16T14:23:45+00:00",
+ "routes_tracked": 519,
  "watches": [
   {
    "id": "phoenix-nov",
@@ -8,29 +8,24 @@
    "arrival_id": "PHX",
    "start": "2026-11-19",
    "end": "2026-11-22",
-   "price": 411,
-   "airport": "JFK",
+   "price": 383,
+   "airport": "LGA",
    "arrives": "PHX",
    "ewr_saving": null,
-   "airline": "JetBlue",
-   "stops": 0,
+   "airline": "American",
+   "stops": 1,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTExLTE5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNQSFgaMhIKMjAyNi0xMS0yMigBagcIARIDUEhYcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-15T14:30:47+00:00",
+   "checked_at": "2026-10-16T14:23:09+00:00",
    "is_ewr": false,
-   "alt": {
-    "price": 360,
-    "airport": "LGA",
-    "stops": 1,
-    "minutes": 653
-   },
+   "alt": null,
    "bare_fare": false,
    "level": "typical",
    "typical": [
-    220,
+    225,
     440
    ],
    "tier": null,
-   "under_pct": -87,
+   "under_pct": -70,
    "history": [
     [
      "2026-09-18",
@@ -143,16 +138,20 @@
     [
      "2026-10-15",
      411
+    ],
+    [
+     "2026-10-16",
+     383
     ]
    ],
-   "change": 0,
-   "change_since": "2026-10-14",
-   "change_total": -36,
+   "change": -28,
+   "change_since": "2026-10-15",
+   "change_total": -64,
    "first_date": "2026-09-18",
    "lowest_seen": 383,
    "lowest_seen_on": "2026-10-13",
-   "days_tracked": 28,
-   "days_out": 35
+   "days_tracked": 29,
+   "days_out": 34
   },
   {
    "id": "toronto-nov",
@@ -167,17 +166,17 @@
    "airline": "American",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTExLTI3KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNZWVpyBwgBEgNZVFoaOxIKMjAyNi0xMS0zMCgBagcIARIDWVlaagcIARIDWVRacgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-15T14:30:52+00:00",
+   "checked_at": "2026-10-16T14:23:15+00:00",
    "is_ewr": false,
    "alt": null,
    "bare_fare": false,
    "level": "typical",
    "typical": [
-    260,
+    250,
     430
    ],
    "tier": null,
-   "under_pct": -8,
+   "under_pct": -13,
    "history": [
     [
      "2026-09-18",
@@ -290,16 +289,20 @@
     [
      "2026-10-15",
      282
+    ],
+    [
+     "2026-10-16",
+     282
     ]
    ],
-   "change": 1,
-   "change_since": "2026-10-14",
+   "change": 0,
+   "change_since": "2026-10-15",
    "change_total": -32,
    "first_date": "2026-09-18",
    "lowest_seen": 254,
    "lowest_seen_on": "2026-10-07",
-   "days_tracked": 28,
-   "days_out": 43
+   "days_tracked": 29,
+   "days_out": 42
   },
   {
    "id": "manila-mar",
@@ -395,99 +398,10 @@
    "lowest_seen": 874,
    "lowest_seen_on": "2026-10-03",
    "days_tracked": 15,
-   "days_out": 162
+   "days_out": 161
   }
  ],
  "deals": [
-  {
-   "tier": "rare",
-   "origin": "LGA",
-   "is_ewr": false,
-   "ewr_saving": null,
-   "dest": "BZN",
-   "name": "Yellowstone National Park",
-   "country": "United States",
-   "domestic": true,
-   "price": 247,
-   "typical": [
-    285,
-    820
-   ],
-   "under_pct": 13,
-   "position": -0.07,
-   "z": -4.1,
-   "start": "2026-12-03",
-   "end": "2026-12-09",
-   "trip": "week",
-   "airline": "Southwest",
-   "stops": 1,
-   "bare_fare": false,
-   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhopEgoyMDI2LTEyLTAzKAFqBwgBEgNKRktqBwgBEgNMR0FyBwgBEgNCWk4aKRIKMjAyNi0xMi0wOSgBagcIARIDQlpOcgcIARIDSkZLcgcIARIDTEdBQAFIAXABmAEB&tfu=EgIIAQ",
-   "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSoOyrsAo-Ad6-oKtim1fdiT3PdQ0Y3gaw64hZ0nMVlCYgSi_yv7Q-0WtWTwH0PSkNsOX7Vqft27Upi_PnkwGKwDz2RZJ_LA699152nHA",
-   "verified_at": "2026-10-14T14:45:54+00:00",
-   "history": [
-    [
-     "2026-09-18",
-     431
-    ],
-    [
-     "2026-09-20",
-     431
-    ],
-    [
-     "2026-09-22",
-     431
-    ],
-    [
-     "2026-09-24",
-     431
-    ],
-    [
-     "2026-09-26",
-     431
-    ],
-    [
-     "2026-09-28",
-     431
-    ],
-    [
-     "2026-09-30",
-     431
-    ],
-    [
-     "2026-10-02",
-     379
-    ],
-    [
-     "2026-10-04",
-     379
-    ],
-    [
-     "2026-10-06",
-     260
-    ],
-    [
-     "2026-10-08",
-     329
-    ],
-    [
-     "2026-10-10",
-     379
-    ],
-    [
-     "2026-10-12",
-     379
-    ],
-    [
-     "2026-10-14",
-     247
-    ]
-   ],
-   "change": -132,
-   "change_since": "2026-10-12",
-   "change_total": -184,
-   "first_date": "2026-09-18"
-  },
   {
    "tier": "great",
    "origin": "JFK",
@@ -664,6 +578,168 @@
    "change": -32,
    "change_since": "2026-10-11",
    "change_total": -46,
+   "first_date": "2026-09-18"
+  },
+  {
+   "tier": "good",
+   "origin": "LGA",
+   "is_ewr": false,
+   "ewr_saving": null,
+   "dest": "BZN",
+   "name": "Yellowstone National Park",
+   "country": "United States",
+   "domestic": true,
+   "price": 247,
+   "typical": [
+    285,
+    820
+   ],
+   "under_pct": 13,
+   "position": -0.07,
+   "z": -1.7,
+   "start": "2026-12-03",
+   "end": "2026-12-09",
+   "trip": "week",
+   "airline": "Southwest",
+   "stops": 1,
+   "bare_fare": false,
+   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhopEgoyMDI2LTEyLTAzKAFqBwgBEgNKRktqBwgBEgNMR0FyBwgBEgNCWk4aKRIKMjAyNi0xMi0wOSgBagcIARIDQlpOcgcIARIDSkZLcgcIARIDTEdBQAFIAXABmAEB&tfu=EgIIAQ",
+   "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSoOyrsAo-Ad6-oKtim1fdiT3PdQ0Y3gaw64hZ0nMVlCYgSi_yv7Q-0WtWTwH0PSkNsOX7Vqft27Upi_PnkwGKwDz2RZJ_LA699152nHA",
+   "verified_at": "2026-10-14T14:45:54+00:00",
+   "history": [
+    [
+     "2026-09-18",
+     431
+    ],
+    [
+     "2026-09-20",
+     431
+    ],
+    [
+     "2026-09-22",
+     431
+    ],
+    [
+     "2026-09-24",
+     431
+    ],
+    [
+     "2026-09-26",
+     431
+    ],
+    [
+     "2026-09-28",
+     431
+    ],
+    [
+     "2026-09-30",
+     431
+    ],
+    [
+     "2026-10-02",
+     379
+    ],
+    [
+     "2026-10-04",
+     379
+    ],
+    [
+     "2026-10-06",
+     260
+    ],
+    [
+     "2026-10-08",
+     329
+    ],
+    [
+     "2026-10-10",
+     379
+    ],
+    [
+     "2026-10-12",
+     379
+    ],
+    [
+     "2026-10-14",
+     247
+    ]
+   ],
+   "change": -132,
+   "change_since": "2026-10-12",
+   "change_total": -184,
+   "first_date": "2026-09-18"
+  },
+  {
+   "tier": "good",
+   "origin": "LGA",
+   "is_ewr": false,
+   "ewr_saving": null,
+   "dest": "AVL",
+   "name": "Asheville",
+   "country": "United States",
+   "domestic": true,
+   "price": 199,
+   "typical": [
+    215,
+    560
+   ],
+   "under_pct": 7,
+   "position": -0.05,
+   "z": null,
+   "start": "2026-12-05",
+   "end": "2026-12-12",
+   "trip": "week",
+   "airline": "American",
+   "stops": 0,
+   "bare_fare": false,
+   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhopEgoyMDI2LTEyLTA1KAFqBwgBEgNKRktqBwgBEgNMR0FyBwgBEgNBVkwaKRIKMjAyNi0xMi0xMigBagcIARIDQVZMcgcIARIDSkZLcgcIARIDTEdBQAFIAXABmAEB&tfu=EgIIAQ",
+   "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcQ7ZgSGr640hyrtlnlpztG-GnlAeHnhWeVnAyRpkVzYiOuBdv41Y7hK8uTf99U8Ge79Lg_j5ijt42scpiayOWswHMnInYwnGz5rhwnA",
+   "verified_at": "2026-10-16T14:23:42+00:00",
+   "history": [
+    [
+     "2026-09-18",
+     199
+    ],
+    [
+     "2026-09-20",
+     199
+    ],
+    [
+     "2026-09-22",
+     199
+    ],
+    [
+     "2026-09-24",
+     199
+    ],
+    [
+     "2026-09-26",
+     219
+    ],
+    [
+     "2026-09-28",
+     219
+    ],
+    [
+     "2026-10-06",
+     219
+    ],
+    [
+     "2026-10-08",
+     219
+    ],
+    [
+     "2026-10-10",
+     199
+    ],
+    [
+     "2026-10-16",
+     199
+    ]
+   ],
+   "change": 0,
+   "change_since": "2026-10-10",
+   "change_total": 0,
    "first_date": "2026-09-18"
   }
  ],
