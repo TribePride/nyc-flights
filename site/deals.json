@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-10-17T13:19:55+00:00",
- "routes_tracked": 519,
+ "updated_at": "2026-10-18T13:39:41+00:00",
+ "routes_tracked": 520,
  "watches": [
   {
    "id": "phoenix-nov",
@@ -15,7 +15,7 @@
    "airline": "JetBlue",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTExLTE5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNQSFgaMhIKMjAyNi0xMS0yMigBagcIARIDUEhYcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-17T13:19:55+00:00",
+   "checked_at": "2026-10-18T13:38:59+00:00",
    "is_ewr": false,
    "alt": null,
    "bare_fare": false,
@@ -27,10 +27,6 @@
    "tier": null,
    "under_pct": -63,
    "history": [
-    [
-     "2026-09-18",
-     447
-    ],
     [
      "2026-09-19",
      447
@@ -146,16 +142,20 @@
     [
      "2026-10-17",
      367
+    ],
+    [
+     "2026-10-18",
+     367
     ]
    ],
-   "change": -16,
-   "change_since": "2026-10-16",
+   "change": 0,
+   "change_since": "2026-10-17",
    "change_total": -80,
-   "first_date": "2026-09-18",
+   "first_date": "2026-09-19",
    "lowest_seen": 367,
    "lowest_seen_on": "2026-10-17",
-   "days_tracked": 30,
-   "days_out": 33
+   "days_tracked": 31,
+   "days_out": 32
   },
   {
    "id": "toronto-nov",
@@ -170,7 +170,7 @@
    "airline": "American",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTExLTI3KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNZWVpyBwgBEgNZVFoaOxIKMjAyNi0xMS0zMCgBagcIARIDWVlaagcIARIDWVRacgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-16T14:23:15+00:00",
+   "checked_at": "2026-10-18T13:39:05+00:00",
    "is_ewr": false,
    "alt": null,
    "bare_fare": false,
@@ -297,16 +297,20 @@
     [
      "2026-10-16",
      282
+    ],
+    [
+     "2026-10-18",
+     282
     ]
    ],
    "change": 0,
-   "change_since": "2026-10-15",
+   "change_since": "2026-10-16",
    "change_total": -32,
    "first_date": "2026-09-18",
    "lowest_seen": 254,
    "lowest_seen_on": "2026-10-07",
-   "days_tracked": 29,
-   "days_out": 41
+   "days_tracked": 30,
+   "days_out": 40
   },
   {
    "id": "manila-mar",
@@ -402,7 +406,7 @@
    "lowest_seen": 874,
    "lowest_seen_on": "2026-10-03",
    "days_tracked": 15,
-   "days_out": 160
+   "days_out": 159
   }
  ],
  "deals": [
@@ -412,26 +416,26 @@
    "is_ewr": false,
    "ewr_saving": null,
    "dest": "BZN",
-   "name": "Yellowstone National Park",
+   "name": "Bozeman",
    "country": "United States",
    "domestic": true,
-   "price": 247,
+   "price": 237,
    "typical": [
     285,
     820
    ],
-   "under_pct": 13,
-   "position": -0.07,
-   "z": -1.7,
+   "under_pct": 17,
+   "position": -0.09,
+   "z": -1.8,
    "start": "2026-12-03",
    "end": "2026-12-09",
    "trip": "week",
-   "airline": "Southwest",
+   "airline": "United",
    "stops": 1,
    "bare_fare": false,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhopEgoyMDI2LTEyLTAzKAFqBwgBEgNKRktqBwgBEgNMR0FyBwgBEgNCWk4aKRIKMjAyNi0xMi0wOSgBagcIARIDQlpOcgcIARIDSkZLcgcIARIDTEdBQAFIAXABmAEB&tfu=EgIIAQ",
-   "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSoOyrsAo-Ad6-oKtim1fdiT3PdQ0Y3gaw64hZ0nMVlCYgSi_yv7Q-0WtWTwH0PSkNsOX7Vqft27Upi_PnkwGKwDz2RZJ_LA699152nHA",
-   "verified_at": "2026-10-14T14:45:54+00:00",
+   "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuAMfjkrYMNCLnUYNB7MD-cwyfYNu9qOJzkn0wPQ4Sk5Z_cDMcsvi6StRZIADVoK29ZFPlVKeRpm0OoRlsz9NJD85WRGcsWP4GX5b0Sg",
+   "verified_at": "2026-10-18T13:39:27+00:00",
    "history": [
     [
      "2026-09-18",
@@ -488,12 +492,85 @@
     [
      "2026-10-14",
      247
+    ],
+    [
+     "2026-10-16",
+     237
+    ],
+    [
+     "2026-10-18",
+     237
     ]
    ],
-   "change": -132,
-   "change_since": "2026-10-12",
-   "change_total": -184,
+   "change": 0,
+   "change_since": "2026-10-16",
+   "change_total": -194,
    "first_date": "2026-09-18"
+  },
+  {
+   "tier": "good",
+   "origin": "JFK",
+   "is_ewr": false,
+   "ewr_saving": null,
+   "dest": "MAA",
+   "name": "Chennai",
+   "country": "India",
+   "domestic": false,
+   "price": 668,
+   "typical": [
+    750,
+    1650
+   ],
+   "under_pct": 11,
+   "position": -0.09,
+   "z": null,
+   "start": "2027-01-31",
+   "end": "2027-02-09",
+   "trip": "week",
+   "airline": "Gulf Air",
+   "stops": 1,
+   "bare_fare": false,
+   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhopEgoyMDI3LTAxLTMxKAFqBwgBEgNKRktqBwgBEgNMR0FyBwgBEgNNQUEaKRIKMjAyNy0wMi0wOSgBagcIARIDTUFBcgcIARIDSkZLcgcIARIDTEdBQAFIAXABmAEB&tfu=EgIIAQ",
+   "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT8jGx4Oe7gOIT3dSF0FgoYzjECbwXYCIq6g0sMhY30kkZu5ThtcjZeZrIwVErtNu0yP-R_6Fgzt1BlhFJgF4nE0Cxoy4q_LrB5mHM6_A",
+   "verified_at": "2026-10-18T13:39:30+00:00",
+   "history": [
+    [
+     "2026-09-20",
+     717
+    ],
+    [
+     "2026-09-24",
+     667
+    ],
+    [
+     "2026-09-28",
+     667
+    ],
+    [
+     "2026-10-02",
+     667
+    ],
+    [
+     "2026-10-06",
+     667
+    ],
+    [
+     "2026-10-10",
+     667
+    ],
+    [
+     "2026-10-14",
+     667
+    ],
+    [
+     "2026-10-18",
+     668
+    ]
+   ],
+   "change": 1,
+   "change_since": "2026-10-14",
+   "change_total": -49,
+   "first_date": "2026-09-20"
   },
   {
    "tier": "good",
@@ -567,6 +644,71 @@
    "change_since": "2026-10-10",
    "change_total": 0,
    "first_date": "2026-09-18"
+  },
+  {
+   "tier": "good",
+   "origin": "JFK",
+   "is_ewr": false,
+   "ewr_saving": null,
+   "dest": "DXB",
+   "name": "Dubai",
+   "country": "United Arab Emirates",
+   "domestic": false,
+   "price": 605,
+   "typical": [
+    640,
+    900
+   ],
+   "under_pct": 5,
+   "position": -0.13,
+   "z": null,
+   "start": "2026-11-08",
+   "end": "2026-11-17",
+   "trip": "week",
+   "airline": "Gulf Air",
+   "stops": 1,
+   "bare_fare": false,
+   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhopEgoyMDI2LTExLTA4KAFqBwgBEgNKRktqBwgBEgNMR0FyBwgBEgNEWEIaKRIKMjAyNi0xMS0xNygBagcIARIDRFhCcgcIARIDSkZLcgcIARIDTEdBQAFIAXABmAEB&tfu=EgIIAQ",
+   "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS8I-qzYsk8MfqbtG7XZriHCE-pfBAmDIEitgTNi6pkd4ydYfON7ave6PO0r4SphWZcLjoAZuDchjD45415sUjceoYWW2iZuva8SQ9Spg",
+   "verified_at": "2026-10-18T13:39:41+00:00",
+   "history": [
+    [
+     "2026-09-20",
+     583
+    ],
+    [
+     "2026-09-24",
+     577
+    ],
+    [
+     "2026-09-28",
+     604
+    ],
+    [
+     "2026-10-02",
+     605
+    ],
+    [
+     "2026-10-06",
+     629
+    ],
+    [
+     "2026-10-10",
+     614
+    ],
+    [
+     "2026-10-14",
+     605
+    ],
+    [
+     "2026-10-18",
+     605
+    ]
+   ],
+   "change": 0,
+   "change_since": "2026-10-14",
+   "change_total": 22,
+   "first_date": "2026-09-20"
   }
  ],
  "honorable_mentions": []
