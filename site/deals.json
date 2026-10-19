@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-18T13:39:41+00:00",
+ "updated_at": "2026-10-19T16:47:10+00:00",
  "routes_tracked": 520,
  "watches": [
   {
@@ -15,7 +15,7 @@
    "airline": "JetBlue",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTExLTE5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNQSFgaMhIKMjAyNi0xMS0yMigBagcIARIDUEhYcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-18T13:38:59+00:00",
+   "checked_at": "2026-10-19T16:46:26+00:00",
    "is_ewr": false,
    "alt": null,
    "bare_fare": false,
@@ -27,10 +27,6 @@
    "tier": null,
    "under_pct": -63,
    "history": [
-    [
-     "2026-09-19",
-     447
-    ],
     [
      "2026-09-20",
      429
@@ -146,171 +142,64 @@
     [
      "2026-10-18",
      367
+    ],
+    [
+     "2026-10-19",
+     367
     ]
    ],
    "change": 0,
-   "change_since": "2026-10-17",
-   "change_total": -80,
-   "first_date": "2026-09-19",
+   "change_since": "2026-10-18",
+   "change_total": -62,
+   "first_date": "2026-09-20",
    "lowest_seen": 367,
    "lowest_seen_on": "2026-10-17",
-   "days_tracked": 31,
-   "days_out": 32
+   "days_tracked": 32,
+   "days_out": 31
   },
   {
-   "id": "toronto-nov",
-   "name": "Toronto",
-   "arrival_id": "YYZ,YTZ",
-   "start": "2026-11-27",
-   "end": "2026-11-30",
-   "price": 282,
-   "airport": "LGA",
-   "arrives": "YYZ",
+   "id": "mexico-city-dec",
+   "name": "Mexico City",
+   "arrival_id": "MEX",
+   "start": "2026-12-03",
+   "end": "2026-12-06",
+   "price": 558,
+   "airport": "JFK",
+   "arrives": "MEX",
    "ewr_saving": null,
    "airline": "American",
-   "stops": 0,
-   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTExLTI3KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNZWVpyBwgBEgNZVFoaOxIKMjAyNi0xMS0zMCgBagcIARIDWVlaagcIARIDWVRacgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-18T13:39:05+00:00",
+   "stops": 1,
+   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTEyLTAzKAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNNRVgaMhIKMjAyNi0xMi0wNigBagcIARIDTUVYcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
+   "checked_at": "2026-10-19T16:46:36+00:00",
    "is_ewr": false,
-   "alt": null,
+   "alt": {
+    "price": 553,
+    "airport": "JFK",
+    "stops": 1,
+    "minutes": 995
+   },
    "bare_fare": false,
    "level": "typical",
    "typical": [
-    250,
-    430
+    420,
+    840
    ],
    "tier": null,
-   "under_pct": -13,
+   "under_pct": -33,
    "history": [
     [
-     "2026-09-18",
-     314
-    ],
-    [
-     "2026-09-19",
-     314
-    ],
-    [
-     "2026-09-20",
-     314
-    ],
-    [
-     "2026-09-21",
-     314
-    ],
-    [
-     "2026-09-22",
-     314
-    ],
-    [
-     "2026-09-23",
-     334
-    ],
-    [
-     "2026-09-24",
-     341
-    ],
-    [
-     "2026-09-25",
-     341
-    ],
-    [
-     "2026-09-26",
-     341
-    ],
-    [
-     "2026-09-27",
-     341
-    ],
-    [
-     "2026-09-28",
-     334
-    ],
-    [
-     "2026-09-29",
-     333
-    ],
-    [
-     "2026-09-30",
-     371
-    ],
-    [
-     "2026-10-01",
-     392
-    ],
-    [
-     "2026-10-02",
-     359
-    ],
-    [
-     "2026-10-03",
-     358
-    ],
-    [
-     "2026-10-04",
-     358
-    ],
-    [
-     "2026-10-05",
-     359
-    ],
-    [
-     "2026-10-06",
-     334
-    ],
-    [
-     "2026-10-07",
-     254
-    ],
-    [
-     "2026-10-08",
-     254
-    ],
-    [
-     "2026-10-09",
-     254
-    ],
-    [
-     "2026-10-10",
-     264
-    ],
-    [
-     "2026-10-11",
-     264
-    ],
-    [
-     "2026-10-12",
-     264
-    ],
-    [
-     "2026-10-13",
-     282
-    ],
-    [
-     "2026-10-14",
-     281
-    ],
-    [
-     "2026-10-15",
-     282
-    ],
-    [
-     "2026-10-16",
-     282
-    ],
-    [
-     "2026-10-18",
-     282
+     "2026-10-19",
+     558
     ]
    ],
-   "change": 0,
-   "change_since": "2026-10-16",
-   "change_total": -32,
-   "first_date": "2026-09-18",
-   "lowest_seen": 254,
-   "lowest_seen_on": "2026-10-07",
-   "days_tracked": 30,
-   "days_out": 40
+   "change": null,
+   "change_since": null,
+   "change_total": null,
+   "first_date": "2026-10-19",
+   "lowest_seen": 558,
+   "lowest_seen_on": "2026-10-19",
+   "days_tracked": 1,
+   "days_out": 45
   },
   {
    "id": "manila-mar",
@@ -319,14 +208,14 @@
    "start": "2027-03-26",
    "end": "2027-04-10",
    "every": 2,
-   "price": 1007,
+   "price": 1024,
    "airport": "JFK",
    "arrives": "MNL",
    "ewr_saving": null,
    "airline": "Korean Air",
    "stops": 1,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI3LTAzLTI2KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNNTkwaMhIKMjAyNy0wNC0xMCgBagcIARIDTU5McgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-15T14:30:57+00:00",
+   "checked_at": "2026-10-19T16:46:42+00:00",
    "is_ewr": false,
    "alt": null,
    "bare_fare": false,
@@ -336,7 +225,7 @@
     1400
    ],
    "tier": null,
-   "under_pct": -5,
+   "under_pct": -7,
    "history": [
     [
      "2026-09-18",
@@ -397,19 +286,209 @@
     [
      "2026-10-15",
      1007
+    ],
+    [
+     "2026-10-19",
+     1024
     ]
    ],
-   "change": 12,
-   "change_since": "2026-10-13",
-   "change_total": 62,
+   "change": 17,
+   "change_since": "2026-10-15",
+   "change_total": 79,
    "first_date": "2026-09-18",
    "lowest_seen": 874,
    "lowest_seen_on": "2026-10-03",
-   "days_tracked": 15,
-   "days_out": 159
+   "days_tracked": 16,
+   "days_out": 158
   }
  ],
  "deals": [
+  {
+   "tier": "rare",
+   "origin": "LGA",
+   "is_ewr": false,
+   "ewr_saving": null,
+   "dest": "VPS",
+   "name": "Destin",
+   "country": "United States",
+   "domestic": true,
+   "price": 245,
+   "typical": [
+    300,
+    455
+   ],
+   "under_pct": 18,
+   "position": -0.35,
+   "z": -6.2,
+   "start": "2027-01-21",
+   "end": "2027-01-25",
+   "trip": "weekend",
+   "airline": "Southwest",
+   "stops": 1,
+   "bare_fare": false,
+   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhopEgoyMDI3LTAxLTIxKAFqBwgBEgNKRktqBwgBEgNMR0FyBwgBEgNWUFMaKRIKMjAyNy0wMS0yNSgBagcIARIDVlBTcgcIARIDSkZLcgcIARIDTEdBQAFIAXABmAEB&tfu=EgIIAQ",
+   "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS8ud8QunDkeAboOWQAb8T697nEN7opYlt4q78bfnooF9vvTYzzuhGh-FSxC0uNQNArgzehgG_5DxeqGv_TJpbtwGAHxcmLy-dKVTbPqg",
+   "verified_at": "2026-10-19T16:47:03+00:00",
+   "history": [
+    [
+     "2026-09-18",
+     355
+    ],
+    [
+     "2026-09-19",
+     355
+    ],
+    [
+     "2026-09-21",
+     355
+    ],
+    [
+     "2026-09-23",
+     355
+    ],
+    [
+     "2026-09-25",
+     355
+    ],
+    [
+     "2026-09-27",
+     355
+    ],
+    [
+     "2026-09-29",
+     355
+    ],
+    [
+     "2026-10-01",
+     355
+    ],
+    [
+     "2026-10-03",
+     355
+    ],
+    [
+     "2026-10-05",
+     232
+    ],
+    [
+     "2026-10-07",
+     231
+    ],
+    [
+     "2026-10-09",
+     355
+    ],
+    [
+     "2026-10-11",
+     355
+    ],
+    [
+     "2026-10-13",
+     355
+    ],
+    [
+     "2026-10-19",
+     245
+    ]
+   ],
+   "change": -110,
+   "change_since": "2026-10-13",
+   "change_total": -110,
+   "first_date": "2026-09-18"
+  },
+  {
+   "tier": "rare",
+   "origin": "LGA",
+   "is_ewr": false,
+   "ewr_saving": null,
+   "dest": "PSP",
+   "name": "Palm Springs",
+   "country": "United States",
+   "domestic": true,
+   "price": 257,
+   "typical": [
+    300,
+    590
+   ],
+   "under_pct": 14,
+   "position": -0.15,
+   "z": -6.0,
+   "start": "2027-01-07",
+   "end": "2027-01-11",
+   "trip": "weekend",
+   "airline": "Delta",
+   "stops": 1,
+   "bare_fare": false,
+   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhopEgoyMDI3LTAxLTA3KAFqBwgBEgNKRktqBwgBEgNMR0FyBwgBEgNQU1AaKRIKMjAyNy0wMS0xMSgBagcIARIDUFNQcgcIARIDSkZLcgcIARIDTEdBQAFIAXABmAEB&tfu=EgIIAQ",
+   "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSZLfw77kgP57dLOlr76GJKYRmeIF5hTxOmAmw9ov85f6blQYZjITWwclDPFIgetF8ddW9I1WG8xGEwuFHNmid0Gty7veh90LJoT6EeEg",
+   "verified_at": "2026-10-19T16:47:10+00:00",
+   "history": [
+    [
+     "2026-09-18",
+     367
+    ],
+    [
+     "2026-09-19",
+     367
+    ],
+    [
+     "2026-09-21",
+     367
+    ],
+    [
+     "2026-09-23",
+     367
+    ],
+    [
+     "2026-09-25",
+     367
+    ],
+    [
+     "2026-09-27",
+     367
+    ],
+    [
+     "2026-09-29",
+     367
+    ],
+    [
+     "2026-10-01",
+     367
+    ],
+    [
+     "2026-10-03",
+     367
+    ],
+    [
+     "2026-10-05",
+     257
+    ],
+    [
+     "2026-10-07",
+     239
+    ],
+    [
+     "2026-10-09",
+     367
+    ],
+    [
+     "2026-10-11",
+     367
+    ],
+    [
+     "2026-10-13",
+     367
+    ],
+    [
+     "2026-10-19",
+     257
+    ]
+   ],
+   "change": -110,
+   "change_since": "2026-10-13",
+   "change_total": -110,
+   "first_date": "2026-09-18"
+  },
   {
    "tier": "good",
    "origin": "LGA",
