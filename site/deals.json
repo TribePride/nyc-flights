@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-19T16:47:10+00:00",
+ "updated_at": "2026-10-19T16:49:02+00:00",
  "routes_tracked": 520,
  "watches": [
   {
@@ -170,7 +170,7 @@
    "airline": "American",
    "stops": 1,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTEyLTAzKAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNNRVgaMhIKMjAyNi0xMi0wNigBagcIARIDTUVYcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-10-19T16:46:36+00:00",
+   "checked_at": "2026-10-19T16:49:02+00:00",
    "is_ewr": false,
    "alt": {
     "price": 553,
