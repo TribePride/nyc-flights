@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-19T16:49:02+00:00",
+ "updated_at": "2026-10-19T18:17:02+00:00",
  "routes_tracked": 520,
  "watches": [
   {
@@ -200,6 +200,45 @@
    "lowest_seen_on": "2026-10-19",
    "days_tracked": 1,
    "days_out": 45
+  },
+  {
+   "id": "costa-rica-dec",
+   "name": "Costa Rica",
+   "arrival_id": "LIR,SJO",
+   "start": "2026-12-10",
+   "end": "2026-12-14",
+   "price": 351,
+   "airport": "LGA",
+   "arrives": "LIR",
+   "ewr_saving": null,
+   "airline": "Air Canada",
+   "stops": 1,
+   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTEyLTEwKAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNMSVJyBwgBEgNTSk8aOxIKMjAyNi0xMi0xNCgBagcIARIDTElSagcIARIDU0pPcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
+   "checked_at": "2026-10-19T18:17:02+00:00",
+   "is_ewr": false,
+   "alt": null,
+   "bare_fare": false,
+   "level": "typical",
+   "typical": [
+    250,
+    600
+   ],
+   "tier": null,
+   "under_pct": -40,
+   "history": [
+    [
+     "2026-10-19",
+     351
+    ]
+   ],
+   "change": null,
+   "change_since": null,
+   "change_total": null,
+   "first_date": "2026-10-19",
+   "lowest_seen": 351,
+   "lowest_seen_on": "2026-10-19",
+   "days_tracked": 1,
+   "days_out": 52
   },
   {
    "id": "manila-mar",
