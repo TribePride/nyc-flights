@@ -14,7 +14,7 @@ on:
         type: string
         default: ""
       find:
-        description: "Find cheapest flexible dates: '<area kgmid> --month <1-12>' (one search per trip length, 3 by default), e.g. '/m/01p1v --month 12' for Costa Rica in December."
+        description: "Find cheapest flexible dates: '<area kgmid> --month <1-12>' (one search per trip length, 3 by default), e.g. '/m/01p8s --month 12' for Costa Rica in December."
         type: string
         default: ""
 

@@ -1,7 +1,7 @@
 """Find the cheapest flexible dates to a country or region, to pick dates for a watch.
 
-    python -m collector.find /m/01p1v --month 12        # Costa Rica in December: cheapest weekend, week, two weeks
-    python -m collector.find /m/01p1v --month 12 --durations 1,2
+    python -m collector.find /m/01p8s --month 12        # Costa Rica in December: cheapest weekend, week, two weeks
+    python -m collector.find /m/01p8s --month 12 --durations 1,2
 
 One SerpApi explore call per trip length, from JFK, LGA and EWR together. Prints the cheapest dates per
 airport and spends nothing on verification; add the dates you like to watchlist.json and check them with
