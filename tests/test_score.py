@@ -229,16 +229,17 @@ class Watches(unittest.TestCase):
 
     def test_watches_are_in_departure_order(self):
         self.assertEqual([w["id"] for w in plan.active_watches(TODAY)],
-                         ["chicago-oct", "phoenix-nov", "mexico-city-dec", "manila-mar"])
+                         ["chicago-oct", "phoenix-nov", "mexico-city-dec", "costa-rica-dec", "manila-mar"])
 
     def test_every_n_days_watch_skips_off_days(self):
         due = [[w["id"] for w in plan.due_watches(TODAY + timedelta(days=d))] for d in range(2)]
-        self.assertEqual(sorted(len(d) for d in due), [3, 4])
+        active = len(plan.active_watches(TODAY))   # Manila is the only every-other-day watch
+        self.assertEqual(sorted(len(d) for d in due), [active - 1, active])
         self.assertTrue(all("chicago-oct" in d for d in due))
 
     def test_unchecked_watch_is_pending_and_departed_watch_disappears(self):
         self.assertTrue(all(b.get("pending") for b in run.build_watches([], TODAY)))
-        self.assertEqual([b["id"] for b in run.build_watches([], date(2026, 11, 20))], ["mexico-city-dec", "manila-mar"])
+        self.assertEqual([b["id"] for b in run.build_watches([], date(2026, 11, 20))], ["mexico-city-dec", "costa-rica-dec", "manila-mar"])
 
 
 if __name__ == "__main__":
