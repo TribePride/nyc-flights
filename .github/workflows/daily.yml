@@ -9,6 +9,10 @@ on:
         description: "Collect prices (spends up to 8 SerpApi searches). Untick to only redeploy the site."
         type: boolean
         default: true
+      watch:
+        description: "Only check this watchlist trip id (one SerpApi search), e.g. mexico-city-dec. Leave blank for the full run."
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -34,7 +38,11 @@ jobs:
           python-version: "3.12"
       - run: python -m unittest -q
       - run: python -m collector.run
-        if: github.event_name == 'schedule' || inputs.collect
+        if: (github.event_name == 'schedule' || inputs.collect) && inputs.watch == ''
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+      - run: python -m collector.run --watches-only --only "${{ inputs.watch }}"
+        if: inputs.watch != ''
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
       - name: Commit data
