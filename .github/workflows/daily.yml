@@ -13,6 +13,10 @@ on:
         description: "Only check this watchlist trip id (one SerpApi search), e.g. mexico-city-dec. Leave blank for the full run."
         type: string
         default: ""
+      find:
+        description: "Find cheapest flexible dates: '<area kgmid> --month <1-12>' (one search per trip length, 3 by default), e.g. '/m/01p1v --month 12' for Costa Rica in December."
+        type: string
+        default: ""
 
 permissions:
   contents: write
@@ -38,11 +42,15 @@ jobs:
           python-version: "3.12"
       - run: python -m unittest -q
       - run: python -m collector.run
-        if: (github.event_name == 'schedule' || inputs.collect) && inputs.watch == ''
+        if: (github.event_name == 'schedule' || inputs.collect) && inputs.watch == '' && inputs.find == ''
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
       - run: python -m collector.run --watches-only --only "${{ inputs.watch }}"
         if: inputs.watch != ''
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+      - run: python -m collector.find ${{ inputs.find }}
+        if: inputs.find != ''
         env:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
       - name: Commit data
