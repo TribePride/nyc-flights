@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-20T14:33:31+00:00",
+ "updated_at": "2026-10-20T14:55:46+00:00",
  "routes_tracked": 520,
  "watches": [
   {
@@ -242,6 +242,50 @@
    "lowest_seen_on": "2026-10-19",
    "days_tracked": 2,
    "days_out": 51
+  },
+  {
+   "id": "korea-dec",
+   "name": "Seoul",
+   "arrival_id": "ICN",
+   "start": "2026-12-21",
+   "end": "2026-12-31",
+   "price": 2259,
+   "airport": "JFK",
+   "arrives": "ICN",
+   "ewr_saving": null,
+   "airline": "Turkish Airlines",
+   "stops": 1,
+   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTEyLTIxKAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNJQ04aMhIKMjAyNi0xMi0zMSgBagcIARIDSUNOcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
+   "checked_at": "2026-10-20T14:55:46+00:00",
+   "is_ewr": false,
+   "alt": {
+    "price": 2189,
+    "airport": "JFK",
+    "stops": 1,
+    "minutes": 1925
+   },
+   "bare_fare": false,
+   "level": "typical",
+   "typical": [
+    1100,
+    2300
+   ],
+   "tier": null,
+   "under_pct": -105,
+   "history": [
+    [
+     "2026-10-20",
+     2259
+    ]
+   ],
+   "change": null,
+   "change_since": null,
+   "change_total": null,
+   "first_date": "2026-10-20",
+   "lowest_seen": 2259,
+   "lowest_seen_on": "2026-10-20",
+   "days_tracked": 1,
+   "days_out": 62
   },
   {
    "id": "manila-mar",
