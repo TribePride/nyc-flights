@@ -32,13 +32,15 @@ def searches_left():
     return int(_get("/account", {}).get("total_searches_left", 0))
 
 
-def explore(departure_id, travel_duration, month, arrival_area_id=None, stops=2):
+def explore(departure_id, travel_duration, month, arrival_area_id=None, stops=2, one_way=False):
     """Cheapest round-trip destinations from departure_id (comma-separated airports allowed).
 
     travel_duration: 1 weekend, 2 one week, 3 two weeks. month: 0 = any time in the next 6 months.
     stops: 0 any, 1 nonstop, 2 one or fewer. Without arrival_area_id Google only returns North America.
     """
     area = {"arrival_area_id": arrival_area_id} if arrival_area_id else {}
+    if one_way:
+        area["type"] = 2
     return _get("/search", {
         **area,
         "engine": "google_travel_explore",
@@ -52,15 +54,15 @@ def explore(departure_id, travel_duration, month, arrival_area_id=None, stops=2)
     })
 
 
-def flights(departure_id, arrival_id, outbound_date, return_date, stops=2):
-    """Round-trip search for fixed dates. Response carries price_insights when Google has it."""
+def flights(departure_id, arrival_id, outbound_date, return_date=None, stops=2):
+    """Fixed-date search: round trip, or one way when return_date is None. Carries price_insights when Google has it."""
+    trip = {"return_date": return_date, "type": 1} if return_date else {"type": 2}
     return _get("/search", {
         "engine": "google_flights",
         "departure_id": departure_id,
         "arrival_id": arrival_id,
         "outbound_date": outbound_date,
-        "return_date": return_date,
-        "type": 1,
+        **trip,
         "stops": stops,
         "currency": "USD",
         "hl": "en",
