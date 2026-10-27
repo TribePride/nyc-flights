@@ -167,7 +167,7 @@ function card(d) {
 const LEVEL = { low: "Low for these dates", typical: "Typical for these dates", high: "High for these dates" };
 
 function watchCard(w) {
-  const dates = `${fmtDate(w.start)} → ${fmtDate(w.end)}`;
+  const dates = w.end ? `${fmtDate(w.start)} → ${fmtDate(w.end)}` : `${fmtDate(w.start)} · one way`;
   if (w.pending) return `<div class="deal mention pending"><div class="top"><div class="place">${esc(w.name)}</div><div class="price">—</div></div>
     <div class="tags"><span class="tag tier">first check tomorrow</span></div><div class="meta">${dates}</div></div>`;
   const stops = w.stops === 0 ? '<span class="nonstop">Nonstop</span>' : w.stops === 1 ? "1 stop" : `${w.stops} stops`;

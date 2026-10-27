@@ -4,5 +4,7 @@
   {"id": "manila-mar", "name": "Manila", "arrival_id": "MNL", "start": "2027-03-26", "end": "2027-04-10", "every": 2},
   {"id": "mexico-city-dec", "name": "Mexico City", "arrival_id": "MEX", "start": "2026-12-03", "end": "2026-12-06"},
   {"id": "costa-rica-dec", "name": "Costa Rica", "arrival_id": "LIR,SJO", "start": "2026-12-10", "end": "2026-12-14"},
-  {"id": "korea-dec", "name": "Seoul", "arrival_id": "ICN", "start": "2026-12-21", "end": "2026-12-31"}
+  {"id": "korea-dec", "name": "Seoul", "arrival_id": "ICN", "start": "2026-12-21", "end": "2026-12-31"},
+  {"id": "taiwan-dec", "name": "Taipei (one way)", "arrival_id": "TPE", "start": "2026-12-05", "every": 2, "offset": 1},
+  {"id": "japan-dec", "name": "Japan (one way)", "arrival_id": "NRT,HND,KIX", "start": "2026-12-08", "every": 2, "offset": 1}
 ]

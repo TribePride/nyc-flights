@@ -390,7 +390,7 @@ def main(argv):
     checked = []
     for w in watches:
         try:
-            row = parse_watch(serp.flights(plan.ALL_NYC, w["arrival_id"], w["start"], w["end"]), w, today)
+            row = parse_watch(serp.flights(plan.ALL_NYC, w["arrival_id"], w["start"], w.get("end")), w, today)  # no end: one way
         except serp.SerpError as e:
             print(f"watch failed {w['id']}: {e}", file=sys.stderr)
             continue

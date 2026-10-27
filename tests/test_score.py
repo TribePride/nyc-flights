@@ -229,17 +229,33 @@ class Watches(unittest.TestCase):
 
     def test_watches_are_in_departure_order(self):
         self.assertEqual([w["id"] for w in plan.active_watches(TODAY)],
-                         ["chicago-oct", "phoenix-nov", "mexico-city-dec", "costa-rica-dec", "korea-dec", "manila-mar"])
+                         ["chicago-oct", "phoenix-nov", "mexico-city-dec", "taiwan-dec", "japan-dec", "costa-rica-dec",
+                          "korea-dec", "manila-mar"])
 
     def test_every_n_days_watch_skips_off_days(self):
         due = [[w["id"] for w in plan.due_watches(TODAY + timedelta(days=d))] for d in range(2)]
-        active = len(plan.active_watches(TODAY))   # Manila is the only every-other-day watch
-        self.assertEqual(sorted(len(d) for d in due), [active - 1, active])
+        active = len(plan.active_watches(TODAY))   # Manila on even days; Taipei and Japan (offset 1) on odd days
+        self.assertEqual(sorted(len(d) for d in due), [active - 2, active - 1])
         self.assertTrue(all("chicago-oct" in d for d in due))
+
+    def test_offset_puts_every_other_day_watches_on_alternate_days(self):
+        import tempfile
+        from unittest import mock
+        trips = [{"id": "a", "arrival_id": "NRT,HND", "start": "2026-12-08", "every": 2},
+                 {"id": "b", "arrival_id": "TPE", "start": "2026-12-08", "every": 2, "offset": 1},
+                 {"id": "c", "arrival_id": "ICN", "start": "2026-12-21", "end": "2026-12-31"}]
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as fh:
+            json.dump(trips, fh)
+        with mock.patch.object(plan, "WATCHLIST", Path(fh.name)):
+            due = [{w["id"] for w in plan.due_watches(TODAY + timedelta(days=d))} for d in range(2)]
+            self.assertEqual(sorted(due, key=sorted), [{"a", "c"}, {"b", "c"}])
+            # One-way watches have no end and still sort by departure.
+            self.assertEqual([w["id"] for w in plan.active_watches(TODAY)], ["a", "b", "c"])
+            self.assertFalse(any("end" in b for b in run.build_watches([], TODAY) if b["id"] in "ab"))
 
     def test_unchecked_watch_is_pending_and_departed_watch_disappears(self):
         self.assertTrue(all(b.get("pending") for b in run.build_watches([], TODAY)))
-        self.assertEqual([b["id"] for b in run.build_watches([], date(2026, 11, 20))], ["mexico-city-dec", "costa-rica-dec", "korea-dec", "manila-mar"])
+        self.assertEqual([b["id"] for b in run.build_watches([], date(2026, 11, 20))], ["mexico-city-dec", "taiwan-dec", "japan-dec", "costa-rica-dec", "korea-dec", "manila-mar"])
 
 
 if __name__ == "__main__":

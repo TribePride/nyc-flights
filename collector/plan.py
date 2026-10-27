@@ -48,13 +48,17 @@ def active_watches(today=None):
     if not WATCHLIST.exists():
         return []
     watches = [w for w in json.loads(WATCHLIST.read_text()) if w["start"] > today.isoformat()]
-    return sorted(watches, key=lambda w: (w["start"], w["end"]))  # soonest departure first, whatever the file order
+    return sorted(watches, key=lambda w: (w["start"], w.get("end", "")))  # soonest departure first, whatever the file order
 
 
 def due_watches(today=None):
-    """Active watches to check today. A watch with "every": N is only checked every Nth day, to save searches."""
+    """Active watches to check today.
+
+    A watch with "every": N is only checked every Nth day, to save searches. "offset": K shifts which days
+    those are, so two every-other-day watches with offsets 0 and 1 take turns instead of landing on the same day.
+    """
     today = today or date.today()
-    return [w for w in active_watches(today) if today.toordinal() % w.get("every", 1) == 0]
+    return [w for w in active_watches(today) if (today.toordinal() + w.get("offset", 0)) % w.get("every", 1) == 0]
 
 
 def fit_budget(watches, queries, searches_left):
