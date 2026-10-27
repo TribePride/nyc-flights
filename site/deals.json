@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-27T15:36:26+00:00",
+ "updated_at": "2026-10-27T16:19:04+00:00",
  "routes_tracked": 534,
  "watches": [
   {
@@ -232,6 +232,55 @@
    "lowest_seen_on": "2026-10-19",
    "days_tracked": 9,
    "days_out": 37
+  },
+  {
+   "id": "taiwan-dec",
+   "name": "Taipei (one way)",
+   "arrival_id": "TPE",
+   "start": "2026-12-05",
+   "every": 2,
+   "offset": 1,
+   "price": 559,
+   "airport": "JFK",
+   "arrives": "TPE",
+   "ewr_saving": null,
+   "airline": "Delta",
+   "stops": 1,
+   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTEyLTA1KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNUUEVAAUgBcAGYAQI&tfu=EgIIAQ",
+   "checked_at": "2026-10-27T16:19:04+00:00",
+   "is_ewr": false,
+   "alt": null,
+   "bare_fare": false,
+   "level": "typical",
+   "typical": [
+    480,
+    1450
+   ],
+   "tier": null,
+   "under_pct": -16,
+   "history": [
+    [
+     "2026-10-27",
+     559
+    ]
+   ],
+   "change": null,
+   "change_since": null,
+   "change_total": null,
+   "first_date": "2026-10-27",
+   "lowest_seen": 559,
+   "lowest_seen_on": "2026-10-27",
+   "days_tracked": 1,
+   "days_out": 39
+  },
+  {
+   "id": "japan-dec",
+   "name": "Japan (one way)",
+   "arrival_id": "NRT,HND,KIX",
+   "start": "2026-12-08",
+   "every": 2,
+   "offset": 1,
+   "pending": true
   },
   {
    "id": "costa-rica-dec",
