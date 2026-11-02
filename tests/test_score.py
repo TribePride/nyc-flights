@@ -229,8 +229,8 @@ class Watches(unittest.TestCase):
 
     def test_watches_are_in_departure_order(self):
         self.assertEqual([w["id"] for w in plan.active_watches(TODAY)],
-                         ["chicago-oct", "phoenix-nov", "mexico-city-dec", "taiwan-dec", "japan-dec", "costa-rica-dec",
-                          "korea-dec", "manila-mar"])
+                         ["chicago-oct", "las-vegas-nov", "los-angeles-nov", "phoenix-nov", "mexico-city-dec", "taiwan-dec",
+                          "japan-dec", "costa-rica-dec", "korea-dec", "manila-mar"])
 
     def test_every_n_days_watch_skips_off_days(self):
         due = [[w["id"] for w in plan.due_watches(TODAY + timedelta(days=d))] for d in range(2)]

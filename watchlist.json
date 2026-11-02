@@ -6,5 +6,7 @@
   {"id": "costa-rica-dec", "name": "Costa Rica", "arrival_id": "LIR,SJO", "start": "2026-12-10", "end": "2026-12-14"},
   {"id": "korea-dec", "name": "Seoul", "arrival_id": "ICN", "start": "2026-12-21", "end": "2026-12-31"},
   {"id": "taiwan-dec", "name": "Taipei (one way)", "arrival_id": "TPE", "start": "2026-12-05", "every": 2, "offset": 1},
-  {"id": "japan-dec", "name": "Japan (one way)", "arrival_id": "NRT,HND,KIX", "start": "2026-12-08", "every": 2, "offset": 1}
+  {"id": "japan-dec", "name": "Japan (one way)", "arrival_id": "NRT,HND,KIX", "start": "2026-12-08", "every": 2, "offset": 1},
+  {"id": "las-vegas-nov", "name": "Las Vegas", "arrival_id": "LAS", "start": "2026-11-10", "end": "2026-11-15"},
+  {"id": "los-angeles-nov", "name": "Los Angeles", "arrival_id": "LAX,BUR", "start": "2026-11-17", "end": "2026-11-21"}
 ]
