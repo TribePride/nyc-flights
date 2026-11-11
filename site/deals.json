@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-10T17:22:19+00:00",
+ "updated_at": "2026-11-11T02:20:39+00:00",
  "routes_tracked": 535,
  "watches": [
   {
@@ -71,7 +71,7 @@
    "lowest_seen": 394,
    "lowest_seen_on": "2026-11-02",
    "days_tracked": 9,
-   "days_out": 7
+   "days_out": 6
   },
   {
    "id": "phoenix-nov",
@@ -231,7 +231,7 @@
    "lowest_seen": 359,
    "lowest_seen_on": "2026-10-26",
    "days_tracked": 54,
-   "days_out": 9
+   "days_out": 8
   },
   {
    "id": "mexico-city-dec",
@@ -363,7 +363,7 @@
    "lowest_seen": 558,
    "lowest_seen_on": "2026-10-19",
    "days_tracked": 23,
-   "days_out": 23
+   "days_out": 22
   },
   {
    "id": "taiwan-dec",
@@ -436,7 +436,7 @@
    "lowest_seen": 559,
    "lowest_seen_on": "2026-10-27",
    "days_tracked": 8,
-   "days_out": 25
+   "days_out": 24
   },
   {
    "id": "japan-dec",
@@ -501,7 +501,7 @@
    "lowest_seen": 545,
    "lowest_seen_on": "2026-10-27",
    "days_tracked": 8,
-   "days_out": 28
+   "days_out": 27
   },
   {
    "id": "costa-rica-dec",
@@ -628,7 +628,78 @@
    "lowest_seen": 351,
    "lowest_seen_on": "2026-10-19",
    "days_tracked": 23,
-   "days_out": 30
+   "days_out": 29
+  },
+  {
+   "id": "las-vegas-dec-26",
+   "name": "Las Vegas",
+   "arrival_id": "LAS",
+   "start": "2026-12-18",
+   "end": "2026-12-26",
+   "every": 4,
+   "offset": 0,
+   "price": 413,
+   "airport": "JFK",
+   "arrives": "LAS",
+   "ewr_saving": null,
+   "airline": "Delta",
+   "stops": 0,
+   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTEyLTE4KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNMQVMaMhIKMjAyNi0xMi0yNigBagcIARIDTEFTcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
+   "checked_at": "2026-11-11T02:20:39+00:00",
+   "is_ewr": false,
+   "alt": null,
+   "bare_fare": false,
+   "level": "typical",
+   "typical": [
+    190,
+    460
+   ],
+   "tier": null,
+   "under_pct": -117,
+   "history": [
+    [
+     "2026-11-11",
+     413
+    ]
+   ],
+   "change": null,
+   "change_since": null,
+   "change_total": null,
+   "first_date": "2026-11-11",
+   "lowest_seen": 413,
+   "lowest_seen_on": "2026-11-11",
+   "days_tracked": 1,
+   "days_out": 37
+  },
+  {
+   "id": "las-vegas-dec-27",
+   "name": "Las Vegas",
+   "arrival_id": "LAS",
+   "start": "2026-12-18",
+   "end": "2026-12-27",
+   "every": 4,
+   "offset": 1,
+   "pending": true
+  },
+  {
+   "id": "las-vegas-dec-28",
+   "name": "Las Vegas",
+   "arrival_id": "LAS",
+   "start": "2026-12-18",
+   "end": "2026-12-28",
+   "every": 4,
+   "offset": 2,
+   "pending": true
+  },
+  {
+   "id": "las-vegas-dec-29",
+   "name": "Las Vegas",
+   "arrival_id": "LAS",
+   "start": "2026-12-18",
+   "end": "2026-12-29",
+   "every": 4,
+   "offset": 3,
+   "pending": true
   },
   {
    "id": "korea-dec",
@@ -756,7 +827,7 @@
    "lowest_seen": 2175,
    "lowest_seen_on": "2026-10-27",
    "days_tracked": 22,
-   "days_out": 41
+   "days_out": 40
   },
   {
    "id": "manila-mar",
@@ -900,7 +971,7 @@
    "lowest_seen": 874,
    "lowest_seen_on": "2026-10-03",
    "days_tracked": 27,
-   "days_out": 136
+   "days_out": 135
   }
  ],
  "deals": [
