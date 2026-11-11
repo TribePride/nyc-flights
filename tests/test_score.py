@@ -2,6 +2,7 @@ import json
 import unittest
 from datetime import date, timedelta
 from pathlib import Path
+from unittest import mock
 
 from collector import plan, run, score
 
@@ -199,6 +200,12 @@ class Watches(unittest.TestCase):
     WATCH = {"id": "chicago-oct", "name": "Chicago", "arrival_id": "ORD,MDW", "start": "2026-10-09", "end": "2026-10-12"}
     INSIGHTS = {"lowest_price": 150, "price_level": "typical", "typical_price_range": [140, 260]}
 
+    def setUp(self):
+        # A frozen copy: the real watchlist.json loses trips as they depart.
+        patch = mock.patch.object(plan, "WATCHLIST", Path(__file__).parent / "fixtures" / "watchlist.json")
+        patch.start()
+        self.addCleanup(patch.stop)
+
     def body(self, *options):
         return {"best_flights": list(options), "price_insights": self.INSIGHTS,
                 "search_metadata": {"google_flights_url": "https://x"}}
@@ -240,7 +247,6 @@ class Watches(unittest.TestCase):
 
     def test_offset_puts_every_other_day_watches_on_alternate_days(self):
         import tempfile
-        from unittest import mock
         trips = [{"id": "a", "arrival_id": "NRT,HND", "start": "2026-12-08", "every": 2},
                  {"id": "b", "arrival_id": "TPE", "start": "2026-12-08", "every": 2, "offset": 1},
                  {"id": "c", "arrival_id": "ICN", "start": "2026-12-21", "end": "2026-12-31"}]
@@ -256,6 +262,19 @@ class Watches(unittest.TestCase):
     def test_unchecked_watch_is_pending_and_departed_watch_disappears(self):
         self.assertTrue(all(b.get("pending") for b in run.build_watches([], TODAY)))
         self.assertEqual([b["id"] for b in run.build_watches([], date(2026, 11, 20))], ["mexico-city-dec", "taiwan-dec", "japan-dec", "costa-rica-dec", "korea-dec", "manila-mar"])
+
+    def test_departed_watches_are_deleted_from_the_file(self):
+        import tempfile
+        trips = [{"id": "gone", "arrival_id": "ORD", "start": "2026-09-10", "end": "2026-09-30"},
+                 {"id": "today", "arrival_id": "ORD", "start": TODAY.isoformat()},
+                 {"id": "later", "name": "Chicago", "arrival_id": "ORD,MDW", "start": "2026-10-09", "every": 2}]
+        with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as fh:
+            json.dump(trips, fh)
+        with mock.patch.object(plan, "WATCHLIST", Path(fh.name)):
+            self.assertEqual(plan.prune_watchlist(TODAY), ["gone", "today"])
+            self.assertEqual(json.loads(Path(fh.name).read_text()), trips[2:])
+            self.assertEqual(Path(fh.name).read_text().count("\n"), 3)   # still one trip per line
+            self.assertEqual(plan.prune_watchlist(TODAY), [])
 
 
 if __name__ == "__main__":

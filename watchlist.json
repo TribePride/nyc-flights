@@ -1,5 +1,4 @@
 [
-  {"id": "chicago-oct", "name": "Chicago", "arrival_id": "ORD,MDW", "start": "2026-10-09", "end": "2026-10-12"},
   {"id": "phoenix-nov", "name": "Phoenix", "arrival_id": "PHX", "start": "2026-11-19", "end": "2026-11-22"},
   {"id": "manila-mar", "name": "Manila", "arrival_id": "MNL", "start": "2027-03-26", "end": "2027-04-10", "every": 2},
   {"id": "mexico-city-dec", "name": "Mexico City", "arrival_id": "MEX", "start": "2026-12-03", "end": "2026-12-06"},
@@ -7,6 +6,9 @@
   {"id": "korea-dec", "name": "Seoul", "arrival_id": "ICN", "start": "2026-12-21", "end": "2026-12-31"},
   {"id": "taiwan-dec", "name": "Taipei (one way)", "arrival_id": "TPE", "start": "2026-12-05", "every": 2, "offset": 1},
   {"id": "japan-dec", "name": "Japan (one way)", "arrival_id": "NRT,HND,KIX", "start": "2026-12-08", "every": 2, "offset": 1},
-  {"id": "las-vegas-nov", "name": "Las Vegas", "arrival_id": "LAS", "start": "2026-11-10", "end": "2026-11-15"},
-  {"id": "los-angeles-nov", "name": "Los Angeles", "arrival_id": "LAX,BUR", "start": "2026-11-17", "end": "2026-11-21"}
+  {"id": "los-angeles-nov", "name": "Los Angeles", "arrival_id": "LAX,BUR", "start": "2026-11-17", "end": "2026-11-21"},
+  {"id": "las-vegas-dec-26", "name": "Las Vegas", "arrival_id": "LAS", "start": "2026-12-18", "end": "2026-12-26", "every": 4, "offset": 0},
+  {"id": "las-vegas-dec-27", "name": "Las Vegas", "arrival_id": "LAS", "start": "2026-12-18", "end": "2026-12-27", "every": 4, "offset": 1},
+  {"id": "las-vegas-dec-28", "name": "Las Vegas", "arrival_id": "LAS", "start": "2026-12-18", "end": "2026-12-28", "every": 4, "offset": 2},
+  {"id": "las-vegas-dec-29", "name": "Las Vegas", "arrival_id": "LAS", "start": "2026-12-18", "end": "2026-12-29", "every": 4, "offset": 3}
 ]

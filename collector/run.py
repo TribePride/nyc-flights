@@ -380,6 +380,8 @@ def main(argv):
         return 0
 
     left = serp.searches_left()
+    for gone in plan.prune_watchlist(today):
+        print(f"watch {gone} has departed; removed from watchlist.json")
     if "--watches-only" in argv:
         queries = []
     watches, queries, slots = plan.fit_budget(watches, queries, left)

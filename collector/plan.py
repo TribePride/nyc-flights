@@ -42,13 +42,30 @@ def discovery_queries(today=None):
     ]
 
 
+def _departed(watch, today):
+    return watch["start"] <= today.isoformat()
+
+
 def active_watches(today=None):
     """Fixed-date trips from watchlist.json that haven't departed yet, in departure order."""
     today = today or date.today()
     if not WATCHLIST.exists():
         return []
-    watches = [w for w in json.loads(WATCHLIST.read_text()) if w["start"] > today.isoformat()]
+    watches = [w for w in json.loads(WATCHLIST.read_text()) if not _departed(w, today)]
     return sorted(watches, key=lambda w: (w["start"], w.get("end", "")))  # soonest departure first, whatever the file order
+
+
+def prune_watchlist(today=None):
+    """Delete departed trips from watchlist.json. Returns the ids removed; their price history stays in data/watches."""
+    today = today or date.today()
+    if not WATCHLIST.exists():
+        return []
+    watches = json.loads(WATCHLIST.read_text())
+    gone = [w["id"] for w in watches if _departed(w, today)]
+    if gone:
+        kept = [w for w in watches if not _departed(w, today)]
+        WATCHLIST.write_text("[\n" + ",\n".join("  " + json.dumps(w) for w in kept) + "\n]\n")  # one trip per line
+    return gone
 
 
 def due_watches(today=None):
