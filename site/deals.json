@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-11T02:20:39+00:00",
+ "updated_at": "2026-11-11T17:32:16+00:00",
  "routes_tracked": 535,
  "watches": [
   {
@@ -15,7 +15,7 @@
    "airline": "Frontier",
    "stops": 1,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTExLTE3KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNMQVhyBwgBEgNCVVIaOxIKMjAyNi0xMS0yMSgBagcIARIDTEFYagcIARIDQlVScgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-11-10T17:21:19+00:00",
+   "checked_at": "2026-11-11T17:31:58+00:00",
    "is_ewr": false,
    "alt": null,
    "bare_fare": true,
@@ -62,15 +62,19 @@
     [
      "2026-11-10",
      469
+    ],
+    [
+     "2026-11-11",
+     469
     ]
    ],
-   "change": -1,
-   "change_since": "2026-11-09",
+   "change": 0,
+   "change_since": "2026-11-10",
    "change_total": 75,
    "first_date": "2026-11-02",
    "lowest_seen": 394,
    "lowest_seen_on": "2026-11-02",
-   "days_tracked": 9,
+   "days_tracked": 10,
    "days_out": 6
   },
   {
@@ -79,17 +83,17 @@
    "arrival_id": "PHX",
    "start": "2026-11-19",
    "end": "2026-11-22",
-   "price": 689,
-   "airport": "JFK",
+   "price": 617,
+   "airport": "LGA",
    "arrives": "PHX",
    "ewr_saving": null,
-   "airline": "Alaska",
+   "airline": "United",
    "stops": 1,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTExLTE5KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNQSFgaMhIKMjAyNi0xMS0yMigBagcIARIDUEhYcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-11-10T17:21:28+00:00",
+   "checked_at": "2026-11-11T17:32:06+00:00",
    "is_ewr": false,
    "alt": {
-    "price": 570,
+    "price": 562,
     "airport": "EWR",
     "stops": 1,
     "minutes": 600
@@ -101,12 +105,8 @@
     560
    ],
    "tier": null,
-   "under_pct": -91,
+   "under_pct": -71,
    "history": [
-    [
-     "2026-10-12",
-     386
-    ],
     [
      "2026-10-13",
      383
@@ -222,15 +222,19 @@
     [
      "2026-11-10",
      689
+    ],
+    [
+     "2026-11-11",
+     617
     ]
    ],
-   "change": 115,
-   "change_since": "2026-11-09",
-   "change_total": 303,
-   "first_date": "2026-10-12",
+   "change": -72,
+   "change_since": "2026-11-10",
+   "change_total": 234,
+   "first_date": "2026-10-13",
    "lowest_seen": 359,
    "lowest_seen_on": "2026-10-26",
-   "days_tracked": 54,
+   "days_tracked": 55,
    "days_out": 8
   },
   {
@@ -239,21 +243,16 @@
    "arrival_id": "MEX",
    "start": "2026-12-03",
    "end": "2026-12-06",
-   "price": 578,
-   "airport": "LGA",
+   "price": 574,
+   "airport": "JFK",
    "arrives": "MEX",
    "ewr_saving": null,
-   "airline": "United",
+   "airline": "Delta",
    "stops": 1,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTEyLTAzKAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNNRVgaMhIKMjAyNi0xMi0wNigBagcIARIDTUVYcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-11-10T17:21:39+00:00",
+   "checked_at": "2026-11-11T17:32:14+00:00",
    "is_ewr": false,
-   "alt": {
-    "price": 562,
-    "airport": "JFK",
-    "stops": 1,
-    "minutes": 825
-   },
+   "alt": null,
    "bare_fare": false,
    "level": "typical",
    "typical": [
@@ -261,7 +260,7 @@
     950
    ],
    "tier": null,
-   "under_pct": -16,
+   "under_pct": -15,
    "history": [
     [
      "2026-10-19",
@@ -354,15 +353,19 @@
     [
      "2026-11-10",
      578
+    ],
+    [
+     "2026-11-11",
+     574
     ]
    ],
-   "change": 0,
-   "change_since": "2026-11-09",
-   "change_total": 20,
+   "change": -4,
+   "change_since": "2026-11-10",
+   "change_total": 16,
    "first_date": "2026-10-19",
    "lowest_seen": 558,
    "lowest_seen_on": "2026-10-19",
-   "days_tracked": 23,
+   "days_tracked": 24,
    "days_out": 22
   },
   {
@@ -372,14 +375,14 @@
    "start": "2026-12-05",
    "every": 2,
    "offset": 1,
-   "price": 727,
+   "price": 737,
    "airport": "JFK",
    "arrives": "TPE",
    "ewr_saving": null,
-   "airline": "Asiana Airlines",
+   "airline": "Turkish Airlines",
    "stops": 1,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTEyLTA1KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNUUEVAAUgBcAGYAQI&tfu=EgIIAQ",
-   "checked_at": "2026-11-09T20:15:29+00:00",
+   "checked_at": "2026-11-11T17:32:15+00:00",
    "is_ewr": false,
    "alt": {
     "price": 604,
@@ -394,7 +397,7 @@
     1450
    ],
    "tier": null,
-   "under_pct": -37,
+   "under_pct": -39,
    "history": [
     [
      "2026-10-27",
@@ -427,15 +430,19 @@
     [
      "2026-11-09",
      727
+    ],
+    [
+     "2026-11-11",
+     737
     ]
    ],
-   "change": 0,
-   "change_since": "2026-11-07",
-   "change_total": 168,
+   "change": 10,
+   "change_since": "2026-11-09",
+   "change_total": 178,
    "first_date": "2026-10-27",
    "lowest_seen": 559,
    "lowest_seen_on": "2026-10-27",
-   "days_tracked": 8,
+   "days_tracked": 9,
    "days_out": 24
   },
   {
@@ -445,14 +452,14 @@
    "start": "2026-12-08",
    "every": 2,
    "offset": 1,
-   "price": 717,
+   "price": 725,
    "airport": "JFK",
-   "arrives": "KIX",
+   "arrives": "NRT",
    "ewr_saving": null,
-   "airline": "Asiana Airlines",
+   "airline": "Turkish Airlines",
    "stops": 1,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhpEEgoyMDI2LTEyLTA4KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNOUlRyBwgBEgNITkRyBwgBEgNLSVhAAUgBcAGYAQI&tfu=EgIIAQ",
-   "checked_at": "2026-11-09T20:15:31+00:00",
+   "checked_at": "2026-11-11T17:32:16+00:00",
    "is_ewr": false,
    "alt": null,
    "bare_fare": false,
@@ -492,15 +499,19 @@
     [
      "2026-11-09",
      717
+    ],
+    [
+     "2026-11-11",
+     725
     ]
    ],
-   "change": -8,
-   "change_since": "2026-11-07",
-   "change_total": 172,
+   "change": 8,
+   "change_since": "2026-11-09",
+   "change_total": 180,
    "first_date": "2026-10-27",
    "lowest_seen": 545,
    "lowest_seen_on": "2026-10-27",
-   "days_tracked": 8,
+   "days_tracked": 9,
    "days_out": 27
   },
   {
