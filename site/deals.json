@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-13T17:24:53+00:00",
+ "updated_at": "2026-11-14T16:12:06+00:00",
  "routes_tracked": 535,
  "watches": [
   {
@@ -75,7 +75,7 @@
    "lowest_seen": 394,
    "lowest_seen_on": "2026-11-02",
    "days_tracked": 10,
-   "days_out": 4
+   "days_out": 3
   },
   {
    "id": "phoenix-nov",
@@ -235,7 +235,7 @@
    "lowest_seen": 359,
    "lowest_seen_on": "2026-10-26",
    "days_tracked": 55,
-   "days_out": 6
+   "days_out": 5
   },
   {
    "id": "mexico-city-dec",
@@ -366,7 +366,7 @@
    "lowest_seen": 558,
    "lowest_seen_on": "2026-10-19",
    "days_tracked": 24,
-   "days_out": 20
+   "days_out": 19
   },
   {
    "id": "taiwan-dec",
@@ -443,7 +443,7 @@
    "lowest_seen": 559,
    "lowest_seen_on": "2026-10-27",
    "days_tracked": 9,
-   "days_out": 22
+   "days_out": 21
   },
   {
    "id": "japan-dec",
@@ -512,7 +512,7 @@
    "lowest_seen": 545,
    "lowest_seen_on": "2026-10-27",
    "days_tracked": 9,
-   "days_out": 25
+   "days_out": 24
   },
   {
    "id": "costa-rica-dec",
@@ -639,7 +639,7 @@
    "lowest_seen": 351,
    "lowest_seen_on": "2026-10-19",
    "days_tracked": 23,
-   "days_out": 27
+   "days_out": 26
   },
   {
    "id": "las-vegas-dec-26",
@@ -680,7 +680,7 @@
    "lowest_seen": 413,
    "lowest_seen_on": "2026-11-11",
    "days_tracked": 1,
-   "days_out": 35
+   "days_out": 34
   },
   {
    "id": "las-vegas-dec-27",
@@ -838,7 +838,7 @@
    "lowest_seen": 2175,
    "lowest_seen_on": "2026-10-27",
    "days_tracked": 22,
-   "days_out": 38
+   "days_out": 37
   },
   {
    "id": "manila-mar",
@@ -982,107 +982,9 @@
    "lowest_seen": 874,
    "lowest_seen_on": "2026-10-03",
    "days_tracked": 27,
-   "days_out": 133
+   "days_out": 132
   }
  ],
- "deals": [
-  {
-   "tier": "rare",
-   "origin": "LGA",
-   "is_ewr": false,
-   "ewr_saving": null,
-   "dest": "JAC",
-   "name": "Jackson",
-   "country": "United States",
-   "domestic": true,
-   "price": 399,
-   "typical": [
-    400,
-    1150
-   ],
-   "under_pct": 0,
-   "position": -0.0,
-   "z": -4.9,
-   "start": "2026-12-03",
-   "end": "2026-12-06",
-   "trip": "weekend",
-   "airline": "United",
-   "stops": 1,
-   "bare_fare": false,
-   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhopEgoyMDI2LTEyLTAzKAFqBwgBEgNKRktqBwgBEgNMR0FyBwgBEgNKQUMaKRIKMjAyNi0xMi0wNigBagcIARIDSkFDcgcIARIDSkZLcgcIARIDTEdBQAFIAXABmAEB&tfu=EgIIAQ",
-   "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJUhLdrQjl29BHrJofL_QXZ2gxgFXIYHU8KSRChpIoZeal07dpKsavSmnG_-78TXV1O-seyiSM4c-J5K2UTF7kMIAJSaqbnM44QVYEEg",
-   "verified_at": "2026-11-10T17:22:19+00:00",
-   "history": [
-    [
-     "2026-09-19",
-     543
-    ],
-    [
-     "2026-10-07",
-     543
-    ],
-    [
-     "2026-10-09",
-     543
-    ],
-    [
-     "2026-10-13",
-     543
-    ],
-    [
-     "2026-10-19",
-     563
-    ],
-    [
-     "2026-10-21",
-     563
-    ],
-    [
-     "2026-10-23",
-     563
-    ],
-    [
-     "2026-10-25",
-     563
-    ],
-    [
-     "2026-10-27",
-     559
-    ],
-    [
-     "2026-10-29",
-     559
-    ],
-    [
-     "2026-10-31",
-     405
-    ],
-    [
-     "2026-11-02",
-     405
-    ],
-    [
-     "2026-11-04",
-     405
-    ],
-    [
-     "2026-11-06",
-     399
-    ],
-    [
-     "2026-11-08",
-     399
-    ],
-    [
-     "2026-11-10",
-     399
-    ]
-   ],
-   "change": 0,
-   "change_since": "2026-11-08",
-   "change_total": -144,
-   "first_date": "2026-09-19"
-  }
- ],
+ "deals": [],
  "honorable_mentions": []
 }
