@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-15T16:40:23+00:00",
+ "updated_at": "2026-11-16T19:54:44+00:00",
  "routes_tracked": 535,
  "watches": [
   {
@@ -75,7 +75,7 @@
    "lowest_seen": 394,
    "lowest_seen_on": "2026-11-02",
    "days_tracked": 10,
-   "days_out": 2
+   "days_out": 1
   },
   {
    "id": "phoenix-nov",
@@ -235,7 +235,7 @@
    "lowest_seen": 359,
    "lowest_seen_on": "2026-10-26",
    "days_tracked": 55,
-   "days_out": 4
+   "days_out": 3
   },
   {
    "id": "mexico-city-dec",
@@ -366,7 +366,7 @@
    "lowest_seen": 558,
    "lowest_seen_on": "2026-10-19",
    "days_tracked": 24,
-   "days_out": 18
+   "days_out": 17
   },
   {
    "id": "taiwan-dec",
@@ -443,7 +443,7 @@
    "lowest_seen": 559,
    "lowest_seen_on": "2026-10-27",
    "days_tracked": 9,
-   "days_out": 20
+   "days_out": 19
   },
   {
    "id": "japan-dec",
@@ -512,7 +512,7 @@
    "lowest_seen": 545,
    "lowest_seen_on": "2026-10-27",
    "days_tracked": 9,
-   "days_out": 23
+   "days_out": 22
   },
   {
    "id": "costa-rica-dec",
@@ -639,7 +639,7 @@
    "lowest_seen": 351,
    "lowest_seen_on": "2026-10-19",
    "days_tracked": 23,
-   "days_out": 25
+   "days_out": 24
   },
   {
    "id": "las-vegas-dec-26",
@@ -680,7 +680,7 @@
    "lowest_seen": 413,
    "lowest_seen_on": "2026-11-11",
    "days_tracked": 1,
-   "days_out": 33
+   "days_out": 32
   },
   {
    "id": "las-vegas-dec-27",
@@ -838,7 +838,7 @@
    "lowest_seen": 2175,
    "lowest_seen_on": "2026-10-27",
    "days_tracked": 22,
-   "days_out": 36
+   "days_out": 35
   },
   {
    "id": "manila-mar",
@@ -982,7 +982,7 @@
    "lowest_seen": 874,
    "lowest_seen_on": "2026-10-03",
    "days_tracked": 27,
-   "days_out": 131
+   "days_out": 130
   }
  ],
  "deals": [],
