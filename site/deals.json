@@ -1,82 +1,7 @@
 {
- "updated_at": "2026-11-16T19:54:44+00:00",
+ "updated_at": "2026-11-17T18:51:06+00:00",
  "routes_tracked": 535,
  "watches": [
-  {
-   "id": "los-angeles-nov",
-   "name": "Los Angeles",
-   "arrival_id": "LAX,BUR",
-   "start": "2026-11-17",
-   "end": "2026-11-21",
-   "price": 469,
-   "airport": "LGA",
-   "arrives": "LAX",
-   "ewr_saving": null,
-   "airline": "Frontier",
-   "stops": 1,
-   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTExLTE3KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNMQVhyBwgBEgNCVVIaOxIKMjAyNi0xMS0yMSgBagcIARIDTEFYagcIARIDQlVScgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-11-11T17:31:58+00:00",
-   "is_ewr": false,
-   "alt": null,
-   "bare_fare": true,
-   "level": "typical",
-   "typical": [
-    300,
-    495
-   ],
-   "tier": null,
-   "under_pct": -76,
-   "history": [
-    [
-     "2026-11-02",
-     394
-    ],
-    [
-     "2026-11-03",
-     394
-    ],
-    [
-     "2026-11-04",
-     420
-    ],
-    [
-     "2026-11-05",
-     467
-    ],
-    [
-     "2026-11-06",
-     472
-    ],
-    [
-     "2026-11-07",
-     472
-    ],
-    [
-     "2026-11-08",
-     495
-    ],
-    [
-     "2026-11-09",
-     470
-    ],
-    [
-     "2026-11-10",
-     469
-    ],
-    [
-     "2026-11-11",
-     469
-    ]
-   ],
-   "change": 0,
-   "change_since": "2026-11-10",
-   "change_total": 75,
-   "first_date": "2026-11-02",
-   "lowest_seen": 394,
-   "lowest_seen_on": "2026-11-02",
-   "days_tracked": 10,
-   "days_out": 1
-  },
   {
    "id": "phoenix-nov",
    "name": "Phoenix",
@@ -235,7 +160,7 @@
    "lowest_seen": 359,
    "lowest_seen_on": "2026-10-26",
    "days_tracked": 55,
-   "days_out": 3
+   "days_out": 2
   },
   {
    "id": "mexico-city-dec",
@@ -366,7 +291,7 @@
    "lowest_seen": 558,
    "lowest_seen_on": "2026-10-19",
    "days_tracked": 24,
-   "days_out": 17
+   "days_out": 16
   },
   {
    "id": "taiwan-dec",
@@ -443,7 +368,7 @@
    "lowest_seen": 559,
    "lowest_seen_on": "2026-10-27",
    "days_tracked": 9,
-   "days_out": 19
+   "days_out": 18
   },
   {
    "id": "japan-dec",
@@ -512,7 +437,7 @@
    "lowest_seen": 545,
    "lowest_seen_on": "2026-10-27",
    "days_tracked": 9,
-   "days_out": 22
+   "days_out": 21
   },
   {
    "id": "costa-rica-dec",
@@ -639,7 +564,7 @@
    "lowest_seen": 351,
    "lowest_seen_on": "2026-10-19",
    "days_tracked": 23,
-   "days_out": 24
+   "days_out": 23
   },
   {
    "id": "las-vegas-dec-26",
@@ -680,7 +605,7 @@
    "lowest_seen": 413,
    "lowest_seen_on": "2026-11-11",
    "days_tracked": 1,
-   "days_out": 32
+   "days_out": 31
   },
   {
    "id": "las-vegas-dec-27",
@@ -838,7 +763,7 @@
    "lowest_seen": 2175,
    "lowest_seen_on": "2026-10-27",
    "days_tracked": 22,
-   "days_out": 35
+   "days_out": 34
   },
   {
    "id": "manila-mar",
@@ -982,7 +907,7 @@
    "lowest_seen": 874,
    "lowest_seen_on": "2026-10-03",
    "days_tracked": 27,
-   "days_out": 130
+   "days_out": 129
   }
  ],
  "deals": [],
