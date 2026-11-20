@@ -1,6 +1,6 @@
 {
- "updated_at": "2026-11-19T18:44:01+00:00",
- "routes_tracked": 536,
+ "updated_at": "2026-11-20T18:05:10+00:00",
+ "routes_tracked": 537,
  "watches": [
   {
    "id": "mexico-city-dec",
@@ -8,29 +8,29 @@
    "arrival_id": "MEX",
    "start": "2026-12-03",
    "end": "2026-12-06",
-   "price": 680,
+   "price": 721,
    "airport": "LGA",
    "arrives": "MEX",
    "ewr_saving": null,
    "airline": "Air Canada",
    "stops": 1,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTEyLTAzKAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNNRVgaMhIKMjAyNi0xMi0wNigBagcIARIDTUVYcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-11-19T18:43:19+00:00",
+   "checked_at": "2026-11-20T18:04:28+00:00",
    "is_ewr": false,
    "alt": {
     "price": 642,
-    "airport": "LGA",
+    "airport": "EWR",
     "stops": 1,
     "minutes": 660
    },
    "bare_fare": false,
    "level": "typical",
    "typical": [
-    510,
-    970
+    520,
+    980
    ],
    "tier": null,
-   "under_pct": -33,
+   "under_pct": -39,
    "history": [
     [
      "2026-10-19",
@@ -135,16 +135,20 @@
     [
      "2026-11-19",
      680
+    ],
+    [
+     "2026-11-20",
+     721
     ]
    ],
-   "change": 0,
-   "change_since": "2026-11-18",
-   "change_total": 122,
+   "change": 41,
+   "change_since": "2026-11-19",
+   "change_total": 163,
    "first_date": "2026-10-19",
    "lowest_seen": 558,
    "lowest_seen_on": "2026-10-19",
-   "days_tracked": 26,
-   "days_out": 14
+   "days_tracked": 27,
+   "days_out": 13
   },
   {
    "id": "taiwan-dec",
@@ -220,7 +224,7 @@
    "lowest_seen": 559,
    "lowest_seen_on": "2026-10-27",
    "days_tracked": 10,
-   "days_out": 16
+   "days_out": 15
   },
   {
    "id": "japan-dec",
@@ -298,7 +302,7 @@
    "lowest_seen": 545,
    "lowest_seen_on": "2026-10-27",
    "days_tracked": 10,
-   "days_out": 19
+   "days_out": 18
   },
   {
    "id": "costa-rica-dec",
@@ -313,17 +317,17 @@
    "airline": "Air Canada",
    "stops": 1,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAho7EgoyMDI2LTEyLTEwKAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNMSVJyBwgBEgNTSk8aOxIKMjAyNi0xMi0xNCgBagcIARIDTElSagcIARIDU0pPcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-11-19T18:43:37+00:00",
+   "checked_at": "2026-11-20T18:04:31+00:00",
    "is_ewr": false,
    "alt": null,
    "bare_fare": false,
    "level": "typical",
    "typical": [
-    305,
-    740
+    335,
+    750
    ],
    "tier": null,
-   "under_pct": -33,
+   "under_pct": -21,
    "history": [
     [
      "2026-10-19",
@@ -424,16 +428,20 @@
     [
      "2026-11-19",
      407
+    ],
+    [
+     "2026-11-20",
+     407
     ]
    ],
-   "change": -100,
-   "change_since": "2026-11-18",
+   "change": 0,
+   "change_since": "2026-11-19",
    "change_total": 56,
    "first_date": "2026-10-19",
    "lowest_seen": 351,
    "lowest_seen_on": "2026-10-19",
-   "days_tracked": 25,
-   "days_out": 21
+   "days_tracked": 26,
+   "days_out": 20
   },
   {
    "id": "las-vegas-dec-26",
@@ -443,38 +451,42 @@
    "end": "2026-12-26",
    "every": 4,
    "offset": 0,
-   "price": 413,
+   "price": 425,
    "airport": "JFK",
    "arrives": "LAS",
    "ewr_saving": null,
-   "airline": "Delta",
+   "airline": "American",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTEyLTE4KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNMQVMaMhIKMjAyNi0xMi0yNigBagcIARIDTEFTcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-11-11T02:20:39+00:00",
+   "checked_at": "2026-11-20T18:04:37+00:00",
    "is_ewr": false,
    "alt": null,
    "bare_fare": false,
    "level": "typical",
    "typical": [
-    190,
-    460
+    265,
+    490
    ],
    "tier": null,
-   "under_pct": -117,
+   "under_pct": -60,
    "history": [
     [
      "2026-11-11",
      413
+    ],
+    [
+     "2026-11-20",
+     425
     ]
    ],
-   "change": null,
-   "change_since": null,
+   "change": 12,
+   "change_since": "2026-11-11",
    "change_total": null,
    "first_date": "2026-11-11",
    "lowest_seen": 413,
    "lowest_seen_on": "2026-11-11",
-   "days_tracked": 1,
-   "days_out": 29
+   "days_tracked": 2,
+   "days_out": 28
   },
   {
    "id": "las-vegas-dec-27",
@@ -515,7 +527,7 @@
    "lowest_seen": 454,
    "lowest_seen_on": "2026-11-19",
    "days_tracked": 1,
-   "days_out": 29
+   "days_out": 28
   },
   {
    "id": "las-vegas-dec-28",
@@ -556,7 +568,7 @@
    "lowest_seen": 437,
    "lowest_seen_on": "2026-11-18",
    "days_tracked": 1,
-   "days_out": 29
+   "days_out": 28
   },
   {
    "id": "las-vegas-dec-29",
@@ -574,29 +586,24 @@
    "arrival_id": "ICN",
    "start": "2026-12-21",
    "end": "2026-12-31",
-   "price": 2243,
+   "price": 2242,
    "airport": "JFK",
    "arrives": "ICN",
    "ewr_saving": null,
    "airline": "Air France",
    "stops": 1,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI2LTEyLTIxKAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNJQ04aMhIKMjAyNi0xMi0zMSgBagcIARIDSUNOcgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-11-19T18:43:47+00:00",
+   "checked_at": "2026-11-20T18:04:42+00:00",
    "is_ewr": false,
-   "alt": {
-    "price": 2242,
-    "airport": "JFK",
-    "stops": 1,
-    "minutes": 1670
-   },
+   "alt": null,
    "bare_fare": false,
    "level": "typical",
    "typical": [
-    1100,
+    1050,
     2350
    ],
    "tier": null,
-   "under_pct": -104,
+   "under_pct": -114,
    "history": [
     [
      "2026-10-20",
@@ -693,16 +700,20 @@
     [
      "2026-11-19",
      2243
+    ],
+    [
+     "2026-11-20",
+     2242
     ]
    ],
-   "change": -37,
-   "change_since": "2026-11-18",
-   "change_total": -16,
+   "change": -1,
+   "change_since": "2026-11-19",
+   "change_total": -17,
    "first_date": "2026-10-20",
    "lowest_seen": 2175,
    "lowest_seen_on": "2026-10-27",
-   "days_tracked": 24,
-   "days_out": 32
+   "days_tracked": 25,
+   "days_out": 31
   },
   {
    "id": "manila-mar",
@@ -718,7 +729,7 @@
    "airline": "Philippine Airlines",
    "stops": 0,
    "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoyEgoyMDI3LTAzLTI2KAFqBwgBEgNKRktqBwgBEgNMR0FqBwgBEgNFV1JyBwgBEgNNTkwaMhIKMjAyNy0wNC0xMCgBagcIARIDTU5McgcIARIDSkZLcgcIARIDTEdBcgcIARIDRVdSQAFIAXABmAEB&tfu=EgIIAQ",
-   "checked_at": "2026-11-18T18:31:09+00:00",
+   "checked_at": "2026-11-20T18:04:48+00:00",
    "is_ewr": false,
    "alt": null,
    "bare_fare": false,
@@ -841,21 +852,25 @@
     [
      "2026-11-18",
      1035
+    ],
+    [
+     "2026-11-20",
+     1035
     ]
    ],
-   "change": -66,
-   "change_since": "2026-11-10",
+   "change": 0,
+   "change_since": "2026-11-18",
    "change_total": 90,
    "first_date": "2026-09-18",
    "lowest_seen": 874,
    "lowest_seen_on": "2026-10-03",
-   "days_tracked": 28,
-   "days_out": 127
+   "days_tracked": 29,
+   "days_out": 126
   }
  ],
  "deals": [
   {
-   "tier": "great",
+   "tier": "rare",
    "origin": "LGA",
    "is_ewr": false,
    "ewr_saving": null,
@@ -863,23 +878,23 @@
    "name": "Jackson",
    "country": "United States",
    "domestic": true,
-   "price": 469,
+   "price": 409,
    "typical": [
-    400,
+    410,
     1100
    ],
-   "under_pct": -17,
-   "position": 0.1,
-   "z": -2.5,
-   "start": "2026-12-10",
+   "under_pct": 0,
+   "position": -0.0,
+   "z": -4.5,
+   "start": "2026-12-11",
    "end": "2026-12-13",
    "trip": "weekend",
    "airline": "United",
    "stops": 1,
    "bare_fare": false,
-   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhopEgoyMDI2LTEyLTEwKAFqBwgBEgNKRktqBwgBEgNMR0FyBwgBEgNKQUMaKRIKMjAyNi0xMi0xMygBagcIARIDSkFDcgcIARIDSkZLcgcIARIDTEdBQAFIAXABmAEB&tfu=EgIIAQ",
+   "url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhopEgoyMDI2LTEyLTExKAFqBwgBEgNKRktqBwgBEgNMR0FyBwgBEgNKQUMaKRIKMjAyNi0xMi0xMygBagcIARIDSkFDcgcIARIDSkZLcgcIARIDTEdBQAFIAXABmAEB&tfu=EgIIAQ",
    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJUhLdrQjl29BHrJofL_QXZ2gxgFXIYHU8KSRChpIoZeal07dpKsavSmnG_-78TXV1O-seyiSM4c-J5K2UTF7kMIAJSaqbnM44QVYEEg",
-   "verified_at": "2026-11-18T18:31:15+00:00",
+   "verified_at": "2026-11-20T18:05:10+00:00",
    "history": [
     [
      "2026-09-19",
@@ -948,11 +963,15 @@
     [
      "2026-11-18",
      469
+    ],
+    [
+     "2026-11-20",
+     409
     ]
    ],
-   "change": 70,
-   "change_since": "2026-11-10",
-   "change_total": -74,
+   "change": -60,
+   "change_since": "2026-11-18",
+   "change_total": -134,
    "first_date": "2026-09-19"
   }
  ],
